@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #passed_tab {
+            position : absolute;
+            border-collapse : collapse;
+            margin : 50px 400px;
+            width : 500px;
+        }
+
+        #not_tab {
+            position : absolute;
+            border-collapse : collapse;
+            margin : 50px 1000px;
+            width : 500px;
+        }
+
+        td {
+            font-size : 50px;
+        }
+
+        #red_text {
+            color : red;
+        }
+
+        h1 {
+            font-size : 50px;
+            text-align : center;
+        }
+
+        #rule {
+            position : absolute;
+            margin : 70px 0px;
+        }
+    </style>
+    <head>
+        <title>
+            全校共同課程地圖
+        </title>
+        <h1>
+            全校共同課程
+        </h1>
+    </head>
+    <body>
+        <span id = "rule">
+            <b>規則</b>：* 為必修課。
+            特色體育選二。
+        </span>
+        <table id = "passed_tab" border = 1>
+            <tr>
+                <td colspan = 6>
+                    <span id = "red_text">
+                        已通過
+                    </span>
+                 </td>
+            </tr>
+            {% for each in passed %}
+            <tr>
+                <td>
+                    {{ each.0 }}
+                    {% if each.1 == 1 %}
+                        *
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table border = 1 id = "not_tab">
+            <tr>
+                <td colspan = 6>
+                    <span id = "red_text">
+                        未通過
+                    </span>
+                </td>
+            </tr>
+            {% for each in not_passed %}
+            <tr>
+                <td>
+                    {{ each.0 }}
+                    {% if each.1 == 1 %}
+                        *
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

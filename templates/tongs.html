@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table {
+            text-align : center;
+            border-collapse : collapse;
+        }
+
+        #red_txt {
+            color : red;
+        }
+
+        #green_txt {
+            color : green;
+        }
+
+        h1 {
+            text-align : center;
+        }
+    </style>
+    <head>
+        <title>
+            通識課程地圖
+        </title>
+        <h1>
+            通識課程地圖<hr/>
+        </h1>
+    </head>
+    <body>
+        <div>
+            規則 : 綠色字體代表已經修過。人文、社會、自然 各需 <b>2</b> 領域且相加至少 <b>5</b> 學分以上，特色通識為 <b>3</b> 領域 需選 <b>2</b> 領域，相加至少 <b>4</b> 學分。最後總通識學分最低門檻為 <b>3*5 + 2*2 = 19</b> 學分。
+        </div>
+        <br/>
+        <table id = "liter_tab" border = 1>
+                <td>
+                    <span id = "red_txt">人文</span><br>-</br><b>文學與藝術</b>
+                </td>
+            {% for key, value in liber_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table id = "history_tab" border = 1>
+                <td>
+                    <span id = "red_txt">人文</span><br>-</br><b>歷史哲學與文化</b>
+                </td>
+            {% for key, value in history_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table border = 1>
+                <td>
+                    <span id = "red_txt">社會</span><br>-</br><b>法政與教育文化</b>
+                </td>
+            {% for key, value in law_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table border = 1>
+                <td>
+                    <span id = "red_txt">社會</span><br>-</br><b>社經與管理</b>
+                </td>
+            {% for key, value in social_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table border = 1>
+                <td>
+                    <span id = "red_txt">自然</span><br>-</br><b>工程與科技</b>
+                </td>
+            {% for key, value in engi_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table border = 1>
+                <td>
+                    <span id = "red_txt">自然</span><br>-</br><b>生命與科學</b>
+                </td>
+            {% for key, value in life_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table border = 1>
+                <td>
+                    <span id = "red_txt">特色通識</span><br>-</br><b>綠概念</b>
+                </td>
+            {% for key, value in green_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table border = 1>
+                <td>
+                    <span id = "red_txt">特色通識</span><br>-</br><b>東南亞</b>
+                </td>
+            {% for key, value in east_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table border = 1>
+                <td>
+                    <span id = "red_txt">特色通識</span><br>-</br><b>在地實踐</b>
+                </td>
+            {% for key, value in local_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <span id = "green_txt"><b> {{ key }} <br/>  ✓</b></span>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </body>
+</html>

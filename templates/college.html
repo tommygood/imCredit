@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table {
+            border-collapse : collapse;
+            height : 100px;
+        }
+
+        #green_txt {
+            color : green;
+        }
+
+        h1 {
+            text-align : center;
+        }
+
+        td {
+            font-size : 24px;
+        }
+    </style>
+    <head>
+        <title>
+            院必修課程地圖
+        </title>
+        <h1>
+            院必修課程地圖<hr/>
+        </h1>
+    </head>
+    <body>
+        <div> 規則 : 綠字為已修過，總共需修 <b>{{ stand.2 }}</b> 學分(以下課程均為<b> 3 </b>學分) </div>
+        <br/>
+        <table border = 1>
+            <td> <b>院必修課程</b> </td>
+            {% for key, value in college_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <b><span id = "green_txt">{{ key }} ✓</span></b>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </body>
+</html>

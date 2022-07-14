@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table {
+            border-collapse : collapse;
+            height : 100px;
+        }
+
+        #green_txt {
+            color : green;
+        }
+
+        #red_txt {
+            color : red;
+        }
+
+        h1 {
+            text-align : center;
+        }
+
+        td {
+            font-size : 24px;
+        }
+    </style>
+    <head>
+        <title>
+            自由選修
+        </title>
+        <h1>
+            自由選修地圖<hr/>
+        </h1>
+    </head>
+    <body>
+        <div> 規則 : 綠字為已修過。可以從<b><span id = "red_txt">全部</span></b>的課程中選擇任何課當作自由學分，總共需<b> {{ stand.6 }} </b>學分。 </div>
+        <br/>
+        <table border = 1>
+            <td> <b>自由選修課程</b> </td>
+            {% for key, value in other_dic.items %}
+                {% if forloop.counter0 != 0 %}
+                    <td>
+                        <b><span id = "green_txt">{{ key }} ✓</span></b>
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </body>
+</html>

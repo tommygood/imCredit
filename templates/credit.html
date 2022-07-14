@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+<style>
+h1 {
+    margin : 0pt 500pt;
+}
+
+.text {
+    position : absolute;
+    width : 500px;
+    height : 400px;
+}
+
+#sub {
+    margin : 420px 1120px;
+}
+
+.domain {
+    text-align : center;
+}
+
+#sel_text {
+    text-align : center;
+}
+
+.year {
+    text-align : center;
+}
+
+#sel_year {
+    text-align : center;
+}
+
+#intro {
+    position : absolute;
+    padding : 700px 0px;
+}
+
+#all_data_div {
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+<title>
+學分檢核表-學士班107學年度
+</title>
+<strong>
+<div align = center style = "font-size:34px;">
+國立暨南國際大學 資訊管理學系
+<br/>
+<br/>
+畢業學分學生自我檢核表
+</div>
+</strong>
+<div align = right>
+<a href = "addData">新增學年資料</a>
+</div>
+<hr/>
+<body>
+    <span id = "intro">
+        系統維護:<br/>
+        <a href = "mailto:s109213059@mail1.ncnu.edu.tw">王冠權</a>
+    </span>
+<form method = "post">
+    {% csrf_token %}
+    <div id = "sel_year">
+        <p><b>選擇學年：</b></p>
+    </div>
+    {{ form.year }}
+    <br/>
+    <div id = "sel_text">
+    <b>
+    選擇次領域：
+    </b>
+    </div>
+    <br/>
+    {{ form.domain }}
+    <br/>
+    <div id = "all_data_div">
+        {{ form_lec.all_data }}
+    </div>
+    <input name = "send" type = "submit" id = "sub"></input>
+</form>
+</body>
+</html>
+
+
