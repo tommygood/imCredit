@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table {
+            width : 1000pt;
+            border-collapse : collapse;
+            height : 100px;
+        }
+
+        #blue_txt {
+            color : blue;
+        }
+
+        #oran_txt {
+            color : orange;
+        }
+
+        #green_txt {
+            color : green;
+        }
+
+        h1 {
+            text-align : center;
+        }
+
+        td {
+            text-align : center;
+            font-size : 24px;
+        }
+
+        #ale {
+            position : fixed;
+            font-size : 24px;
+            color : red;
+            padding : 0px 1700px;
+        }
+    </style>
+    <head>
+        <title>
+            系專業選修課程地圖
+        </title>
+        <h1>
+            系專業選修課程地圖<hr/>
+        </h1>
+    </head>
+    <body>
+        <div> 規則 : 綠字為已修過。次領域 <b>2</b> 選 <b>1</b> ，選擇的領域需 <b> {{ stand.4 }} </b>學分(以下課程均為 <b>3</b> 學分)，最後全部(主領域+其他領域)需 <b>{{ total_pro }}</b> 學分。 </div>
+        <br/>
+        <table border = 1>
+            <td> <b><span id = "blue_txt">資訊技術與系統開發次領域</span></b> </td>
+            {% for key, value in tech_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <b><span id = "green_txt">{{ key }}<br/>✓</span></b>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <table border = 1>
+            <td> <b><span id = "oran_txt">資訊管理與決策科學次領域</span></b> </td>
+            {% for key, value in mana_dic.items %}
+                {% if value == 1 %}
+                    <td>
+                        <b><span id = "green_txt">{{ key }} ✓</span></b>
+                    </td>
+                {% else %}
+                    <td>
+                        {{ key }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <table id = "tb" border = 1>
+            <tr>
+            <td> <b>非次領域</b> </td>
+            {% for key, value in profe_dic.items %}
+                {% if forloop.counter|divisibleby:15 %}
+                    <tr>
+                    {% if value == 1 %}
+                        <td>
+                            <b><span id = "green_txt">{{ key }}<br/>✓</span></b>
+                        </td>
+                    {% else %}
+                        <td>
+                            {{ key }}
+                        </td>
+                    {% endif %}
+                {% else %}
+                    {% if value == 1 %}
+                        <td>
+                            <b><span id = "green_txt">{{ key }}<br/>✓</span></b>
+                        </td>
+                    {% else %}
+                        <td>
+                            {{ key }}
+                        </td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

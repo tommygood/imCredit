@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    {% if set == True %}
+        <script> alert('新增成功！'); </script>
+        <script> window.location.href = "IMCreditCount"; </script>
+    {% endif %}
+    {% if fail == True %}
+        <script> alert('帳號或密碼錯誤'); </script>
+    {% endif %}
+    <head>
+        <title>
+            新增資料
+        </title>
+        <h1>
+            新增學年資料<hr/>
+        </h1>
+        <h2>
+            規則:若要上傳新學年度資料，檔名須為 學年_data。ex. 107_data
+        </h2>
+    </head>
+    <body>
+        <form enctype = "multipart/form-data" method = "post">
+            {% csrf_token %}
+            {{ form_login.as_p }}
+            {{ form.as_p }}
+            <input type = "submit"></input>
+        </form>
+        {{ a }}
+    </body>
+</html>
+

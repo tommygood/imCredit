@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+    <script>//window.location.href='rest'</script>
+    {% if no_data == True %}
+        <script> 
+            alert('此學年還未有資料');
+            window.location.href = "IMCreditCount"; 
+        </script>
+    {% endif %}
+    {% if ale_wrong_input %}
+        <script>
+            alert('輸入格式錯誤');
+            window.location.href = "IMCreditCount"; 
+        </script>
+    {% endif %}
+<style>
+#line {
+    position : absolute;
+}
+
+#dev {
+    text-align:right;
+}
+
+#chk_txt {
+    position : absolute;
+    padding : 0px 150px;
+}
+
+#chk_txt1 {
+    position : absolute;
+    padding : 50px 200px;
+    color : #FF0000;
+}
+
+#chk_txt2 {
+    position : absolute;
+    padding : 35px 200px;
+    color : #003060;
+}
+
+#oran_txt {
+    color : orange;
+}
+
+#green_txt {
+    color : green;
+}
+
+#blue_txt {
+    color : blue;
+}
+
+h1 {
+    margin : 0pt 500pt;
+}
+
+#cre_tab {
+    border-collapse : collapse; 
+    width : 1000px;
+}
+
+td {
+    text-align : center;
+}
+       
+#intro {
+    border-top : hidden;
+    text-align : left;
+}
+
+#same {
+    border-left : 3px solid #484891 ;
+    text-align : center;
+}
+
+#red_txt {
+    color : red;
+}
+
+#txt {
+    font-size : 34px;
+}
+
+#sign {
+    width : 50%;
+    border-top:hidden;
+    text-align : left;
+}
+
+#no_head {
+    border-top:hidden;
+    text-align : center;
+}
+
+tr {
+}
+</style>
+<script>
+    window.onload = function() {
+        //drawLine();
+    }
+
+    function drawLine() {
+        let line = document.getElementById('line');
+        let ctx = line.getContext('2d');
+        line.height = 100
+        line.width = 1000
+        ctx.lineWith = 30
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(190,46,468,30);
+        ctx.clearRect(199,53,450,18);
+        /*line.height = 50
+        line.width = 50
+        ctx.lineWith = 30
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(0,0);
+        ctx.stroke();*/
+    }
+
+    function plusOne(num) {
+        return num+1;
+    }
+</script>
+<head>
+    <title>
+	    學分檢核表-{{year}}學年度
+    </title>
+</head>
+<body>
+    <strong>
+        <div id = "txt" align = center>
+            國立暨南國際大學 資訊管理學系
+        </div>
+        <br/>
+        <div id = "txt" align = center>
+            畢業學分學生自我檢核表
+        </div>
+        <h1><hr/></h1>
+    </strong>
+    <table id = "cre_tab" border = "2" align = center>
+        <tr style = "border-top:3px solid #484891;">
+            <td style = "border-left:3px solid #484891;"><b>姓名</b></td>
+            <td>{{name}}</td>
+            <td><b>學年</b></td>
+            <td>{{year}}</td>
+            <td><b>次領域</b></td>
+            {% if domain == 1 %}
+                <td>資訊技術與系統開發</td>
+            {% endif %}
+            {% if domain == 2 %}
+                <td>資訊管理與決策科學</td>
+            {% endif %}
+	    <td><b>目前已修習學分數</b></td>
+        <td style = "border-right:3px solid #484891;">{{ fin_cre }}</td>
+        </tr>
+    </table>
+    <table id = "cre_tab" border = "2" align = center>
+        <tr>
+            <td id = "intro" colspan = "6" style = "border-left:3px solid #484891;border-right:3px solid #484891;">
+                本表 <b>{{ year }}</b> 學年度入學之學生適用。<br/>
+                最低畢業門檻：<b>{{ total_stand }}</b> 學分，分別為以下：<br/>
+                <a href = "same">全校共同課程：</a> <b>{{ stand.0 }}</b>，
+                <a href = "tongs">通識領域課程：</a> <b>{{ stand.1 }}</b>，
+                <a href = "college">院必修：</a><b>{{ stand.2 }}</b>，
+                <a href = "department">系必修：</a> <b>{{ stand.3 }}</b>，
+		<a href = "profession">次領域+系專業選修：</a> <b>{{ stand.4 }}＋{{ stand.5 }}</b>，
+                <a href = "free">自由選修：</a> <b>{{ stand.6 }}</b>。
+            </td>
+        </tr>
+        <tr style = "border-top:3px solid #484891;">
+            <td rowspan = {{lec_same|length}} id = "same" width = "100">
+                全校共同必修<br/> 
+                <br/>{{ lec_same.lec_same_cre }}/{{ stand.0 }}<br/>
+                {% if same_nece == False %}
+                    <b><span id = "red_txt">未達規定門檻</span></b>
+                {% else %}
+                    <b>已達規定門檻</b>
+                {% endif %}
+            </td>
+            {% if lec_same|length < 2 %}
+                <td colspan = "12">
+                </td> 
+            {% endif %}
+        </tr>
+            {% for key, value in lec_same.items %}
+                {% if forloop.counter != 1 %}
+		<tr style = "border-right:3px soild #484891">
+                        <td style = "border-right:3px solid #484891" colspan = "12">{{ key }} {{ value }}</td>
+		</tr>
+                {% endif %}
+            {% endfor %}
+            <tr style = "border-top:3px solid #484891;">
+                <td style = "border-left:3px solid #484891" rowspan = {{ tongs_len.all }}>
+                    通識領域課程<br/><br/>
+                    {% if tongs_pass.0 == 1 %}
+                        <b><span id = "red_txt">學分尚未達標</b></span><br/>
+                    {% endif %}
+                    {% if tongs_pass.1 == 1 %}
+                        <b><span id = "red_txt">領域尚未達標</b></span>
+                    {% endif %}
+                    {% if tongs_pass.0 == 0 and tongs_pass.1 == 0 %}
+                        <b>已達規定門檻</b>
+                    {% endif %}
+                </td>
+            </tr>
+            {% for key, value in tongs_dic.items %}
+                    {% if forloop.counter == 1 %}
+                        <tr>
+                            <td rowspan = {{ tongs_len.human_length }}>
+                                <b>
+                                    人文學分：<br/>
+                                    {{ tongs_cre_sep.human.0 }}/5.0
+                                </b>
+                            </td>
+                            <td rowspan = {{ tongs_len.human_length }}>
+                                <b>
+                                    人文領域：<br/>
+                                    {{ tongs_cre_sep.human.1 }}/2
+                                </b>
+                            </td>
+                            <td rowspan = {{ tongs_dic.liber|length }} colspan = 2>
+                                <b>人文</b>－文學與藝術
+                                {% if tongs_dic.liber|length < 2 %}
+                                    <td colspan = "12" style = "border-right:3px solid #484891">
+                                    </td> 
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                    {% if key  == "liber" %}
+                        {% for i in value %}
+                            {% if forloop.counter0 != 0 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td style = "border-right:3px solid #484891" colspan = "0">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if forloop.counter == 2 %}
+                        <tr>
+                            <td rowspan = {{ tongs_dic.history|length }} colspan = 2>
+                                <b>人文</b>－歷史哲學與文化
+                            </td>
+                            {% if tongs_dic.history|length < 2 %}
+                                <td colspan = "12" style = "border-right:3px solid #484891">
+                                </td> 
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                    {% if key  == "history" %}
+                        {% for i in value %}
+                            {% if forloop.counter != 1 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td colspan = "12" style = "border-right:3px solid #484891">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if forloop.counter == 3 %}
+                        <tr>
+                            <td rowspan = {{ tongs_len.social_length }}>
+                                <b>
+                                    社會學分：<br/>
+                                    {{ tongs_cre_sep.society.0 }}/5.0
+                                </b>
+                            </td>
+                            <td rowspan = {{ tongs_len.social_length }}>
+                                <b>
+                                    社會領域：<br/>
+                                    {{ tongs_cre_sep.society.1 }}/2
+                                </b>
+                            </td>
+                            <td rowspan = {{ tongs_dic.law|length }} colspan = 2>
+                                <b>社會</b>－法政與教育
+                            </td>
+                            {% if tongs_dic.law|length < 2 %}
+                                <td colspan = "12" style = "border-right:3px solid #484891">
+                                </td> 
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                    {% if key  == "law" %}
+                        {% for i in value %}
+                            {% if forloop.counter != 1 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td colspan = "12" style = "border-right:3px solid #484891">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if forloop.counter == 4 %}
+                        <tr>
+                            <td rowspan = {{ tongs_dic.social|length }} colspan = 2>
+                                <b>社會</b>－社經與管理
+                            </td>
+                            {% if tongs_dic.social|length < 2 %}
+                                <td colspan = "12" style = "border-right:3px solid #484891">
+                                </td> 
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                    {% if key  == "social" %}
+                        {% for i in value %}
+                            {% if forloop.counter != 1 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td colspan = "12" style = "border-right:3px solid #484891">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if forloop.counter == 5 %}
+                        <tr>
+                            <td rowspan = {{ tongs_len.science_length }}>
+                                <b>
+                                    自然學分：<br/>
+                                    {{ tongs_cre_sep.science.0 }}/5.0
+                                </b>
+                            </td>
+                            <td rowspan = {{ tongs_len.science_length }}>
+                                <b>
+                                    自然領域：<br/>
+                                    {{ tongs_cre_sep.science.1 }}/2
+                                </b>
+                            </td>
+                            <td rowspan = {{ tongs_dic.engi|length }} colspan = 2>
+                                <b>自然</b>－工程與科技
+                            </td>
+                            {% if tongs_dic.engi|length < 2 %}
+                                <td colspan = "12" style = "border-right:3px solid #484891">
+                                </td> 
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                    {% if key == "engi" %}
+                        {% for i in value %}
+                            {% if forloop.counter != 1 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td colspan = "12" style = "border-right:3px solid #484891">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if forloop.counter == 6 %}
+                        <tr>
+                            <td rowspan = {{ tongs_dic.life|length }} colspan = 2>
+                                <b>自然</b>－生命與科學
+                            </td>
+                            {% if tongs_dic.life|length < 2 %}
+                                <td colspan = "12" style = "border-right:3px solid #484891">
+                                </td> 
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                    {% if key  == "life" %}
+                        {% for i in value %}
+                            {% if forloop.counter != 1 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td colspan = "12" style = "border-right:3px solid #484891">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if forloop.counter == 7 %}
+                        <tr>
+                            <td rowspan = {{ tongs_len.spe_length }}>
+                                <b>
+                                    特色通識學分：<br/>
+                                    {{ tongs_cre_sep.spe.0 }}/4.0
+                                </b>
+                            </td>
+                            <td rowspan = {{ tongs_len.spe_length }}>
+                                <b>
+                                    特色通識領域：<br/>
+                                    {{ tongs_cre_sep.spe.1 }}/2
+                                </b>
+                            </td>
+                            <td rowspan = {{ tongs_dic.green|length }} colspan = 2>
+                                <b>特色通識</b>－綠概念
+                            </td>
+                            {% if tongs_dic.green|length < 2 %}
+                                <td colspan = "12" style = "border-right:3px solid #484891">
+                                </td> 
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                    {% if key  == "green" %}
+                        {% for i in value %}
+                            {% if forloop.counter != 1 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td colspan = "12" style = "border-right:3px solid #484891">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if forloop.counter == 8 %}
+                        <tr>
+                            <td rowspan = {{ tongs_dic.east|length }} colspan = 2>
+                                <b>特色通識</b>－東南亞
+                            </td>
+                            {% if tongs_dic.east|length < 2 %}
+                                <td colspan = "12" style = "border-right:3px solid #484891">
+                                </td> 
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                    {% if key  == "east" %}
+                        {% for i in value %}
+                            {% if forloop.counter != 1 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td colspan = "12" style = "border-right:3px solid #484891">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if forloop.counter == 9 %}
+                        <tr>
+                            <td rowspan = {{ tongs_dic.local|length }} colspan = 2>
+                                <b>特色通識</b>－在地實踐
+                            </td>
+                            {% if tongs_dic.local|length < 2 %}
+                                <td colspan = "12" style = "border-right:3px solid #484891">
+                                </td> 
+                            {% endif %}
+                        </tr>
+                    {% endif %}
+                    {% if key  == "local" %}
+                        {% for i in value %}
+                            {% if forloop.counter != 1 %}
+                                {% for name, cre in i.items %}
+                                    <tr>
+                                        <td colspan = "12" style = "border-right:3px solid #484891">
+                                            {{ name }} {{ cre }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            <tr style = "border-top:3px solid #484891">
+                <td rowspan = {{ college_name_cre|length }} style = "border-left:3px solid #484891">
+                    院必修課程<br/>
+                    {{ college_name_cre.total_cre }}/{{ stand.2 }}<br/>
+                    {% if college_name_cre.total_cre !=  stand.2  %}
+                        <b><span id = "red_txt">未達規定門檻</span></b>
+                    {% else %}
+                        <b> 已達規定門檻 </b>
+                    {% endif %}
+                </td>
+               {% if college_name_cre|length < 2 %}
+                   <td colspan = "12" style = "border-right:3px solid #484891">
+                   </td> 
+               {% endif %}
+            </tr>
+            {% for key, value in college_name_cre.items %}
+                {% if forloop.counter0 != 0  %}
+                    <tr>
+                        <td colspan = 5 style = "border-right:3px solid #484891">
+                            {{ key }} {{ value }} 學分
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            <tr style = "border-top:3px solid #484891">
+                <td rowspan = {{ depart_name_cre|length }} style = "border-left:3px solid #484891">
+                    系必修課程<br/><br/>
+                    {{ depart_name_cre.total_cre }}/{{ stand.3 }}<br/>
+                    {% if depart_name_cre.total_cre !=  stand.3  %}
+                        <b><span id = "red_txt">未達規定門檻</span></b>
+                    {% else %}
+                        <b> 已達規定門檻 </b>
+                    {% endif %}
+                </td>
+               {% if depart_name_cre|length < 2 %}
+                   <td colspan = "12" style = "border-right:3px solid #484891">
+                   </td> 
+               {% endif %}
+            </tr>
+            {% for key, value in depart_name_cre.items %}
+                {% if forloop.counter0 != 0  %}
+                    <tr>
+                        <td colspan = 5 style = "border-right:3px solid #484891">
+                            {{ key }} {{ value }} 學分
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            {% if domain == 1 %}
+                <tr style = "border-top:3px solid #484891">
+                    <td rowspan = {{ total_profe_len }} style = "border-left:3px solid #484891">
+                        系專業選修<br/><br/>
+                        {{ total_pro_cre }}/{{ sum_stand_pro }}<br/>
+                        {% if total_pro_cre < sum_stand_pro %}
+                            <b><span id = "red_txt">未達規定門檻</span></b>
+                        {% else %}
+                           <b>已達規定門檻</b>
+                        {% endif %}
+                    </td>
+                </tr>
+                   <tr style = "border-top:3px solid #484891">
+                        <td rowspan = {{ tech_name_cre|length }}>
+                             <b><span id = "blue_txt">技術次領域</span></b><br/>
+                             {{ tech_name_cre.total_cre }}/{{ stand.4 }}<br/>
+                            {% if tech_name_cre.total_cre < stand.4 %}
+                                <b><span id = "red_txt">未達規定門檻</span></b>
+                            {% else %}
+                                <b>已達規定門檻</b>
+                            {% endif %}
+                        </td>   
+                        {% if tech_name_cre|length < 2 %}
+                            <td colspan = "4" style = "border-right:3px solid #484891">
+                            </td> 
+                        {% endif %}
+                   </tr>
+                {% for key, value in tech_name_cre.items %}
+                    {% if forloop.counter0 != 0  %}
+                        <tr  style = "border-right:3px solid #484891">
+                            <td colspan = 4>
+                                 {{ key }} {{ value }} 學分
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <td rowspan = {{ other_len }} >
+                         <b>其他次領域</b><br/>
+                         {{ other_cre }}<br/>
+                    </td>   
+                    {% if mana_name_cre|length < 2  and profe_name_cre|length < 2 %}
+                        <td colspan = "12" style = "border-right:3px solid #484891">
+                        </td> 
+                    {% endif %}
+                </tr>
+                {% for key, value in mana_name_cre.items %}
+                    {% if forloop.counter0 != 0  %}
+                        <tr>
+                            <td colspan = 4 style = "border-right:3px solid #484891">
+                                {{ key }} {{ value }} 學分
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                {% for key, value in profe_name_cre.items %}
+                    {% if forloop.counter0 != 0  %}
+                        <tr>
+                          <td colspan = 4 style = "border-right:3px solid #484891">
+                                {{ key }} {{ value }} 學分
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                {% else %}
+                    <tr style = "border-top:3px solid #484891">
+                        <td rowspan = {{ total_profe_len }} style = "border-left:3px solid #484891">
+                            系專業選修<br/><br/>
+                            {{ total_pro_cre }}/{{ sum_stand_pro }}<br/>
+                            {% if total_pro_cre < sum_stand_pro %}<br/>
+                                <b><span id = "red_txt">未達規定門檻</span></b>
+                            {% else %}
+                                <b>已達規定門檻</b>
+                            {% endif %}
+                        </td>
+                    </tr>
+                   <tr style = "border-top:3px solid #484891">
+                        <td rowspan = {{ mana_name_cre|length }}>
+                             <b><span id = "oran_txt">管理次領域</span></b><br/>
+                             {{ mana_name_cre.total_cre }}/{{ stand.4 }}<br/>
+                             {% if mana_name_cre.total_cre < stand.4 %}
+                                 <b><span id = "red_txt">未達規定門檻</span></b>
+                             {% else %}
+                                 <b>已達規定門檻</b>
+                             {% endif %}
+                        </td>   
+                        {% if mana_name_cre|length < 2 %}
+                            <td colspan = "12" style = "border-right:3px solid #484891">
+                            </td> 
+                        {% endif %}
+                   </tr>
+                {% for key, value in mana_name_cre.items %}
+                    {% if forloop.counter0 != 0  %}
+                        <tr>
+                            <td colspan = 4 style = "border-right:3px solid #484891">
+                                 {{ key }} {{ value }} 學分
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <td rowspan = {{ other_len1 }} >
+                         <b>其他次領域</b><br/>
+                         {{ other_cre1 }}<br/>
+                    </td>   
+                    {% if tech_name_cre|length < 2  and profe_name_cre|length < 2 %}
+                        <td colspan = "12" style = "border-right:3px solid #484891">
+                        </td> 
+                    {% endif %}
+                </tr>
+                {% for key, value in tech_name_cre.items %}
+                    {% if forloop.counter0 != 0  %}
+                        <tr>
+                            <td colspan = 4 style = "border-right:3px solid #484891">
+                                {{ key }} {{ value }} 學分
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                {% for key, value in profe_name_cre.items %}
+                    {% if forloop.counter0 != 0  %}
+                        <tr>
+                          <td colspan = 4 style = "border-right:3px solid #484891">
+                                {{ key }} {{ value }} 學分
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <tr style = "border-top:3px solid #484891">
+                <td rowspan = {{ other_dic|length }} style = "border-left:3px solid #484891">
+                    其他課程<br/><br/>
+                    <!--{% if other_dic.total_cre < 20.0 %}
+                        <b><span id = "red_txt">未達規定門檻</span></b>
+                    {% else %}
+                        <b>已達規定門檻</b>
+                        {% endif %} -->
+                        <br/>{{ other_dic.total_cre }}<!--/{{ stand.5 }}--><br/>
+                </td>
+                {% if other_dic|length < 2 %}
+                    <td colspan = "12" style = "border-right:3px solid #484891">
+                    </td> 
+                {% endif %}
+            </tr>
+            {% for key, value in other_dic.items %}
+                {% if forloop.counter0 != 0  %}
+                    <tr>
+                        <td colspan = 5 style = "border-right:3px solid #484891">
+                            {{ key }} {{ value }} 學分
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            <tr style = "border-top:3px solid #484891">
+                <td rowspan = {{ semi_dic|length }} style = "border-left:3px solid #484891;border-bottom:3px solid #484891">
+                    通識講座<br/></br/>
+                    {{ semi_dic.total_cre }}/6<br/>
+                    {% if semi_dic.total_cre < 6 %}
+                        <b><span id = "red_txt">未達規定門檻</span></b>
+                    {% else %}
+                        <b>已達規定門檻</b>
+                    {% endif %}
+                </td>
+                {% if semi_dic|length < 2 %}
+                    <td colspan = "12" style = "border-bottom:3px solid #484891;border-right:3px solid #484891">
+                    </td>
+                {% endif %}
+            </tr>
+	    {% if semi_dic|length >= 2%}
+                {% for key, value in semi_dic.items %}
+		    {% if forloop.counter0 == 1 and semi_dic|length == 2 %}
+                        <tr>
+                            <td colspan = 5 style = "border-right:3px solid #484891;border-bottom:3px solid #484891">
+		                {{ key }}
+                            </td>
+                        </tr>
+		    {% endif %}
+                    {% if forloop.counter0 == 1 and semi_dic|length != 2 %}
+                        <tr>
+                        <td id = "no_head" colspan = 5 style = "border-right:3px solid #484891">
+                            {{ key }}
+                        </td>
+                    </tr>
+		{% elif forloop.counter == semi_dic|length and semi_dic|length != 2 %}
+                    <tr>
+                        <td colspan = 5 style = "border-right:3px solid #484891;border-bottom:3px solid #484891">
+		            {{ key }}
+                        </td>
+                    </tr>
+                {% elif forloop.counter0 != 0 and semi_dic|length != 2 %}
+                    <tr>
+                        <td colspan = 5 style = "border-right:3px solid #484891">
+                            {{ key }}
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+       {% endif %}
+   <tr>
+         <td style = "border-left:3px solid #484891;border-bottom:3px solid #484891;" height = "120px">英文畢業門檻</td>
+         <td colspan = 5 style = "border-right:3px solid #484891;border-bottom:3px solid #484891;text-align:left;">
+             <b><span id ="chk_txt2">
+                     請手寫是否已通過英文畢業門檻，例 ：1091多益通過、尚未通過......等等。
+                 </span></b>
+         </td>
+   </tr>
+    <tr>
+        <td style = "text-align:left;border-left:3px solid #484891;border-bottom:3px solid #484891;" height = "150px"><div style = "text-align:center;"><b>備註</b></div><br/>（供手動認抵學分用）</td>
+        <td colspan = 5 style = "border-right:3px solid #484891;border-bottom:3px solid #484891;text-align:left;">
+            <b><span id ="chk_txt1">務必請授課老師親簽或蓋章，代表同意抵免課程，以利系辦複核</span></b>
+        </td>
+	</tr>
+    <table id = "cre_tab" border = "2" align = center>
+            <tr style = "border-top:3px solid #484891">
+                <td style = "border-left:3px solid #484891;border-bottom:3px solid #484891" id = "sign" height = "125px">
+                     &nbsp;&nbsp;
+		     學號：<br/><br/>
+                     &nbsp;&nbsp;
+                     學生簽名：
+                     <br/>{{ date }}<br/>
+                     <b>
+                         <span id = "chk_txt">本人經查核，確認畢業學分無誤。</span></b>
+                </td>
+                <td style = "border-right:3px solid #484891;border-bottom:3px solid #484891;" id = "sign"> 
+                    <br/>&nbsp;&nbsp;
+                    系辦複核：
+                    <span>&nbsp;</span>
+                </td>
+            </tr>
+    </table>
+</body>
+</html>
+
