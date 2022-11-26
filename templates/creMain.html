@@ -23,17 +23,20 @@
 }
 
 #chk_txt {
+    width : 300px;
     position : absolute;
     padding : 0px 150px;
 }
 
 #chk_txt1 {
+    width : 600px;
     position : absolute;
     padding : 50px 200px;
     color : #FF0000;
 }
 
 #chk_txt2 {
+    width : 700px;
     position : absolute;
     padding : 35px 200px;
     color : #003060;
@@ -95,6 +98,10 @@ td {
 
 tr {
 }
+
+button {
+    position : absolute;
+}
 </style>
 <script>
     window.onload = function() {
@@ -128,7 +135,7 @@ tr {
 	    學分檢核表-{{year}}學年度
     </title>
 </head>
-<body>
+<body id = 'body'>
     <strong>
         <div id = "txt" align = center>
             國立暨南國際大學 資訊管理學系
@@ -139,12 +146,13 @@ tr {
         </div>
         <h1><hr/></h1>
     </strong>
+    <button id="button">輸出PDF檔</button>
     <table id = "cre_tab" border = "2" align = center>
         <tr style = "border-top:3px solid #484891;">
             <td style = "border-left:3px solid #484891;"><b>姓名</b></td>
-            <td>{{name}}</td>
+            <td id = 'name'>{{name}}</td>
             <td><b>學年</b></td>
-            <td>{{year}}</td>
+            <td id = 'stu_year'>{{year}}</td>
             <td><b>次領域</b></td>
             {% if domain == 1 %}
                 <td>資訊技術與系統開發</td>
@@ -187,7 +195,11 @@ tr {
             {% for key, value in lec_same.items %}
                 {% if forloop.counter != 1 %}
 		<tr style = "border-right:3px soild #484891">
-                        <td style = "border-right:3px solid #484891" colspan = "12">{{ key }} {{ value }}</td>
+			{% if forloop.counter == lec_same.items|length %}
+			    <td style = "border-bottom:3px solid #484891;border-right:3px solid #484891;" colspan = "12">{{ key }} {{ value }}</td>
+	                {% else %}
+			    <td style = "border-right:3px solid #484891;" colspan = "12">{{ key }} {{ value }}</td>
+			{% endif %}
 		</tr>
                 {% endif %}
             {% endfor %}
@@ -490,9 +502,15 @@ tr {
             {% for key, value in college_name_cre.items %}
                 {% if forloop.counter0 != 0  %}
                     <tr>
+			{% if forloop.counter0 == 1 %}
+                            <td colspan = 5 style = "border-top:3px solid #484891;border-right:3px solid #484891;">
+                                {{ key }} {{ value }} 學分
+                            </td>
+			{% else %}
                         <td colspan = 5 style = "border-right:3px solid #484891">
                             {{ key }} {{ value }} 學分
                         </td>
+			{% endif %}
                     </tr>
                 {% endif %}
             {% endfor %}
@@ -514,9 +532,19 @@ tr {
             {% for key, value in depart_name_cre.items %}
                 {% if forloop.counter0 != 0  %}
                     <tr>
-                        <td colspan = 5 style = "border-right:3px solid #484891">
-                            {{ key }} {{ value }} 學分
-                        </td>
+			{% if forloop.counter0 == 1 %}
+                            <td colspan = 5 style = "border-top:3px solid #484891;border-right:3px solid #484891;">
+                                {{ key }} {{ value }} 學分
+                            </td>
+			{% elif forloop.counter == depart_name_cre.items|length %}
+                            <td colspan = 5 style = "border-bottom:3px solid #484891;border-right:3px solid #484891;">
+                                {{ key }} {{ value }} 學分
+                            </td>
+			{% else %}
+                            <td colspan = 5 style = "border-right:3px solid #484891;">
+                                {{ key }} {{ value }} 學分
+                            </td>
+			{% endif %}
                     </tr>
                 {% endif %}
             {% endfor %}
@@ -667,9 +695,19 @@ tr {
             {% for key, value in other_dic.items %}
                 {% if forloop.counter0 != 0  %}
                     <tr>
-                        <td colspan = 5 style = "border-right:3px solid #484891">
-                            {{ key }} {{ value }} 學分
-                        </td>
+			{% if forloop.counter0 == 1 %}
+                            <td colspan = 5 style = "border-top:3px solid #484891;border-right:3px solid #484891;">
+                                {{ key }} {{ value }} 學分
+                            </td>
+			{% elif forloop.counter == other_dic.items|length %}
+                            <td colspan = 5 style = "border-bottom:3px solid #484891;border-right:3px solid #484891;">
+                                {{ key }} {{ value }} 學分
+                            </td>
+			{% else %}
+                            <td colspan = 5 style = "border-right:3px solid #484891;">
+                                {{ key }} {{ value }} 學分
+                            </td>
+			{% endif %}
                     </tr>
                 {% endif %}
             {% endfor %}
@@ -751,5 +789,42 @@ tr {
             </tr>
     </table>
 </body>
+<!-- output pdf file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+	const btn = document.getElementById("button");  
+	btn.addEventListener("click", function(){
+	    // confirm the user
+	    if (!confirm('確定輸出 PDF 檔？'))
+		return;
+	    // disable button
+	    btn.style.display = 'none';
+	    window.jsPDF = window.jspdf.jsPDF;
+	    var element = document.getElementById('body');
+	    let imgsData = html2pdf().from(element).set( { 
+	        margin: -1, filename: 'text', 
+		html2canvas: { scale:4, useCORS: true }, 
+                jsPDF: {orientation: 'portrait', unit: 'pc', format: 'a3', compressPDF: true} 
+            }).output('img',{},'img'); setTimeout(()=>{ 
+                if(imgsData && imgsData._result){ 
+		    let width = imgsData._result.width; 
+		    let height = imgsData._result.height; 
+		    let pdf2 = new jsPDF('', 'pt', [width, height]); 
+		    pdf2.addImage(imgsData._result, 'jpeg', 0, 0, width, height); 
+		    pdf2.save(getId('stu_year').innerHTML + '_' + getId('name').innerHTML + '_畢業學分檢核表'); 
+		} 
+	     },800) 
+	    // show button again
+	    setInterval(function(){
+	        btn.style.display = 'block';
+	    },1000);
+	});
+
+	function getId(id) {
+	    return document.getElementById(id);
+	}
+</script>
 </html>
 

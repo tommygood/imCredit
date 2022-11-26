@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
 <style>
 h1 {
     margin : 0pt 500pt;
@@ -13,7 +16,9 @@ h1 {
 }
 
 #sub {
-    margin : 420px 1120px;
+	position : absolute;
+	margin : 0px 1100px;
+	
 }
 
 .domain {
@@ -33,8 +38,6 @@ h1 {
 }
 
 #intro {
-    position : absolute;
-    padding : 700px 0px;
 }
 
 #all_data_div {
@@ -42,6 +45,9 @@ h1 {
     justify-content: center;
 }
 
+#textarea {
+    height : 20px;
+}
 </style>
 <title>
 學分檢核表-學士班107學年度
@@ -59,7 +65,7 @@ h1 {
 </div>
 <hr/>
 <body>
-    <span id = "intro">
+    <span class = 'position-absolute bottom-0 start-0' id = "intro">
         系統維護:<br/>
         <a href = "mailto:s109213059@mail1.ncnu.edu.tw">王冠權</a>
     </span>
@@ -81,7 +87,7 @@ h1 {
     <div id = "all_data_div">
         {{ form_lec.all_data }}
     </div>
-    <input name = "send" type = "submit" id = "sub"></input>
+    <input class = 'position-absolute bottom-0' name = "send" type = "submit" id = "sub"></input>
 </form>
 </body>
 </html>

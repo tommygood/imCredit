@@ -20,7 +20,7 @@ class userForm(forms.ModelForm) :
         model = userLec
         fields = ("all_data",)
         labels = {"all_data" : _("")}
-        widgets = {'all_data' : forms.Textarea(attrs={'class':'text'})}
+        widgets = {'all_data' : forms.Textarea(attrs={'class':'text', 'style' : 'height:300px;'})}
         #text = forms.CharField(
                 #widget = forms.Textarea(attrs={'class':'text'})
                 #)
