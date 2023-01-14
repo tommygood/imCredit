@@ -286,7 +286,7 @@ def creMain(request, domain, year, stand) : # 主頁面
             for j in range(len(seme_dic[i])) :
                 course_name = seme_dic[i][j][3]
                 same, short_name = lecSame(course_name)  # 是否在全校共同
-                if same or ckOverseas(course_name) : # 如果有過的全校共同
+                if (same or ckOverseas(course_name)) and (short_name not in lec_same_short_name) : # 如果有過的全校共同
                     lec_same['lec_same_cre'] += float(seme_dic[i][j][2][:3]) # 算總全校共同學分
                     lec_same[same+'-抵免'] = seme_dic[i][j][2][:3] # 加入課名為 key ，學分為 value 的 dici
                     lec_same_short_name.append(short_name) # 通用的課名
@@ -340,7 +340,7 @@ def creMain(request, domain, year, stand) : # 主頁面
                     continue # 沒及格找下一個
                 course_name = ckCourseName(seme_dic[i][j]) # 檢查課程名稱，有可能是中間有空白
                 same, short_name = lecSame(course_name)  # 是否在全校共同
-                if same or ckOverseas(course_name) : # 如果有過的全校共同
+                if (same or ckOverseas(course_name)) and (short_name not in lec_same_short_name) : # 如果有過的全校共同
                     lec_same['lec_same_cre'] += float(seme_dic[i][j][1][:3]) # 算總全校共同學分
                     lec_same[same] = seme_dic[i][j][1] # 加入課名為 key ，學分為 value 的 dici
                     lec_same_short_name.append(short_name) # 通用的課名
@@ -551,7 +551,7 @@ def ckNecessary(same, lec_same_cre, stand) : # 檢查領域是否有必修還沒
     if lec_same_cre < stand[0] : # 學分沒到
         return False
     # 檢查必修過了沒
-    data_name = ['英文上','英文下','英文二','國文上','國文下','服務學習上','服務學習下','大一體育(上)','大一體育(下)'] # 全部必修課名
+    data_name = ['英文上','英文下','英文二','國文上','國文下','資管系服務學習(上)','資管系服務學習(下)','大一體育(上)','大一體育(下)'] # 全部必修課名
     same_nece = True
     same_name_only = [] # 只有上過的課名，把是不是必修拿掉
     for lec_name, necess in same :
@@ -559,7 +559,7 @@ def ckNecessary(same, lec_same_cre, stand) : # 檢查領域是否有必修還沒
     for i in data_name : # 找所有的必修課
         if not i in same_name_only : # 有一
             same_nece = False
-            return [i, same_name_only]
+            #return [i, same_name_only]
             break
     return same_nece
 
