@@ -50,7 +50,7 @@ h1 {
 }
 </style>
 <title>
-學分檢核表-學士班107學年度
+暨大資管學分檢核表-學士班
 </title>
 <strong>
 <div align = center style = "font-size:34px;">
@@ -68,6 +68,9 @@ h1 {
     <span class = 'position-absolute bottom-0 start-0' id = "intro">
         系統維護:<br/>
         <a href = "mailto:s109213059@mail1.ncnu.edu.tw">王冠權</a>
+    </span>
+    <span id = 'warn_msg' class = 'position-absolute top-0 start-0'>
+	<span id = 'red_text'>提醒：</span>同個課程在不同學年可能有不同課名，系統會判斷為不同課程，請以你的畢業年度為準。
     </span>
 <form method = "post">
     {% csrf_token %}
@@ -90,6 +93,16 @@ h1 {
     <input class = 'position-absolute bottom-0' name = "send" type = "submit" id = "sub"></input>
 </form>
 </body>
+<style>
+    #warn_msg {
+	-webkit-writing-mode : vertical-lr;
+	writing-mode : vertical-lr;
+    }
+
+    #red_text {
+	color : red;
+    }
+</style>
 </html>
 
 

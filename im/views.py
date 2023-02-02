@@ -660,7 +660,7 @@ def mkSameList() : # 製作全校共同課程的二維陣列, [[課名, 是否�
             total_same.append([i,1])
 
 def lecSame(lec_name) : # 全校共同課程
-    if lec_name == "英文寫作一(上)" or lec_name == "英文寫作一(下)" :
+    if lec_name == "英文寫作一(上)" or lec_name == "英文寫作一(下)" or '進修英文' in lec_name :
         return False, False
     is_over = False
     if "僑外生華語文(上)" in lec_name :
