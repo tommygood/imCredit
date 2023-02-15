@@ -86,7 +86,9 @@ h1 {
     </div>
     <br/>
     {{ form.domain }}
-    <br/>
+    <div id = 'input_text'>
+        請至校務系統 -> 歷年修課狀況，全選複製再貼到輸入框。
+    </div>
     <div id = "all_data_div">
         {{ form_lec.all_data }}
     </div>
@@ -102,7 +104,11 @@ h1 {
     #red_text {
 	color : red;
     }
+
+    #input_text {
+	color : red;
+	text-align : center;
+    }
 </style>
 </html>
-
 
