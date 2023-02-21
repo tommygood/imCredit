@@ -266,6 +266,7 @@ def creMain(request, domain, year, stand) : # 主頁面
     total[0].pop(0) # 不要前兩行
     total[0].pop(0) # 原本的 index1 變 index0
     seme_dic, semi_dic, other_info = mkSemeDic(request, total) # 只有全部學期的字典，以學年度為 key
+    total_credit = findTotalCredit(total[len(total)-1]) # 從校務系統的資料找總學分
     lec_same_cre = 0 # 全校共同課程總共學分
     lec_same = {"lec_same_cre": lec_same_cre} # 全校共同課程，先塞一個頭，因rowspan要len+1i
     tongs_dic = {"liber" : [0], "history" : [0], "law" : [0], "social" : [0], "engi" : [0], "life" : [0] , "green" : [0], "east" : [0], "local" : [0]}
@@ -406,7 +407,7 @@ def creMain(request, domain, year, stand) : # 主頁面
     tongs_len, tongs_cre_sep = ckLength(tongs_dic) # 通識的長度(課數)、通識的學分、領域數
     #free_dic = ckFree(lec_same, tongs_dic, tech_name_cre, mana_name_cre, profe_name_cre) # 可以當做自由學分的課程
     fin_cre = float(lec_same['lec_same_cre'])+float(tongs_cre_sep['human'][0])+float(tongs_cre_sep['society'][0])+float(tongs_cre_sep['science'][0])+float(tongs_cre_sep['spe'][0])+float(college_name_cre['total_cre'])+float(depart_name_cre['total_cre'])+float(tech_name_cre['total_cre'])+float(mana_name_cre['total_cre'])+float(profe_name_cre['total_cre'])+float(other_dic['total_cre'])
-    context = {"fin_cre" : fin_cre, "total_pro_cre" : tech_name_cre['total_cre']+mana_name_cre['total_cre']+profe_name_cre['total_cre'], "sum_stand_pro" : stand[4]+stand[5], "total_stand" : sum(stand), "stand" : stand, "date" : datetime.date.today(), "other_cre1" : other_cre1, "other_len1" : other_len1, "depart_107" : east, "college_107" : local, "other_info" : other_info, "semi_dic" : semi_dic, "total" : total, "other_dic" : other_dic, "total_profe_len" : total_profe_len, "other_len" : other_len, "other_cre" : other_cre, "profe_name_cre" : profe_name_cre, "mana_name_cre" : mana_name_cre, "tech_name_cre" : tech_name_cre, "depart_name_cre" : depart_name_cre, "college_name_cre" : college_name_cre, "tongs_pass" : tongsPass(tongs_cre_sep), "tongs_cre_sep" : tongs_cre_sep, "tongs_len" : tongs_len, "name" : name, "domain" : domain, "seme_dic" : seme_dic, "year" : request.POST["year"], "lec_same" : lec_same, "same_nece" : same_nece, "tongs_dic" : tongs_dic, "tongs_cre" : tongs_cre}
+    context = {"fin_cre" : total_credit, "total_pro_cre" : tech_name_cre['total_cre']+mana_name_cre['total_cre']+profe_name_cre['total_cre'], "sum_stand_pro" : stand[4]+stand[5], "total_stand" : sum(stand), "stand" : stand, "date" : datetime.date.today(), "other_cre1" : other_cre1, "other_len1" : other_len1, "depart_107" : east, "college_107" : local, "other_info" : other_info, "semi_dic" : semi_dic, "total" : total, "other_dic" : other_dic, "total_profe_len" : total_profe_len, "other_len" : other_len, "other_cre" : other_cre, "profe_name_cre" : profe_name_cre, "mana_name_cre" : mana_name_cre, "tech_name_cre" : tech_name_cre, "depart_name_cre" : depart_name_cre, "college_name_cre" : college_name_cre, "tongs_pass" : tongsPass(tongs_cre_sep), "tongs_cre_sep" : tongs_cre_sep, "tongs_len" : tongs_len, "name" : name, "domain" : domain, "seme_dic" : seme_dic, "year" : request.POST["year"], "lec_same" : lec_same, "same_nece" : same_nece, "tongs_dic" : tongs_dic, "tongs_cre" : tongs_cre}
     return render(request, "creMain.html", context)
 
 def profeCk(course_name) : # 檢查是否在院必修
@@ -422,10 +423,16 @@ def manaCk(course_name) : # 檢查是否在院必修
         return False
 
 def techCk(course_name) : # 檢查是否在院必修
-    if course_name in tech :
-        return course_name
-    else :
-        return False
+    for each_tech in tech :
+        if '$~$' in each_tech : # 相同課有多個課名
+            each_tech = each_tech.split('$~$')
+            for different_course_name in each_tech :
+                if different_course_name == course_name :
+                    return course_name
+        else :
+            if each_tech == course_name :
+                return course_name
+    return False
 
 def departCk(course_name) : # 檢查是否在院必修
     if course_name in depart :
@@ -583,7 +590,7 @@ def mkSemeDic(request, total) : # [全部學期的字典，學年度為 key, 通
         for j in range(len(total[i])) :
             if total[i][j] == "外抵" or "外抵" in total[i][j] :
                 out = True
-            if "內抵" in total[i][j] :
+            if "內抵" in total[i][j] or '免修' in total[i][j] :
                 out = True
                 in_cre = True
             if j == 0 :
@@ -808,10 +815,18 @@ def Profession(request) : # 系專業選修
     mana_dic = {}
     profe_dic = {}
     for i in range(len(tech)) :
-        if tech[i] in tech_name_only : # 有修過
-            tech_dic[tech[i]] = 1 # value = 1
-        else : # 沒修過
-            tech_dic[tech[i]] = 0
+        if '$~$' in tech[i] : # 同堂課有多個課名
+            tech_name = tech[i].split('$~$')
+        else : # 普通的，只有一種課名
+            tech_name = [tech[i]]
+        is_pass_one = False # 是否有通過其中一個課名
+        for each_tech in tech_name :
+            if each_tech in tech_name_only : # 有修過其中一堂課名
+                tech_dic[each_tech] = 1
+                is_pass_one = True
+                break
+        if not is_pass_one : # 一種課名都沒通過，代表沒過此堂課
+            tech_dic[each_tech] = 0
     for i in range(len(mana)) :
         if mana[i] in mana_name_only : # 有修過
             mana_dic[mana[i]] = 1 # value = 1
@@ -993,6 +1008,20 @@ def ckOverseas(course_name) : # 僑生華語文可以抵國文
 def rest(request) :
     return render(request, 'rest.html')
 
+def findTotalCredit(total) : # 找總學分
+    total_credit = 'bug'
+    for each in total :
+        if '總共' in each :
+            total_credit = extractFloat(each)
+    return total_credit
+
+def extractFloat(obj) : # 把小數點拿出來
+    only_float = ''
+    for i in obj :
+        if i.isnumeric() or i == '.' :
+            only_float += i
+    return only_float
+
 '''def redundSame(lec_same) : # 多餘的共同必修(超過兩堂的體育)
     count_sport = 0 # 修過的特色體育
     for key in list(lec_same) : # 用 list 包起來可以解決在 del dictionary 在迴圈中會報的錯
@@ -1091,4 +1120,3 @@ def mkSort(human_cre_sep, human_cre) : # 回傳 sorted human_cre_sep, 依照 hum
                     human_cre[j] = human_cre[j+1]
                     human_cre[j+1] = tem
     return human_cre_sep, human_cre '''
-
