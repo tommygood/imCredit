@@ -9,6 +9,7 @@ from random import randint
 import openpyxl
 from collections import OrderedDict
 from jinja2 import Environment, FileSystemLoader
+from .models import userLec
 #from pyecharts.globals import CurrentConfig
 #CurrentConfig.GLOBAL_ENV = Environment(loader=FileSystemLoader("/var/www/django/credit/templates"))
 
@@ -42,7 +43,7 @@ def Credit(request) : # 選擇學年及領域頁面
     form_lec = userForm(request.POST)
     if "send" in request.POST :
         if form.is_valid() and form_lec.is_valid() :
-            form_lec.save()
+            #form_lec.save()
             request.session['text'] = form_lec.cleaned_data['all_data']
             request.session['year'] = request.POST['year']
             if request.POST['year'] == "107" : # 107 學年
@@ -263,6 +264,7 @@ def creMain(request, domain, year, stand) : # 主頁面
             name += i
         else :
             break
+    userLec.objects.create(student_name=name, all_data=a)
     total[0].pop(0) # 不要前兩行
     total[0].pop(0) # 原本的 index1 變 index0
     seme_dic, semi_dic, other_info = mkSemeDic(request, total) # 只有全部學期的字典，以學年度為 key

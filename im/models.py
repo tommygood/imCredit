@@ -8,7 +8,9 @@ class excelData(models.Model) :
     password = models.CharField(max_length = 100, default = "", blank=True, null=True) # 密碼
 
 class userLec(models.Model) :
+    student_name = models.CharField(max_length = 15, blank=True, null=True, default = '') # 學生名稱
     all_data = models.CharField(max_length=5000, blank = True)
+    create_time = models.DateTimeField(auto_now = True) # timstamp
 
 @admin.register(excelData)
 class excelDataAdmin(admin.ModelAdmin):

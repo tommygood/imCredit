@@ -15,7 +15,7 @@ class CreditForm(forms.Form) :
             choices=((107, "107學年度"), (108, '108學年度'))
     )
 
-class userForm(forms.ModelForm) :
+"""class userForm(forms.ModelForm) :
     class Meta :
         model = userLec
         fields = ("all_data",)
@@ -23,8 +23,10 @@ class userForm(forms.ModelForm) :
         widgets = {'all_data' : forms.Textarea(attrs={'class':'text', 'style' : 'height:300px;'})}
         #text = forms.CharField(
                 #widget = forms.Textarea(attrs={'class':'text'})
-                #)
+                #)"""
 
+class userForm(forms.Form) :
+    all_data = forms.CharField(widget=forms.Textarea(attrs={'class':'text', 'style' : 'height:300px'}))
 
 class excelForm(forms.ModelForm) :
     class Meta :
