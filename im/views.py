@@ -579,6 +579,9 @@ def mkSemeDic(request, total) : # [全部學期的字典，學年度為 key, 通
     other_info = {"head" : 0} # 剩下的資訊
     for i in total :
         for j in i :
+            if '休學' in j : # 有休學，多加一學期。因為休學紀錄會多被 split 一個 list
+                count_seme += 1
+                break
             if "修課狀況" in j or "已抵免之學分" in j :
                 count_seme += 1 # 計算學期
             elif "通識講座" in j and j[-3] != "未": # 是通識講座且有通過
