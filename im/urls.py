@@ -14,5 +14,6 @@ urlpatterns = [
     path('profession', views.Profession),
     path('free', views.Free),
     path('addData', views.addData),
+    path('rootExclusive', views.rootExclusive),
 ]
 

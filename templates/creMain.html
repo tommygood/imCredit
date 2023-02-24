@@ -102,6 +102,16 @@ tr {
 button {
     position : absolute;
 }
+
+img {
+    position : absolute;
+    transform : rotate(-30deg);
+    display : block;
+    margin-left : auto;
+    margin-right : auto;
+    margin-top : 500px;
+    z-index : -9999;
+}
 </style>
 <script>
     window.onload = function() {
@@ -136,6 +146,7 @@ button {
     </title>
 </head>
 <body id = 'body'>
+    <img id = 'water'></img>
     <strong>
         <div id = "txt" align = center>
             國立暨南國際大學 資訊管理學系
@@ -792,6 +803,12 @@ button {
 <!-- output pdf file -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+{% if pic_path != '' %}
+    <script>
+	const pic_path = '{{pic_path}}';
+	document.getElementById('water').src = pic_path;
+    </script>
+{% endif %}
 
 <script>
 	const btn = document.getElementById("button");  
