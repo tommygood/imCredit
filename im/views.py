@@ -411,7 +411,7 @@ def creMain(request, domain, year, stand) : # 主頁面
     fin_cre = float(lec_same['lec_same_cre'])+float(tongs_cre_sep['human'][0])+float(tongs_cre_sep['society'][0])+float(tongs_cre_sep['science'][0])+float(tongs_cre_sep['spe'][0])+float(college_name_cre['total_cre'])+float(depart_name_cre['total_cre'])+float(tech_name_cre['total_cre'])+float(mana_name_cre['total_cre'])+float(profe_name_cre['total_cre'])+float(other_dic['total_cre'])
     # 是否是資管系辦登入
     if request.session.get('root') == 'im' :
-        pic_path = '/media/im_water.png'
+        pic_path = '/media/image/im_water.png'
     else :
         pic_path = ''
     context = {"pic_path" : pic_path, "fin_cre" : total_credit, "total_pro_cre" : tech_name_cre['total_cre']+mana_name_cre['total_cre']+profe_name_cre['total_cre'], "sum_stand_pro" : stand[4]+stand[5], "total_stand" : sum(stand), "stand" : stand, "date" : datetime.date.today(), "other_cre1" : other_cre1, "other_len1" : other_len1, "depart_107" : east, "college_107" : local, "other_info" : other_info, "semi_dic" : semi_dic, "total" : total, "other_dic" : other_dic, "total_profe_len" : total_profe_len, "other_len" : other_len, "other_cre" : other_cre, "profe_name_cre" : profe_name_cre, "mana_name_cre" : mana_name_cre, "tech_name_cre" : tech_name_cre, "depart_name_cre" : depart_name_cre, "college_name_cre" : college_name_cre, "tongs_pass" : tongsPass(tongs_cre_sep), "tongs_cre_sep" : tongs_cre_sep, "tongs_len" : tongs_len, "name" : name, "domain" : domain, "seme_dic" : seme_dic, "year" : request.POST["year"], "lec_same" : lec_same, "same_nece" : same_nece, "tongs_dic" : tongs_dic, "tongs_cre" : tongs_cre}
