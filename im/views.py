@@ -855,7 +855,7 @@ def addData(request) :
     form_login = excelLogin(request.POST)
     if request.method == 'POST' :
         if form.is_valid() and form_login.is_valid():
-            if request.POST['name'] == "root"  and request.POST['password'] == "456":
+            if request.POST['name'] == "imadmin"  and request.POST['password'] == "im_grade439":
                 form.save()
                 return render(request, "addData.html", {"set" : True})
             else :
@@ -1037,7 +1037,7 @@ def rootExclusive(request) : # 選擇學年及領域頁面
     form_login = excelLogin(request.POST)
     if request.method == 'POST' :
         if form_login.is_valid():
-            if request.POST['name'] == "root"  and request.POST['password'] == "456":
+            if request.POST['name'] == "imadmin"  and request.POST['password'] == "im_grade439":
                 request.session['root'] = 'im'
                 return render(request, "rootLogin.html", {"set" : True})
             else :
