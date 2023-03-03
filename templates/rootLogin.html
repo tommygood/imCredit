@@ -2,7 +2,6 @@
 <html>
     {% if set == True %}
         <script> alert('系辦帳號登入成功！'); </script>
-        <script> window.location.href = "IMCreditCount"; </script>
     {% endif %}
     {% if fail == True %}
         <script> alert('帳號或密碼錯誤'); </script>
@@ -16,11 +15,25 @@
         </h1>
     </head>
     <body>
-        <form enctype = "multipart/form-data" method = "post">
-            {% csrf_token %}
-            {{ form_login.as_p }}
-            <input type = "submit"></input>
-        </form>
+	{% if is_root == True %}
+	    <div>登入成功！</div>
+	    <div>
+	        服務：
+	        <br/>
+	        <a href = 'IMCreditCount'>主頁面</a>
+	    	<br/>
+	    	<a href = "addData">新增學年資料</a>
+	    	<br/>
+	   	<a href = "postWater">更換浮水印</a>
+	    </div>
+	{% else %}
+            <form enctype = "multipart/form-data" method = "post">
+                {% csrf_token %}
+                {{ form_login.as_p }}
+                <input type = "submit"></input>
+            </form>
+	{% endif %}
+	<br/>
     </body>
 </html>
 

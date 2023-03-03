@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    {% if not_root == True %}
+        <script> window.location.href = "IMCreditCount"; </script>
+    {% endif %}
+    {% if set == True %}
+        <script> alert('新增成功！'); </script>
+        <script> window.location.href = "IMCreditCount"; </script>
+    {% endif %}
+    {% if fail == True %}
+        <script> alert('帳號或密碼錯誤'); </script>
+    {% endif %}
+    <head>
+        <title>
+            換浮水印照片
+        </title>
+        <h1>
+            換浮水印照片<hr/>
+        </h1>
+        <h2>
+            規則: 檔名須為 im_water.png
+        </h2>
+    </head>
+    <body>
+        <form enctype = "multipart/form-data" method = "post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type = "submit"></input>
+        </form>
+    </body>
+</html>
+

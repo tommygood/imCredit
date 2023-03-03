@@ -12,6 +12,9 @@ class userLec(models.Model) :
     all_data = models.CharField(max_length=5000, blank = True)
     create_time = models.DateTimeField(auto_now = True) # timstamp
 
+class waterImg(models.Model) :
+    water_img = models.FileField(upload_to='image/', blank=False, null=False)
+
 @admin.register(excelData)
 class excelDataAdmin(admin.ModelAdmin):
     list_display = [field.name for field in excelData._meta.fields]
@@ -19,3 +22,7 @@ class excelDataAdmin(admin.ModelAdmin):
 @admin.register(userLec)
 class LecAdmin(admin.ModelAdmin):
     list_display = [field.name for field in userLec._meta.fields]
+
+@admin.register(waterImg)
+class waterImgAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in waterImg._meta.fields]

@@ -1,6 +1,6 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
-from .models import excelData, userLec
+from .models import excelData, userLec, waterImg
 class CreditForm(forms.Form) :
     domain = forms.ChoiceField(
             required=True,
@@ -35,8 +35,14 @@ class excelForm(forms.ModelForm) :
         labels = {"excel_data" : _("excel資料")}
             #labels = {"excel_data" : _("excel資料"), "name" : _("帳號"), "password" : _("密碼")}
             #widgets = {'password': forms.PasswordInput(),}
+    stu_year = forms.CharField(required=False)
 
 class excelLogin(forms.Form) :
     name = forms.CharField(required=False)
     password = forms.CharField(required=False, widget = forms.PasswordInput())
 
+class waterForm(forms.ModelForm) :
+    class Meta :
+        model = waterImg
+        fields = ("water_img",)
+        labels = {"image" : _("浮水印照片")}

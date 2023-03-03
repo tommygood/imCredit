@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    {% if not_root == True %}
+        <script> window.location.href = "IMCreditCount"; </script>
+    {% endif %}
     {% if set == True %}
         <script> alert('新增成功！'); </script>
         <script> window.location.href = "IMCreditCount"; </script>

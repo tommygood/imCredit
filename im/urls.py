@@ -15,5 +15,6 @@ urlpatterns = [
     path('free', views.Free),
     path('addData', views.addData),
     path('rootExclusive', views.rootExclusive),
+    path('postWater', views.postWater),
 ]
 

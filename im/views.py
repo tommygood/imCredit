@@ -1,8 +1,8 @@
-import os, copy
+import os, copy, subprocess, time
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.db import connection
-from .form import CreditForm, excelForm, excelLogin, userForm
+from .form import CreditForm, excelForm, excelLogin, userForm, waterForm
 import datetime
 from datetime import date, timedelta
 from random import randint
@@ -851,17 +851,33 @@ def Profession(request) : # 系專業選修
     return render(request, "profession.html", context)
 
 def addData(request) :
+    try : # 是否是系辦登入
+        if request.session['root'] == 'im' :
+            is_root = True # 有登入過
+    except :
+        is_root = False # 沒有登入過
+    if not is_root :
+        context = {'not_root' : True}
+        return render(request, "addData.html", context)
     form = excelForm(request.POST, request.FILES)
-    form_login = excelLogin(request.POST)
+    #form_login = excelLogin(request.POST)
     if request.method == 'POST' :
-        if form.is_valid() and form_login.is_valid():
-            if request.POST['name'] == "imadmin"  and request.POST['password'] == "im_grade439":
-                form.save()
-                return render(request, "addData.html", {"set" : True})
-            else :
-                context = {"fail" : True, "form" : form, "form_login" : form_login}
-                return render(request, "addData.html", context)
-    context = {"form" : form, "form_login" : form_login}
+        #if form.is_valid() and form_login.is_valid():
+            #if request.POST['name'] == "imadmin"  and request.POST['password'] == "im_grade439":
+        if form.is_valid() :
+            try : # 先去刪看看是否已有此學年的檔案
+                stu_year = request.POST['stu_year']
+                subprocess.Popen(f'rm /var/www/django/credit/media/Excel/{stu_year}_data.xlsx', stdout=subprocess.PIPE, shell=True)
+            except :
+                print('remove excel data error')
+            # 先等一下再加入新的 excel 檔，否則會被判定還有原本的 excel 檔
+            time.sleep(1)
+            form.save()
+            return render(request, "addData.html", {"set" : True})
+            #else :
+            #    context = {"fail" : True, "form" : form, "form_login" : form_login}
+            #    return render(request, "addData.html", context)
+    context = {"form" : form}
     return render(request, "addData.html", context)
 
 def Free(request) : # 自由學分
@@ -1035,16 +1051,45 @@ def extractFloat(obj) : # 把小數點拿出來
 # 系辦登入
 def rootExclusive(request) : # 選擇學年及領域頁面
     form_login = excelLogin(request.POST)
+    try : # 是否是系辦登入
+        if request.session['root'] == 'im' :
+            is_root = True # 有登入過
+    except :
+        is_root = False # 沒有登入過
     if request.method == 'POST' :
         if form_login.is_valid():
             if request.POST['name'] == "imadmin"  and request.POST['password'] == "im_grade439":
                 request.session['root'] = 'im'
-                return render(request, "rootLogin.html", {"set" : True})
+                is_root = True # 登入成功
+                return render(request, "rootLogin.html", {"set" : True, "is_root" : is_root})
             else :
                 context = {"fail" : True, "form_login" : form_login}
                 return render(request, "rootLogin.html", context)
-    context = {"form_login" : form_login}
+    context = {"form_login" : form_login, 'is_root' : is_root}
     return render(request, "rootLogin.html", context)
+
+# 換浮水印
+def postWater(request) :
+    try :
+        if request.session['root'] == 'im' :
+            is_root = True # 是有登入過的
+    except :
+        is_root = False # 不是有登入過的
+    if not is_root : # 沒有登入
+        context = {"not_root" : True}
+        return render(request, "postWater.html", context)
+    form = waterForm(request.POST, request.FILES)
+    if request.method == 'POST' :
+        if form.is_valid():
+            try :
+                subprocess.Popen(f'rm /var/www/django/credit/media/image/im_water.png', stdout=subprocess.PIPE, shell=True)
+                time.sleep(1)
+            except :
+                print('remove water image error')
+            form.save()
+            return render(request, "postWater.html", {"set" : True})
+    context = {"form" : form}
+    return render(request, "postWater.html", context)
 
 '''def redundSame(lec_same) : # 多餘的共同必修(超過兩堂的體育)
     count_sport = 0 # 修過的特色體育
