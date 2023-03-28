@@ -284,9 +284,9 @@ def creMain(request, domain, year, stand) : # 主頁面
     other_dic = {"total_cre" : 0} # 沒有在以上課名，都當自由學分
     for i in seme_dic :
         if "已抵免之學分" in i : 
-            if "內抵" in seme_dic[i][0] :
-                break
             for j in range(len(seme_dic[i])) :
+                if "內抵" in seme_dic[i][j] : # 因為內抵本來就有在學期中的紀錄裡了
+                    break
                 course_name = seme_dic[i][j][3]
                 same, short_name = lecSame(course_name)  # 是否在全校共同
                 if (same or ckOverseas(course_name)) and (short_name not in lec_same_short_name) : # 如果有過的全校共同
