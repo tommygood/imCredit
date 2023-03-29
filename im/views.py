@@ -615,7 +615,7 @@ def mkSemeDic(request, total) : # [全部學期的字典，學年度為 key, 通
         for k in range(len(seme_dic['已抵免之學分如下:'])) :
             for i in seme_dic :
                 for j in range(len(seme_dic[i])) :
-                    if seme_dic['已抵免之學分如下:'][k][-1][:-5] in seme_dic[i][j] : # 是內抵的學分
+                    if seme_dic['已抵免之學分如下:'][k][-1][:-5] in seme_dic[i][j] and '內抵' not in seme_dic[i][j] : # 是內抵的學分，且只要抓學期中的紀錄就好
                         seme_dic[i][j][4] = seme_dic['已抵免之學分如下:'][k][2] # 換名字
     return seme_dic, semi, other_info
 
