@@ -10,33 +10,10 @@ import openpyxl
 from collections import OrderedDict
 from jinja2 import Environment, FileSystemLoader
 from .models import userLec
+from pathlib import Path
 #from pyecharts.globals import CurrentConfig
 #CurrentConfig.GLOBAL_ENV = Environment(loader=FileSystemLoader("/var/www/django/credit/templates"))
-
-def creditUp(request) : # 選擇學年及領域頁面
-    form = CreditForm(request.POST)
-    form_lec = userForm(request.POST)
-    if "send" in request.POST :
-        if form.is_valid() and form_lec.is_valid() :
-            form_lec.save()
-            request.session['text'] = form_lec.cleaned_data['all_data']
-            request.session['year'] = request.POST['year']
-            if request.POST['year'] == "107" : # 107 學年
-                stand = [12.0, 19.0, 9.0, 39.0, 21.0, 12.0, 20.0] # 各領域最低學分門檻
-                request.session['stand'] = stand
-                if request.POST['domain']== "1" : # 技術
-                    return update(request, 1, request.POST['year'], stand)
-                if request.POST['domain']== "2" : # 管理
-                    return update(request, 2, request.POST['year'], stand)
-            elif request.POST['year'] == "108" : # 108 學年
-                stand = [12.0, 19.0, 15.0, 30.0, 24.0, 12.0, 20.0]
-                request.session['stand'] = stand
-                if request.POST['domain']== "1" : # 技術
-                    return update(request, 1, request.POST['year'], stand)
-                if request.POST['domain']== "2" : # 管理
-                    return update(request, 2, request.POST['year'], stand)
-    context = {"form" : form, "form_lec" : form_lec}
-    return render(request, "credit.html", context)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 def Credit(request) : # 選擇學年及領域頁面
     form = CreditForm(request.POST)
@@ -60,185 +37,18 @@ def Credit(request) : # 選擇學年及領域頁面
                     return creMain(request, 1, request.POST['year'], stand)
                 if request.POST['domain']== "2" : # 管理
                     return creMain(request, 2, request.POST['year'], stand)
+            elif request.POST['year'] == "109" : # 109 學年
+                stand = [12.0, 19.0, 15.0, 30.0, 24.0, 12.0, 20.0]
+                request.session['stand'] = stand
+                if request.POST['domain']== "1" : # 技術
+                    return creMain(request, 1, request.POST['year'], stand)
+                if request.POST['domain']== "2" : # 管理
+                    return creMain(request, 2, request.POST['year'], stand)
     context = {"form" : form, "form_lec" : form_lec}
     return render(request, "credit.html", context)
 
-def update(request, domain, year, stand) : # 主頁面
-    path = "/var/www/django/credit/media/Excel"
-    if not mkLec(path, year) : # 沒資料
-        return render(request, "creMain.html", {"no_data" : True})
-    mkSameList() # 製作全校共同課程的二維陣列
-    #a = request.POST['text']
-    a = request.session.get('text')
-    b = a.split("\r\n")
-    cut = []
-    total = []
-    for i in range(len(b)) : # 分大組
-        if b[i] == '' : # 遇到空一行
-            total.append(cut) # 加入 list
-            cut = []
-            continue # 重新找，不然會把 '' 加到 list
-        cut.append(b[i])
-        if  i == len(b)-1: # 或是最後一個也要加入 list
-            total.append(cut)
-            cut = []
-    name = ""
-    if len(total[0]) < 2 :
-        return render(request, "creMain.html", {"ale_wrong_input" : True})
-    for i in total[0][1] : # 找名字
-        if i != "的" :
-            name += i
-        else :
-            break
-    total[0].pop(0) # 不要前兩行
-    total[0].pop(0) # 原本的 index1 變 index0
-    seme_dic, semi_dic, other_info = mkSemeDic(request, total) # 只有全部學期的字典，以學年度為 key
-    lec_same_cre = 0 # 全校共同課程總共學分
-    lec_same = {"lec_same_cre": lec_same_cre} # 全校共同課程，先塞一個頭，因rowspan要len+1i
-    tongs_dic = {"liber" : [0], "history" : [0], "law" : [0], "social" : [0], "engi" : [0], "life" : [0] , "green" : [0], "east" : [0], "local" : [0]}
-    tongs_cre = {"liber" : [0], "history" : [0], "law" : [0], "social" : [0], "engi" : [0], "life" : [0] , "green" : [0], "east" : [0], "local" : [0]} # 已經修過的通識課的學分
-    lec_same_short_name = [] # 已經有上過的課程的簡短課名，ex. 英文上
-    tongs_name_only = [] # 只有修過的通識課的課名
-    college_name_cre = {"total_cre" : 0} #　key = 院必修課的課名、value = 學分
-    depart_name_cre = {"total_cre" : 0} #　key = 系必修課的課名、value = 學分
-    tech_name_cre = {"total_cre" : 0} # key = 技術領域的課名, value = 學分
-    mana_name_cre = {"total_cre" : 0} # key = 管理領域的課名, value = 學分
-    profe_name_cre = {"total_cre" : 0} # key = 系專選的課名, value = 學分
-    global other_dic
-    other_dic = {"total_cre" : 0} # 沒有在以上課名，都當自由學分
-    for i in seme_dic :
-        if "已抵免之學分" in i : 
-            if "內抵" in seme_dic[i][0] :
-                break
-            for j in range(len(seme_dic[i])) :
-                course_name = seme_dic[i][j][3]
-                same, short_name = lecSame(course_name)  # 是否在全校共同
-                if same or ckOverseas(course_name) : # 如果有過的全校共同
-                    lec_same['lec_same_cre'] += float(seme_dic[i][j][2][:3]) # 算總全校共同學分
-                    lec_same[same+'-抵免'] = seme_dic[i][j][2][:3] # 加入課名為 key ，學分為 value 的 dici
-                    lec_same_short_name.append(short_name) # 通用的課名
-                    continue # 找下一個課名
-                tongs_name = tongsCk(course_name) # 是否在通識，回傳[課名,領域]
-                if tongs_name : # 有過的通識
-                    tongs_name_only.append(tongs_name[0])
-                    tongs_dic[tongs_name[1]].append({tongs_name[0]: seme_dic[i][j][2]+'-抵免'})
-                    tongs_cre[tongs_name[1]].append(seme_dic[i][j][2][:3])
-                    continue # 找下一個課名
-                college_name = collegeCk(course_name) # 是否在院必修
-                if college_name : # 是院必修
-                    college_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
-                    college_name_cre[college_name+'-抵免'] = seme_dic[i][j][2][:3] # key = 課名, value = 學分          
-                    continue
-                depart_name = departCk(course_name) # 是否在系必修
-                if depart_name : # 是院必修
-                    depart_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
-                    depart_name_cre[depart_name+'-抵免'] = seme_dic[i][j][2][:3] # key = 課名, value = 學分
-                    continue
-                tech_name = techCk(course_name) # 是否在技術領域
-                mana_name = manaCk(course_name) # 是否在管理領域
-                if tech_name and mana_name : # 是技術和管理領域的課
-                    if domain == 1 :
-                        tech_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
-                        tech_name_cre[tech_name+'-抵免'] = seme_dic[i][j][2][:3] # key = 課名, value = 學分
-                    else :
-                        mana_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
-                        mana_name_cre[mana_name+'-抵免'] = seme_dic[i][j][2][:3]  # key = 課名, value = 學分
-                    continue
-                if tech_name : # 是技術領域
-                    tech_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
-                    tech_name_cre[tech_name+'-抵免'] = seme_dic[i][j][2][:3] # key = 課名, value = 學分
-                    continue
-                if mana_name : # 是管理領域
-                    mana_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
-                    mana_name_cre[mana_name+'-抵免'] = seme_dic[i][j][2][:3] # key = 課名, value = 學分
-                    continue
-                profe_name = profeCk(course_name) # 是否在無領域系專選
-                if profe_name :
-                    profe_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
-                    profe_name_cre[profe_name+'-抵免'] = seme_dic[i][j][2][:3]  # key = 課名, value = 學分
-                    continue
-                other_dic['total_cre'] += float(seme_dic[i][j][2][:3])
-                other_dic[course_name+'-抵免'] = seme_dic[i][j][2][:3] # 其他課程，可當自由學分
-        else :
-            for j in range(len(seme_dic[i])-1) : # 最後一個是共修多少學分，不要算
-                if not isFloat(seme_dic[i][j][3]) : # 成績未送達
-                    continue # 找下個 value，因為有可能相同學期有些先送達
-                if float(seme_dic[i][j][3]) < 60.0 : # 有及格
-                    continue # 沒及格找下一個
-                course_name = ckCourseName(seme_dic[i][j]) # 檢查課程名稱，有可能是中間有空白
-                same, short_name = lecSame(course_name)  # 是否在全校共同
-                if same or ckOverseas(course_name) : # 如果有過的全校共同
-                    lec_same['lec_same_cre'] += float(seme_dic[i][j][1][:3]) # 算總全校共同學分
-                    lec_same[same] = seme_dic[i][j][1] # 加入課名為 key ，學分為 value 的 dici
-                    lec_same_short_name.append(short_name) # 通用的課名
-                    continue # 找下一個課名
-                tongs_name = tongsCk(course_name) # 是否在通識，回傳[課名,領域]
-                if tongs_name : # 有過的通識
-                    tongs_name_only.append(tongs_name[0])
-                    tongs_dic[tongs_name[1]].append({tongs_name[0]:seme_dic[i][j][1]})
-                    tongs_cre[tongs_name[1]].append(seme_dic[i][j][1][:3])
-                    continue # 找下一個課名
-                college_name = collegeCk(course_name) # 是否在院必修
-                if college_name : # 是院必修
-                    college_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
-                    college_name_cre[college_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分          
-                    continue
-                depart_name = departCk(course_name) # 是否在系必修
-                if depart_name : # 是院必修
-                    depart_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
-                    depart_name_cre[depart_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
-                    continue
-                tech_name = techCk(course_name) # 是否在技術領域
-                mana_name = manaCk(course_name) # 是否在管理領域
-                if tech_name and mana_name : # 是技術領域
-                    if domain == 1 :
-                        tech_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
-                        tech_name_cre[tech_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
-                    else :
-                        mana_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
-                        mana_name_cre[mana_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
-                    continue
-                if tech_name : # 是技術領域
-                    tech_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
-                    tech_name_cre[tech_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
-                    continue
-                if mana_name : # 是管理領域
-                    mana_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
-                    mana_name_cre[mana_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
-                    continue
-                profe_name = profeCk(course_name) # 是否在無領域系專選
-                if profe_name : 
-                    profe_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
-                    profe_name_cre[profe_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
-                    continue
-                other_dic['total_cre'] += float(seme_dic[i][j][1][:3])
-                other_dic[course_name] = seme_dic[i][j][1][:3] # 其他課程，可當自由學分
-    #redundSame(lec_same) # 把多餘的特色體育放進自由學分
-    #human_cre = redundTongs(tongs_dic) # 把多餘的通識放進自由學分
-    lec_same_cre = lec_same['lec_same_cre']
-    total_profe_len = len(profe_name_cre) + len(mana_name_cre) + len(tech_name_cre)
-    other_cre = profe_name_cre['total_cre'] + mana_name_cre['total_cre'] # 管理+非次領域的修過學分
-    other_cre1 = profe_name_cre['total_cre'] + tech_name_cre['total_cre'] # 管理+非次領域的修過學分
-    other_len = len(profe_name_cre) + len(mana_name_cre) - 1
-    other_len1 = len(profe_name_cre) + len(tech_name_cre) - 1
-    request.session['other_dic'] = other_dic
-    request.session['profe_name_cre'] = profe_name_cre
-    request.session['mana_name_cre'] = mana_name_cre
-    request.session['tech_name_cre'] = tech_name_cre
-    request.session['depart_name_cre'] = depart_name_cre
-    request.session['college_name_cre'] = college_name_cre
-    request.session["tongs_name_only"] = tongs_name_only
-    same_nece = ckNecessary(lec_same_short_name, lec_same_cre, stand) # 檢查各領域是否有還沒修完的必修課
-    #return render(request, 'error.html', {'error': same_nece})
-    request.session['lec_same_short_name'] = lec_same_short_name
-    tongs_len, tongs_cre_sep = ckLength(tongs_dic) # 通識的長度(課數)、通識的學分、領域數
-    #free_dic = ckFree(lec_same, tongs_dic, tech_name_cre, mana_name_cre, profe_name_cre) # 可以當做自由學分的課程
-    fin_cre = float(lec_same['lec_same_cre'])+float(tongs_cre_sep['human'][0])+float(tongs_cre_sep['society'][0])+float(tongs_cre_sep['science'][0])+float(tongs_cre_sep['spe'][0])+float(college_name_cre['total_cre'])+float(depart_name_cre['total_cre'])+float(tech_name_cre['total_cre'])+float(mana_name_cre['total_cre'])+float(profe_name_cre['total_cre'])+float(other_dic['total_cre'])
-    context = {"fin_cre" : fin_cre, "total_pro_cre" : tech_name_cre['total_cre']+mana_name_cre['total_cre']+profe_name_cre['total_cre'], "sum_stand_pro" : stand[4]+stand[5], "total_stand" : sum(stand), "stand" : stand, "date" : datetime.date.today(), "other_cre1" : other_cre1, "other_len1" : other_len1, "depart_107" : east, "college_107" : local, "other_info" : other_info, "semi_dic" : semi_dic, "total" : total, "other_dic" : other_dic, "total_profe_len" : total_profe_len, "other_len" : other_len, "other_cre" : other_cre, "profe_name_cre" : profe_name_cre, "mana_name_cre" : mana_name_cre, "tech_name_cre" : tech_name_cre, "depart_name_cre" : depart_name_cre, "college_name_cre" : college_name_cre, "tongs_pass" : tongsPass(tongs_cre_sep), "tongs_cre_sep" : tongs_cre_sep, "tongs_len" : tongs_len, "name" : name, "domain" : domain, "seme_dic" : seme_dic, "year" : request.POST["year"], "lec_same" : lec_same, "same_nece" : same_nece, "tongs_dic" : tongs_dic, "tongs_cre" : tongs_cre}
-    return render(request, "creMain_back.html", context)
-
 def creMain(request, domain, year, stand) : # 主頁面
-    path = "/var/www/django/credit/media/Excel"
+    path = str(BASE_DIR) + "/media/Excel"
     if not mkLec(path, year) : # 沒資料
         return render(request, "creMain.html", {"no_data" : True})
     mkSameList() # 製作全校共同課程的二維陣列
@@ -706,7 +516,7 @@ def lecSame(lec_name) : # 全校共同課程
     return False, False
 
 def Same(request) : # 全校共同課程
-    path = "/var/www/django/credit/media/Excel"
+    path = str(BASE_DIR) + "/media/Excel"
     mkLec(path, str(request.session.get('year')))
     mkSameList() # 製作全校共同 list
     lec_same_name = request.session.get('lec_same_short_name') # 有上過的全校共同課程的全部資訊
@@ -867,7 +677,7 @@ def addData(request) :
         if form.is_valid() :
             try : # 先去刪看看是否已有此學年的檔案
                 stu_year = request.POST['stu_year']
-                subprocess.Popen(f'rm /var/www/django/credit/media/Excel/{stu_year}_data.xlsx', stdout=subprocess.PIPE, shell=True)
+                subprocess.Popen(f'rm {str(BASE_DIR)}/media/Excel/{stu_year}_data.xlsx', stdout=subprocess.PIPE, shell=True)
             except :
                 print('remove excel data error')
             # 先等一下再加入新的 excel 檔，否則會被判定還有原本的 excel 檔
@@ -1082,7 +892,7 @@ def postWater(request) :
     if request.method == 'POST' :
         if form.is_valid():
             try :
-                subprocess.Popen(f'rm /var/www/django/credit/media/image/im_water.png', stdout=subprocess.PIPE, shell=True)
+                subprocess.Popen(f'rm {str(BASE_DIR)}/media/image/im_water.png', stdout=subprocess.PIPE, shell=True)
                 time.sleep(1)
             except :
                 print('remove water image error')

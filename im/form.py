@@ -12,7 +12,7 @@ class CreditForm(forms.Form) :
             required=True,
             widget=forms.RadioSelect(
                 attrs={'class':'year'}),
-            choices=((107, "107學年度"), (108, '108學年度'))
+            choices=((108, '108學年度'), (109, "109學年度"))
     )
 
 """class userForm(forms.ModelForm) :

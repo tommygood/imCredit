@@ -4,8 +4,6 @@ from . import views
 
 urlpatterns = [
     path('IMCreditCount', views.Credit),
-    path('update', views.update),
-    path('creditUp', views.creditUp),
     path('rest', views.rest),
     path('same', views.Same),
     path('tongs', views.Tongs),
