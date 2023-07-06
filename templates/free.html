@@ -31,8 +31,15 @@
         </h1>
     </head>
     <body>
-        <div> 規則 : 綠字為已修過。可以從<b><span id = "red_txt">全部</span></b>的課程中選擇任何課當作自由學分，總共需<b> {{ stand.6 }} </b>學分。 </div>
+        <div> 規則 : 可以從<b><span id = "red_txt">全部</span></b>的課程中選擇任何課當作自由學分，總共需<b> {{ stand.6 }} </b>學分。 </div>
         <br/>
+	<div>
+	    <b>注意：</b>學分不能<b><span id = "red_txt">拆開</span></b>計算。
+	    <br/>
+	    ex. 特色通識學分只需要 <b>2</b> 堂，共 <b>4</b> 學分；但若修了 <b>2</b> 堂共 <b>5</b> 學分，多出來的 <b>1</b> 學分不能當作自由學分。
+	</div>
+	<br/>
+	<!--
         <table border = 1>
             <td> <b>自由選修課程</b> </td>
             {% for key, value in other_dic.items %}
@@ -43,5 +50,6 @@
                 {% endif %}
             {% endfor %}
         </table>
+	-->
     </body>
 </html>
