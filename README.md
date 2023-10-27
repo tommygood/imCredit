@@ -22,4 +22,4 @@
   - 以系辦身分登入，檔案會有浮水印
 
 ## Demo
-![image](https://github.com/tommygood/imCredit/assets/96759292/ed4d2d48-0395-4e52-b78c-4def4024f3eb)
+https://github.com/tommygood/imCredit/blob/main/109_%E7%8E%8B%E5%86%A0%E6%AC%8A_%E7%95%A2%E6%A5%AD%E5%AD%B8%E5%88%86%E6%AA%A2%E6%A0%B8%E8%A1%A8.pdf
