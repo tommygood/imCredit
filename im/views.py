@@ -15,6 +15,12 @@ from pathlib import Path
 #CurrentConfig.GLOBAL_ENV = Environment(loader=FileSystemLoader("/var/www/django/credit/templates"))
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# login info
+import json
+login_info = json.loads(open(str(BASE_DIR) + "/config.json", "r").read())
+account = login_info["account"]
+password = login_info["password"]
+
 def Credit(request) : # 選擇學年及領域頁面
     form = CreditForm(request.POST)
     form_lec = userForm(request.POST)
@@ -868,7 +874,7 @@ def rootExclusive(request) : # 選擇學年及領域頁面
         is_root = False # 沒有登入過
     if request.method == 'POST' :
         if form_login.is_valid():
-            if request.POST['name'] == "imadmin"  and request.POST['password'] == "im_grade439":
+            if request.POST['name'] == account and request.POST['password'] == password :
                 request.session['root'] = 'im'
                 is_root = True # 登入成功
                 return render(request, "rootLogin.html", {"set" : True, "is_root" : is_root})
