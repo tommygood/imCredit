@@ -156,7 +156,6 @@ def creMain(request, domain, year, stand) : # 主頁面
                     continue
                 course_snum = seme_dic[i][j][0]
                 course_name = seme_dic[i][j][3]
-                print("抵免", course_name)
                 same, short_name = lecSame(course_name)  # 是否在全校共同
                 if (same or ckOverseas(course_name)) and (short_name not in lec_same_short_name) : # 如果有過的全校共同
                     lec_same['lec_same_cre'] += float(seme_dic[i][j][2][:3]) # 算總全校共同學分
@@ -497,6 +496,9 @@ def mkSemeDic(request, total) : # [全部學期的字典，學年度為 key, 通
             if j == 0 :
                 seme_dic[total[i][0]] = [] # 第一個為 key
             else :
+                # 處理特例課名
+                if "Python 程式設計" in total[i][j] :
+                    total[i][j] = total[i][j].replace("Python 程式設計", "Python程式設計") 
                 if out : # 外抵或內抵
                     #seme_dic[total[i][0]].append(total[i][j].split("  "))
                     seme_dic[total[i][0]].append(mkSplit(total[i][j]))
