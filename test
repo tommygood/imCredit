@@ -1,0 +1,28 @@
+
+            <tr>
+            <td> <b>非次領域</b> </td>
+            {% for key, value in profe_dic.items %}
+                {% if forloop.counter|divisibleby:15 %}
+                    <tr>
+                    {% if value == 1 %}
+                        <td>
+                            <b><span id = "green_txt">{{ key }}<br/>✓</span></b>
+                        </td>
+                    {% else %}
+                        <td>
+                            {{ key }}
+                        </td>
+                    {% endif %}
+                {% else %}
+                    {% if value == 1 %}
+                        <td>
+                            <b><span id = "green_txt">{{ key }}<br/>✓</span></b>
+                        </td>
+                    {% else %}
+                        <td>
+                            {{ key }}
+                        </td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </tr>

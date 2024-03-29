@@ -53,11 +53,62 @@ def Credit(request) : # 選擇學年及領域頁面
     context = {"form" : form, "form_lec" : form_lec}
     return render(request, "credit.html", context)
 
+def mkConflictCourses() :
+    # 針對 技術次領域, 管理次領域, 系專業選修 檢查課名相同的課
+
+    #tech, mana, pro
+    global conflict_courses
+    conflict_courses = {} # 所有有重複課名的課
+    index = 0
+    for course in tech :
+        conflict_courses[course] = [["tech", tech_snum[index]]]
+        index += 1
+    index = 0
+    for course in mana :
+        if course in conflict_courses :
+            conflict_courses[course].append(["mana", mana_snum[index]])
+        else :
+            conflict_courses[course] = [["mana", mana_snum[index]]]
+        index += 1
+    index = 0
+    for course in pro :
+        if course in conflict_courses : 
+            conflict_courses[course].append(["pro", pro_snum[index]])
+        else :
+            conflict_courses[course] = [["pro", pro_snum[index]]]
+        index += 1
+    
+    all_keys = []
+    for key in conflict_courses :
+        all_keys.append(key) # tech_snum, mana_snum, pro_snum
+    for key in all_keys :
+        if len(conflict_courses[key]) <= 1 : # 只有一堂相同課
+            del conflict_courses[key] # 刪除該課
+    return conflict_courses
+
+def ckConflictCourse(course_name, course_snum, domain) :
+    # 檢查課程是否有相同課名, 且是否真正修的課號的領域和 domain 相同
+
+    for courses in conflict_courses :
+        if courses != course_name : # 不同課名, 不相同 
+            continue
+        # 相同課名, 檢查課號和領域是否相同
+        for course in conflict_courses[courses] :
+            c_domain = course[0]
+            c_snum = str(course[1])
+            if c_snum == course_snum : # 相同課號且同課名, 代表是對應的課
+                if c_domain == domain : # 同個領域
+                    return course_name
+        return False
+    return "keep" # 此課程沒有相同課名的課
+
 def creMain(request, domain, year, stand) : # 主頁面
     path = str(BASE_DIR) + "/media/Excel"
     if not mkLec(path, year) : # 沒資料
         return render(request, "creMain.html", {"no_data" : True})
     mkSameList() # 製作全校共同課程的二維陣列
+    mkConflictCourses() # 針對課名相同的課處理
+    #print(conflict_courses)
     #a = request.POST['text']
     a = request.session.get('text')
     b = a.split("\r\n")
@@ -102,8 +153,10 @@ def creMain(request, domain, year, stand) : # 主頁面
         if "已抵免之學分" in i : 
             for j in range(len(seme_dic[i])) :
                 if "內抵" in seme_dic[i][j] : # 因為內抵本來就有在學期中的紀錄裡了
-                    break
+                    continue
+                course_snum = seme_dic[i][j][0]
                 course_name = seme_dic[i][j][3]
+                print("抵免", course_name)
                 same, short_name = lecSame(course_name)  # 是否在全校共同
                 if (same or ckOverseas(course_name)) and (short_name not in lec_same_short_name) : # 如果有過的全校共同
                     lec_same['lec_same_cre'] += float(seme_dic[i][j][2][:3]) # 算總全校共同學分
@@ -126,8 +179,8 @@ def creMain(request, domain, year, stand) : # 主頁面
                     depart_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
                     depart_name_cre[depart_name+'-抵免'] = seme_dic[i][j][2][:3] # key = 課名, value = 學分
                     continue
-                tech_name = techCk(course_name) # 是否在技術領域
-                mana_name = manaCk(course_name) # 是否在管理領域
+                tech_name = techCk(course_name, course_snum, i) # 是否在技術領域
+                mana_name = manaCk(course_name, course_snum, i) # 是否在管理領域
                 if tech_name and mana_name : # 是技術和管理領域的課
                     if domain == 1 :
                         tech_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
@@ -144,7 +197,7 @@ def creMain(request, domain, year, stand) : # 主頁面
                     mana_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
                     mana_name_cre[mana_name+'-抵免'] = seme_dic[i][j][2][:3] # key = 課名, value = 學分
                     continue
-                profe_name = profeCk(course_name) # 是否在無領域系專選
+                profe_name = profeCk(course_name, course_snum) # 是否在無領域系專選
                 if profe_name :
                     profe_name_cre["total_cre"] += float(seme_dic[i][j][2][:3])
                     profe_name_cre[profe_name+'-抵免'] = seme_dic[i][j][2][:3]  # key = 課名, value = 學分
@@ -157,6 +210,7 @@ def creMain(request, domain, year, stand) : # 主頁面
                     continue # 找下個 value，因為有可能相同學期有些先送達
                 if float(seme_dic[i][j][3]) < 60.0 : # 有及格
                     continue # 沒及格找下一個
+                course_snum = seme_dic[i][j][0]
                 course_name = ckCourseName(seme_dic[i][j]) # 檢查課程名稱，有可能是中間有空白
                 same, short_name = lecSame(course_name)  # 是否在全校共同
                 if (same or ckOverseas(course_name)) and (short_name not in lec_same_short_name) : # 如果有過的全校共同
@@ -180,8 +234,8 @@ def creMain(request, domain, year, stand) : # 主頁面
                     depart_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
                     depart_name_cre[depart_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
                     continue
-                tech_name = techCk(course_name) # 是否在技術領域
-                mana_name = manaCk(course_name) # 是否在管理領域
+                tech_name = techCk(course_name, course_snum, i) # 是否在技術領域
+                mana_name = manaCk(course_name, course_snum, i) # 是否在管理領域
                 if tech_name and mana_name : # 是技術領域
                     if domain == 1 :
                         tech_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
@@ -198,7 +252,7 @@ def creMain(request, domain, year, stand) : # 主頁面
                     mana_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
                     mana_name_cre[mana_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
                     continue
-                profe_name = profeCk(course_name) # 是否在無領域系專選
+                profe_name = profeCk(course_name, course_snum) # 是否在無領域系專選
                 if profe_name : 
                     profe_name_cre["total_cre"] += float(seme_dic[i][j][1][:3])
                     profe_name_cre[profe_name] = seme_dic[i][j][1][:3] # key = 課名, value = 學分
@@ -233,19 +287,39 @@ def creMain(request, domain, year, stand) : # 主頁面
     context = {"pic_path" : pic_path, "fin_cre" : total_credit, "total_pro_cre" : tech_name_cre['total_cre']+mana_name_cre['total_cre']+profe_name_cre['total_cre'], "sum_stand_pro" : stand[4]+stand[5], "total_stand" : sum(stand), "stand" : stand, "date" : datetime.date.today(), "other_cre1" : other_cre1, "other_len1" : other_len1, "depart_107" : east, "college_107" : local, "other_info" : other_info, "semi_dic" : semi_dic, "total" : total, "other_dic" : other_dic, "total_profe_len" : total_profe_len, "other_len" : other_len, "other_cre" : other_cre, "profe_name_cre" : profe_name_cre, "mana_name_cre" : mana_name_cre, "tech_name_cre" : tech_name_cre, "depart_name_cre" : depart_name_cre, "college_name_cre" : college_name_cre, "tongs_pass" : tongsPass(tongs_cre_sep), "tongs_cre_sep" : tongs_cre_sep, "tongs_len" : tongs_len, "name" : name, "domain" : domain, "seme_dic" : seme_dic, "year" : request.POST["year"], "lec_same" : lec_same, "same_nece" : same_nece, "tongs_dic" : tongs_dic, "tongs_cre" : tongs_cre}
     return render(request, "creMain.html", context)
 
-def profeCk(course_name) : # 檢查是否在院必修
+def profeCk(course_name, course_snum) : # 檢查是否在院必修
+    conflict_result = ckConflictCourse(course_name, course_snum, "pro")
+    if conflict_result == True : # 是此領域的重複課名的課程
+        return course_name
+    elif conflict_result == False : # 不是此領域, 但是重複課名的課程
+        return False
     if course_name in pro :
         return course_name
     else :
         return False
 
-def manaCk(course_name) : # 檢查是否在院必修
+def manaCk(course_name, course_snum, stu_year) : # 檢查是否在院必修
+
+    conflict_result = ckConflictCourse(course_name, course_snum, "mana")
+    if conflict_result == True : # 是此領域的重複課名的課程
+        return course_name
+    elif conflict_result == False : # 不是此領域, 但是重複課名的課程
+        return False
     if course_name in mana :
         return course_name
     else :
         return False
 
-def techCk(course_name) : # 檢查是否在院必修
+def techCk(course_name, course_snum, stu_year) : # 檢查是否在院必修
+    # 特例
+    if course_name == "人因與人機介面" and "112學年" in stu_year and "第2學期" in stu_year :
+        return False
+
+    conflict_result = ckConflictCourse(course_name, course_snum, "tech")
+    if conflict_result == True : # 是此領域的重複課名的課程
+        return course_name
+    elif conflict_result == False : # 不是此領域, 但是重複課名的課程
+        return False
     for each_tech in tech :
         if '$~$' in each_tech : # 相同課有多個課名
             each_tech = each_tech.split('$~$')
@@ -386,6 +460,7 @@ def ckNecessary(same, lec_same_cre, stand) : # 檢查領域是否有必修還沒
     same_name_only = [] # 只有上過的課名，把是不是必修拿掉
     for lec_name, necess in same :
         same_name_only.append(lec_name)
+    print(same_name_only)
     for i in data_name : # 找所有的必修課
         if not i in same_name_only : # 有一
             same_nece = False
@@ -431,7 +506,8 @@ def mkSemeDic(request, total) : # [全部學期的字典，學年度為 key, 通
         for k in range(len(seme_dic['已抵免之學分如下:'])) :
             for i in seme_dic :
                 for j in range(len(seme_dic[i])) :
-                    if seme_dic['已抵免之學分如下:'][k][-1][:-5] in seme_dic[i][j] and '內抵' not in seme_dic[i][j] : # 是內抵的學分，且只要抓學期中的紀錄就好
+                    if (seme_dic['已抵免之學分如下:'][k][-1][:-5] in seme_dic[i][j] or seme_dic['已抵免之學分如下:'][k][-1][:-3] in seme_dic[i][j]) and '內抵' not in seme_dic[i][j] : # 是內抵的學分，且只要抓學期中的紀錄就好
+                        print(seme_dic[i][j][4], "換成", seme_dic['已抵免之學分如下:'][k][2])
                         seme_dic[i][j][4] = seme_dic['已抵免之學分如下:'][k][2] # 換名字
     return seme_dic, semi, other_info
 
@@ -648,21 +724,21 @@ def Profession(request) : # 系專業選修
         is_pass_one = False # 是否有通過其中一個課名
         for each_tech in tech_name :
             if each_tech in tech_name_only : # 有修過其中一堂課名
-                tech_dic[each_tech] = 1
+                tech_dic[each_tech] = [1,tech_snum[i]]
                 is_pass_one = True
                 break
         if not is_pass_one : # 一種課名都沒通過，代表沒過此堂課
-            tech_dic[each_tech] = 0
+            tech_dic[each_tech] = [0, tech_snum[i]]
     for i in range(len(mana)) :
         if mana[i] in mana_name_only : # 有修過
-            mana_dic[mana[i]] = 1 # value = 1
+            mana_dic[mana[i]] = [1, mana_snum[i]] # value = 1
         else : # 沒修過
-            mana_dic[mana[i]] = 0
+            mana_dic[mana[i]] = [0, mana_snum[i]]
     for i in range(len(pro)) :
         if pro[i] in profe_name_only : # 有修過
-            profe_dic[pro[i]] = 1 # value = 1
+            profe_dic[pro[i]] = [1, pro_snum[i]] # value = 1
         else : # 沒修過
-            profe_dic[pro[i]] = 0
+            profe_dic[pro[i]] = [0, pro_snum[i]]
     context = {'num' : 14, 'total_pro' : stand[4]+stand[5], 'stand' : stand, "tech_dic" : tech_dic, "mana_dic" : mana_dic, "profe_dic" : profe_dic}
     return render(request, "profession.html", context)
 
@@ -712,9 +788,11 @@ def mkLec(path, year) : # 製作不同領域課程 list
     num = 1
     global same, sports, college, depart, tech, mana, pro, liter, his, law, social, engi, life, east, green, local
     same, sports, college, depart, tech, mana, pro, liter, his, law, social, engi, life, east, green, local = [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
+    global tech_snum, mana_snum, pro_snum
+    tech_snum, mana_snum, pro_snum = [], [], []
     start_depart = False # 院必修、系必修在同排，院必修先算
     while True : # 共同必修
-        same_index = "A" + str(same_num)
+        same_index = "B" + str(same_num)
         if data.worksheets[0][same_index].value != "特色運動" : # 遇到特色運動就停
             same.append(data.worksheets[0][same_index].value)
         else :
@@ -722,7 +800,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
         same_num += 1
     sports_num = 18
     while True : # 共同必修-特色體育
-        index = "F" + str(sports_num)
+        index = "H" + str(sports_num)
         if data.worksheets[0][index].value != None :
             sports.append("體育:"+data.worksheets[0][index].value)
         else :
@@ -730,7 +808,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
         sports_num += 1
     while True :  # 院必修+系必修
         num += 1 # 同一排，要檢查哪些是系必修所以 index 一開始加較好算
-        index = "A" + str(num)
+        index = "B" + str(num)
         if data.worksheets[1][index].value == None : # 空就停
             break
         if "系必修" in data.worksheets[1][index].value : # 開始算系必修
@@ -741,34 +819,37 @@ def mkLec(path, year) : # 製作不同領域課程 list
             depart.append(data.worksheets[1][index].value)
     num = 2
     while True : # 技術組
-        index = "E" + str(num)
+        index = "G" + str(num)
         if data.worksheets[1][index].value != None :
             tech.append(data.worksheets[1][index].value)
+            tech_snum.append(data.worksheets[1]["F" + str(num)].value)
         else :
             break
         num += 1
     num = 2
     while True : # 管理組
-        index = "I" + str(num)
+        index = "L" + str(num)
         if data.worksheets[1][index].value != None :
             mana.append(data.worksheets[1][index].value)
+            mana_snum.append(data.worksheets[1]["K" + str(num)].value)
         else :
             break
         num += 1
     num = 2
-    index_letter = ['A','E','I','M','Q','U'] # 系專選在 a+3 排
+    index_letter = ['B','G','L','Q','U','V'] # 系專選在 a+3 排
     for i in index_letter : # 系專選有多排
         num = 2
         while True : # 系專選
             index = i + str(num)
             if data.worksheets[2][index].value != None :
                 pro.append(data.worksheets[2][index].value)
+                pro_snum.append(data.worksheets[2][chr(ord(i)-1) + str(num)].value)
             else :
                 break
             num += 1
     num = 2
     while True : # 文學
-        index = "A" + str(num)
+        index = "B" + str(num)
         if data.worksheets[3][index].value != None :
             liter.append(data.worksheets[3][index].value)
         else :
@@ -776,7 +857,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
         num += 1
     num = 2
     while True : # 歷史
-        index = "E" + str(num)
+        index = "G" + str(num)
         if data.worksheets[3][index].value != None :
             his.append(data.worksheets[3][index].value)
         else :
@@ -784,7 +865,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
         num += 1
     num = 2
     while True : # 法政
-        index = "I" + str(num)
+        index = "L" + str(num)
         if data.worksheets[3][index].value != None :
             law.append(data.worksheets[3][index].value)
         else :
@@ -792,7 +873,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
         num += 1
     num = 2
     while True : # 社經
-        index = "M" + str(num)
+        index = "Q" + str(num)
         if data.worksheets[3][index].value != None :
             social.append(data.worksheets[3][index].value)
         else :
@@ -800,7 +881,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
         num += 1
     num = 2
     while True : # 工程
-        index = "A" + str(num)
+        index = "B" + str(num)
         if data.worksheets[4][index].value != None :
             engi.append(data.worksheets[4][index].value)
         else :
@@ -808,7 +889,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
         num += 1
     num = 2
     while True : # 生活科技
-        index = "E" + str(num)
+        index = "G" + str(num)
         if data.worksheets[4][index].value != None :
             life.append(data.worksheets[4][index].value)
         else :
@@ -817,7 +898,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
     num = 2
     green_start = False
     while True : # 東南亞、綠概念 同一排
-        index = "I" + str(num)
+        index = "L" + str(num)
         if data.worksheets[4][index].value == None:
             break
         elif "特色通識領域" in data.worksheets[4][index].value and "綠概念" in data.worksheets[4][index].value : # 東南亞結束換綠概念
@@ -831,7 +912,7 @@ def mkLec(path, year) : # 製作不同領域課程 list
         num += 1
     num = 2
     while True : # 在地
-        index = "M" + str(num)
+        index = "Q" + str(num)
         if data.worksheets[4][index].value != None :
             local.append(data.worksheets[4][index].value)
         else :
