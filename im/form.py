@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from .models import excelData, userLec, waterImg
 class CreditForm(forms.Form) :
     domain = forms.ChoiceField(
-            required=True,
+            required=False,
             widget=forms.RadioSelect(
                 attrs={'class':'domain'}),
             choices=((1, "資訊技術與系統開發次領域"), (2, "資訊管理與決策科學次領域"))

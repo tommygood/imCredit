@@ -1,0 +1,1663 @@
+Error: You don't have permission to access that port.
+Error: You don't have permission to access that port.
+Error: You don't have permission to access that port.
+[30/Mar/2024 11:21:04] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[30/Mar/2024 11:21:32] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[30/Mar/2024 11:21:39] "POST /credit/IMCreditCount HTTP/1.1" 200 39457
+[30/Mar/2024 11:23:01] "POST /credit/IMCreditCount HTTP/1.1" 200 39457
+[30/Mar/2024 11:25:58] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 11:50:14] "GET / HTTP/1.0" 404 179
+[30/Mar/2024 12:16:23] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 12:19:14] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 12:19:20] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 12:42:53] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 12:53:50] "GET / HTTP/1.0" 404 179
+[30/Mar/2024 12:56:29] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[30/Mar/2024 13:07:38] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 13:10:46] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 13:18:58] "CONNECT google.com:443 HTTP/1.1" 400 143
+[30/Mar/2024 13:48:24] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 14:08:15] "GET /admin HTTP/1.1" 301 0
+[30/Mar/2024 14:08:15] "GET /admin/ HTTP/1.1" 302 0
+[30/Mar/2024 14:08:15] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4162
+[30/Mar/2024 14:08:15] "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+[30/Mar/2024 14:08:15] "GET /static/admin/css/base.css HTTP/1.1" 404 179
+[30/Mar/2024 14:08:15] "GET /static/admin/css/login.css HTTP/1.1" 404 179
+[30/Mar/2024 14:08:15] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[30/Mar/2024 14:08:15] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[30/Mar/2024 14:08:15] "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+[30/Mar/2024 14:08:15] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:00] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4325
+[30/Mar/2024 14:09:00] "GET /static/admin/css/login.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:00] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:00] "GET /static/admin/css/base.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:00] "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:00] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:00] "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:00] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:31] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[30/Mar/2024 14:09:31] "GET /admin/ HTTP/1.1" 200 10138
+[30/Mar/2024 14:09:32] "GET /static/admin/css/base.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:32] "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:32] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:32] "GET /static/admin/css/dashboard.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:32] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:32] "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:32] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/css/base.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/css/changelists.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/js/jquery.init.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[30/Mar/2024 14:09:35] "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/js/actions.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/js/core.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/js/urlify.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/js/prepopulate.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:35] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:36] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:36] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[30/Mar/2024 14:09:36] "GET /static/admin/js/filters.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:36] "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+[30/Mar/2024 14:09:37] "GET /admin/im/userlec/ HTTP/1.1" 200 660976
+[30/Mar/2024 14:10:57] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 14:44:49,386] - Broken pipe from ('206.168.34.39', 34404)
+[30/Mar/2024 14:44:52] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 14:44:53,187] - Broken pipe from ('206.168.34.39', 38522)
+[30/Mar/2024 14:44:56] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 14:44:58] code 505, message Invalid HTTP version (2.0)
+[30/Mar/2024 14:44:58] "PRI * HTTP/2.0" 505 -
+[30/Mar/2024 15:11:40] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 15:11:40,531] - Broken pipe from ('198.211.113.9', 27901)
+[30/Mar/2024 15:22:03] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 15:25:48] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Mar/2024 15:26:10] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 15:26:33] "GET /geoserver/web/ HTTP/1.1" 404 179
+[30/Mar/2024 15:27:48] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 15:30:03] "CONNECT api64.ipify.org:443 HTTP/1.1" 400 143
+[30/Mar/2024 15:46:49] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 16:09:15] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 16:14:52] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 16:51:20] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 17:19:49] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 18:12:53] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 19:50:28] "CONNECT google.com:443 HTTP/1.1" 400 143
+[30/Mar/2024 20:18:01] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 20:20:37] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 20:53:50] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 21:02:57] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 22:00:23] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 22:04:50] "GET / HTTP/1.1" 404 179
+[30/Mar/2024 23:06:24] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 01:14:53] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 01:15:33] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 01:38:30] "CONNECT google.com:443 HTTP/1.1" 400 143
+[31/Mar/2024 02:23:33] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 02:56:26] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 04:50:39] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 04:57:07] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 05:06:14] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 06:09:24] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 06:56:55] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 07:12:47] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 07:20:58] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 07:29:30] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 07:33:31] "GET /static/yuandong-ec9eec26.ico HTTP/1.1" 400 143
+[31/Mar/2024 07:36:15] "CONNECT google.com:443 HTTP/1.1" 400 143
+[31/Mar/2024 07:42:49] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 07:48:47] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 07:48:59] code 400, message Bad request version ('À\x13À')
+[31/Mar/2024 07:48:59] You're accessing the development server over HTTPS, but it only supports HTTP.
+[31/Mar/2024 07:49:00] code 400, message Bad request version ('À(À$À\x14À')
+[31/Mar/2024 07:49:00] You're accessing the development server over HTTPS, but it only supports HTTP.
+[31/Mar/2024 08:13:40,549] - Broken pipe from ('162.142.125.225', 40200)
+[31/Mar/2024 08:13:43] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 08:13:43,989] - Broken pipe from ('162.142.125.225', 50566)
+[31/Mar/2024 08:13:48] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 08:13:49] code 505, message Invalid HTTP version (2.0)
+[31/Mar/2024 08:13:49] "PRI * HTTP/2.0" 505 -
+[31/Mar/2024 08:15:17] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 08:58:22] "GET / HTTP/1.0" 400 143
+[31/Mar/2024 10:05:05] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 10:05:07] code 400, message Bad request version ('À\x13À')
+[31/Mar/2024 10:05:07] You're accessing the development server over HTTPS, but it only supports HTTP.
+[31/Mar/2024 10:05:08] code 400, message Bad HTTP/0.9 request type ('t3')
+[31/Mar/2024 10:05:08] "t3 12.1.2" 400 -
+[31/Mar/2024 10:05:26] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 10:05:26] "GET /favicon.ico HTTP/1.1" 404 179
+[31/Mar/2024 10:05:27] "GET /robots.txt HTTP/1.1" 404 179
+[31/Mar/2024 10:05:27] "GET /sitemap.xml HTTP/1.1" 404 179
+[31/Mar/2024 10:06:51] code 400, message Bad request version ('À\x14À')
+[31/Mar/2024 10:06:51] You're accessing the development server over HTTPS, but it only supports HTTP.
+[31/Mar/2024 10:27:28] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 11:57:47] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 12:08:52] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 12:23:16] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[31/Mar/2024 12:23:16] "  /*à     Cookie: mstshash=Administr" 400 -
+[31/Mar/2024 12:30:40] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 14:11:40] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[31/Mar/2024 14:11:40] "  /*à     Cookie: mstshash=Administr" 400 -
+[31/Mar/2024 14:35:29] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 14:36:07] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 14:59:04] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 15:59:44] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 16:04:17] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 16:16:24] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 17:28:04] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 17:35:23] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 17:40:46] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 17:42:43] "GET /favicon.ico HTTP/1.1" 404 179
+[31/Mar/2024 17:43:10] "GET /geoserver/web/ HTTP/1.1" 404 179
+[31/Mar/2024 17:59:31] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 18:04:19] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 18:06:17] code 400, message Bad request version ('["cpuminer/2.5.1"]}')
+[31/Mar/2024 18:06:17] "{"id": 1, "method": "mining.subscribe", "params": ["cpuminer/2.5.1"]}" 400 -
+[31/Mar/2024 18:06:31] code 400, message Bad request syntax ('{"id":1,"method":"eth_submitLogin","worker":"igwrcvap","params":["0x68ed39e53eb844c3680a9b4471ca6481c6f4f3d0","x"],"jsonrpc":"2.0"}')
+[31/Mar/2024 18:06:31] "{"id":1,"method":"eth_submitLogin","worker":"igwrcvap","params":["0x68ed39e53eb844c3680a9b4471ca6481c6f4f3d0","x"],"jsonrpc":"2.0"}" 400 -
+[31/Mar/2024 18:06:38,157] - Broken pipe from ('45.148.120.187', 43650)
+[31/Mar/2024 18:06:58] code 400, message Bad request syntax ('\x08\x00\x00\x00arch=x64\x15\x00\x00\x00pipename=msagent_e8c2')
+[31/Mar/2024 18:06:58] "   arch=x64   pipename=msagent_e8c2" 400 -
+[31/Mar/2024 18:14:46] code 400, message Bad request syntax ('\x04\x01\x00\x19h/:¡\x00')
+[31/Mar/2024 18:14:46] " h/:¡ " 400 -
+[31/Mar/2024 18:15:03] code 400, message Bad request syntax ('\x05\x01\x00')
+[31/Mar/2024 18:15:03] " " 400 -
+[31/Mar/2024 18:16:10] code 400, message Bad HTTP/0.9 request type ('\x04\x01\x00\x194eD')
+[31/Mar/2024 18:16:10] " 4eD " 400 -
+[31/Mar/2024 18:17:11] code 400, message Bad request syntax ('\x05\x01\x00')
+[31/Mar/2024 18:17:11] " " 400 -
+[31/Mar/2024 18:17:11] "CONNECT hotmail-com.olc.protection.outlook.com:25 HTTP/1.1" 400 143
+[31/Mar/2024 19:54:37] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 20:21:08] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 20:26:15] code 400, message Bad request version ("\x11úk?ãð÷\x00V\x13\x02\x13\x03\x13\x01À,À0À+À/Ì©Ì¨\x00\x9f\x00\x9eÌªÀ¯À\xadÀ®À¬À$À(À#À'À")
+[31/Mar/2024 20:26:15] You're accessing the development server over HTTPS, but it only supports HTTP.
+[31/Mar/2024 20:27:28] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 21:11:40] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 21:42:02] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 22:23:00] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 22:46:40] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 22:53:32] "GET / HTTP/1.1" 404 179
+[31/Mar/2024 22:53:49] "POST /boaform/admin/formLogin HTTP/1.1" 404 179
+[31/Mar/2024 23:31:31] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 00:07:03] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 01:24:30] "CONNECT google.com:443 HTTP/1.1" 400 143
+[01/Apr/2024 01:38:46] code 400, message Bad request syntax ('\x04\x01\x00PPBS1\x00')
+[01/Apr/2024 01:38:46] " PPBS1 " 400 -
+[01/Apr/2024 01:39:46] code 400, message Bad request syntax ('\x05\x01\x00')
+[01/Apr/2024 01:39:46] " " 400 -
+[01/Apr/2024 01:39:46] "CONNECT 80.66.83.49:80 HTTP/1.1" 400 143
+[01/Apr/2024 02:15:32] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 02:15:49] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 02:27:33] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 03:12:30] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 03:25:31,749] - Broken pipe from ('167.94.138.36', 48494)
+[01/Apr/2024 03:25:35] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 03:25:35,552] - Broken pipe from ('167.94.138.36', 51112)
+[01/Apr/2024 03:25:40] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 03:25:42] code 505, message Invalid HTTP version (2.0)
+[01/Apr/2024 03:25:42] "PRI * HTTP/2.0" 505 -
+[01/Apr/2024 04:25:05] code 400, message Bad request version ('À\x13À')
+[01/Apr/2024 04:25:05] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 04:25:06] code 400, message Bad request version ('À(À$À\x14À')
+[01/Apr/2024 04:25:06] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 05:38:10] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 06:06:59,290] - Broken pipe from ('185.224.128.34', 57410)
+[01/Apr/2024 06:16:36] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 07:22:22] "CONNECT google.com:443 HTTP/1.1" 400 143
+[01/Apr/2024 08:17:15] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 08:25:59] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 08:40:08] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 08:49:50] "GET / HTTP/1.1" 400 143
+[01/Apr/2024 09:02:40] "HEAD / HTTP/1.1" 404 0
+[01/Apr/2024 09:17:09] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 09:23:08,025] - Broken pipe from ('104.219.238.217', 53879)
+[01/Apr/2024 09:35:41] "GET / HTTP/1.0" 404 179
+[01/Apr/2024 10:00:01] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[01/Apr/2024 10:00:01] "  /*à     Cookie: mstshash=Administr" 400 -
+[01/Apr/2024 10:26:19] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 10:37:37] code 400, message Bad request version ('À\x14À')
+[01/Apr/2024 10:37:37] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 10:50:55] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 10:57:17] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 10:59:04] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 10:59:05] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 10:59:07] "GET /credit/rootExclusive HTTP/1.1" 200 763
+[01/Apr/2024 10:59:12] "GET /admin HTTP/1.1" 301 0
+[01/Apr/2024 10:59:13] "GET /admin/ HTTP/1.1" 200 10138
+[01/Apr/2024 10:59:13] "GET /static/admin/css/base.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:13] "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:13] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:13] "GET /static/admin/css/dashboard.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:13] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:13] "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:13] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/css/base.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/css/changelists.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /admin/im/userlec/ HTTP/1.1" 200 660976
+[01/Apr/2024 10:59:17] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[01/Apr/2024 10:59:17] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/jquery.init.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/actions.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/core.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/urlify.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/prepopulate.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[01/Apr/2024 10:59:17] "GET /static/admin/js/filters.js HTTP/1.1" 404 179
+[01/Apr/2024 11:49:39] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 12:04:27] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 12:06:26] code 400, message Bad request version ('À\x14À')
+[01/Apr/2024 12:06:26] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 12:06:26] code 400, message Bad request version ('À\x14À')
+[01/Apr/2024 12:06:26] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 12:06:27] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 12:06:28] "GET /form.html HTTP/1.1" 404 179
+[01/Apr/2024 12:06:28] "GET /upl.php HTTP/1.1" 404 179
+[01/Apr/2024 12:06:29] code 400, message Bad request version ('À\x14À')
+[01/Apr/2024 12:06:29] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 12:06:29] "GET /geoip/ HTTP/1.1" 404 179
+[01/Apr/2024 12:06:30] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 12:06:31] "GET /1.php HTTP/1.1" 404 179
+[01/Apr/2024 12:06:32] "GET /bundle.js HTTP/1.1" 404 179
+[01/Apr/2024 12:06:32] "GET /files/ HTTP/1.1" 404 179
+[01/Apr/2024 12:06:33] "GET /systembc/password.php HTTP/1.1" 404 179
+[01/Apr/2024 12:06:34] "GET /password.php HTTP/1.1" 404 179
+[01/Apr/2024 12:06:34] "GET /info.php HTTP/1.1" 404 179
+[01/Apr/2024 12:34:27,941] - Broken pipe from ('167.94.146.52', 39270)
+[01/Apr/2024 12:34:31] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 12:34:31,546] - Broken pipe from ('167.94.146.52', 43148)
+[01/Apr/2024 12:34:34] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 12:34:35] code 505, message Invalid HTTP version (2.0)
+[01/Apr/2024 12:34:35] "PRI * HTTP/2.0" 505 -
+[01/Apr/2024 12:44:35] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 13:17:01] "GET / HTTP/1.1" 400 143
+[01/Apr/2024 13:27:08,551] - Broken pipe from ('139.59.58.140', 50556)
+[01/Apr/2024 13:27:08] code 400, message Bad request version ('À\x14À')
+[01/Apr/2024 13:27:08] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 13:27:09,358] - Broken pipe from ('139.59.58.140', 50574)
+[01/Apr/2024 13:27:10] code 400, message Bad request version ('À\x14À')
+[01/Apr/2024 13:27:10] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 13:27:10,450] - Broken pipe from ('139.59.58.140', 47782)
+[01/Apr/2024 13:27:10] code 400, message Bad request version ('À\x14À')
+[01/Apr/2024 13:27:10] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 13:31:50] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 13:51:14] "CONNECT google.com:443 HTTP/1.1" 400 143
+[01/Apr/2024 14:07:14] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 14:17:19] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 15:23:02] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 15:27:15] "GET / HTTP/1.0" 400 143
+[01/Apr/2024 16:06:43] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 16:14:22] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 16:51:33] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[01/Apr/2024 16:51:33] "  /*à     Cookie: mstshash=Administr" 400 -
+[01/Apr/2024 16:56:27] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 16:56:30] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 16:58:03] "POST /credit/IMCreditCount HTTP/1.1" 200 35470
+[01/Apr/2024 17:15:42] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 17:15:42] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 17:15:56] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 17:15:56] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 17:51:52] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 17:51:52] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 17:52:11] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 17:52:37] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 17:52:44] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 17:53:28] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 18:22:43] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 18:58:12] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 19:26:50] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 19:35:18] "CONNECT google.com:443 HTTP/1.1" 400 143
+[01/Apr/2024 19:49:35] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 19:55:04] code 400, message Bad request version ('ØmÆ\x84Mð\x82§Q×Kà\xadø')
+[01/Apr/2024 19:55:04] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Apr/2024 19:55:06] "OPTIONS / HTTP/1.0" 404 179
+[01/Apr/2024 20:25:44] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 20:43:34,091] - Broken pipe from ('80.94.92.60', 59020)
+[01/Apr/2024 21:21:05,378] - Broken pipe from ('162.142.125.221', 58034)
+[01/Apr/2024 21:21:08] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 21:21:08,746] - Broken pipe from ('162.142.125.221', 43704)
+[01/Apr/2024 21:21:11] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 21:21:12] code 505, message Invalid HTTP version (2.0)
+[01/Apr/2024 21:21:12] "PRI * HTTP/2.0" 505 -
+[01/Apr/2024 22:33:35] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 22:33:35] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 22:33:57] "POST /credit/IMCreditCount HTTP/1.1" 200 38482
+[01/Apr/2024 22:46:39] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 22:46:39] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 22:46:40] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 22:46:41] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 22:46:56] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 22:46:56] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 22:47:32] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 22:47:32] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 22:48:26] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 22:48:26] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 22:49:15] "POST /credit/IMCreditCount HTTP/1.1" 200 40026
+[01/Apr/2024 22:49:28] "POST /credit/IMCreditCount HTTP/1.1" 200 38674
+[01/Apr/2024 22:50:41] "GET /credit/tongs HTTP/1.1" 200 61249
+[01/Apr/2024 22:51:05] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 22:52:00] "POST /credit/IMCreditCount HTTP/1.1" 200 40026
+[01/Apr/2024 22:53:05] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 22:53:06] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 22:54:10] "POST /credit/IMCreditCount HTTP/1.1" 200 39632
+[01/Apr/2024 23:03:26] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:03:30] "POST /credit/IMCreditCount HTTP/1.1" 200 38674
+[01/Apr/2024 23:04:24] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:04:29] "POST /credit/IMCreditCount HTTP/1.1" 200 38674
+[01/Apr/2024 23:07:03] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:07:05] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:07:53] "POST /credit/IMCreditCount HTTP/1.1" 200 34637
+[01/Apr/2024 23:09:25] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:09:46] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:09:47] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:10:14] "POST /credit/IMCreditCount HTTP/1.1" 200 37974
+[01/Apr/2024 23:28:07] "GET / HTTP/1.1" 404 179
+[01/Apr/2024 23:28:25] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:28:25] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:28:37] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:28:37] "GET /credit/rootExclusive HTTP/1.1" 200 763
+[01/Apr/2024 23:28:50] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:28:50] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:34:40] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:34:40] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:46:28] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:46:30] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:46:36] "GET /credit/rootExclusive HTTP/1.1" 200 763
+[01/Apr/2024 23:46:40] "POST /credit/rootExclusive HTTP/1.1" 200 827
+[01/Apr/2024 23:46:57] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:46:58] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:46:59] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:48:28] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:48:28] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:49:01] "POST /credit/IMCreditCount HTTP/1.1" 200 35950
+[01/Apr/2024 23:49:28] "POST /credit/IMCreditCount HTTP/1.1" 200 39576
+[01/Apr/2024 23:50:12] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:50:19] "POST /credit/IMCreditCount HTTP/1.1" 200 40896
+[01/Apr/2024 23:50:37] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:50:37] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Apr/2024 23:50:41] "POST /credit/IMCreditCount HTTP/1.1" 200 39576
+[01/Apr/2024 23:52:51] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:53:06] "POST /credit/IMCreditCount HTTP/1.1" 200 35237
+[01/Apr/2024 23:54:29] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[01/Apr/2024 23:54:53] "POST /credit/IMCreditCount HTTP/1.1" 200 40896
+[01/Apr/2024 23:54:56] "GET /credit/profession HTTP/1.1" 200 26549
+[01/Apr/2024 23:55:08] "GET /credit/profession HTTP/1.1" 200 26549
+[01/Apr/2024 23:55:24] "GET /credit/department HTTP/1.1" 200 5835
+[01/Apr/2024 23:55:45] "GET /credit/profession HTTP/1.1" 200 26549
+[01/Apr/2024 23:56:04] "GET /credit/tongs HTTP/1.1" 200 61347
+[01/Apr/2024 23:56:12] "GET /credit/tongs HTTP/1.1" 200 61347
+[01/Apr/2024 23:56:37] "GET /credit/same HTTP/1.1" 200 4150
+[01/Apr/2024 23:57:10] "GET /credit/tongs HTTP/1.1" 200 61347
+[02/Apr/2024 00:01:46] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 00:01:48] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 00:02:15] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 00:03:05] "POST /credit/IMCreditCount HTTP/1.1" 200 35352
+[02/Apr/2024 00:04:22] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 00:10:05] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 00:10:07] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 00:10:43] "POST /credit/IMCreditCount HTTP/1.1" 200 38453
+[02/Apr/2024 00:19:28] "GET /robots.txt HTTP/1.1" 404 179
+[02/Apr/2024 00:19:29] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 00:19:56] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 00:19:56] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 00:20:18] "HEAD / HTTP/1.1" 404 0
+[02/Apr/2024 00:21:28] "POST /credit/IMCreditCount HTTP/1.1" 200 36073
+[02/Apr/2024 01:01:13] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 01:12:17] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 01:32:32] "CONNECT google.com:443 HTTP/1.1" 400 143
+[02/Apr/2024 01:47:18] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[02/Apr/2024 01:47:18] "  /*à     Cookie: mstshash=Administr" 400 -
+[02/Apr/2024 02:03:59] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 02:14:37] "GET /credit/profession HTTP/1.1" 200 26504
+[02/Apr/2024 02:46:05] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 02:46:17] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 02:51:19] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 03:20:58] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 03:28:04] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 03:28:05] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 03:32:03] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 03:32:03] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 03:32:08] "GET /credit/rootExclusive HTTP/1.1" 200 763
+[02/Apr/2024 03:33:56] "POST /credit/IMCreditCount HTTP/1.1" 200 38613
+[02/Apr/2024 03:35:32] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 03:35:44] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 03:35:53] "POST /credit/IMCreditCount HTTP/1.1" 200 38613
+[02/Apr/2024 03:37:45] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 03:45:15] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 04:12:44,233] - Broken pipe from ('151.80.205.188', 59395)
+[02/Apr/2024 04:39:06,932] - Broken pipe from ('151.80.205.188', 59138)
+[02/Apr/2024 04:52:05] "GET /boaform/admin/formLogin?username=adminisp&psd=adminisp HTTP/1.0" 400 143
+[02/Apr/2024 05:02:37] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 05:12:03] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 05:18:28,909] - Broken pipe from ('151.80.205.188', 58404)
+[02/Apr/2024 05:35:26,060] - Broken pipe from ('151.80.205.188', 59389)
+[02/Apr/2024 06:24:00] "CONNECT google.com:443 HTTP/1.1" 400 143
+[02/Apr/2024 06:42:51] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 07:22:29,462] - Broken pipe from ('167.94.145.56', 41860)
+[02/Apr/2024 07:22:32] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 07:22:33,103] - Broken pipe from ('167.94.145.56', 44790)
+[02/Apr/2024 07:22:36] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 07:22:37] code 505, message Invalid HTTP version (2.0)
+[02/Apr/2024 07:22:37] "PRI * HTTP/2.0" 505 -
+[02/Apr/2024 07:42:14] "CONNECT google.com:443 HTTP/1.1" 400 143
+[02/Apr/2024 07:49:54] "GET / HTTP/1.0" 400 143
+[02/Apr/2024 09:23:33] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 09:41:37,473] - Broken pipe from ('151.80.205.188', 54783)
+[02/Apr/2024 10:05:35] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 10:05:40] "GET /admin HTTP/1.1" 301 0
+[02/Apr/2024 10:05:41] "GET /admin/ HTTP/1.1" 200 10138
+[02/Apr/2024 10:05:41] "GET /static/admin/css/base.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:41] "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:41] "GET /static/admin/css/dashboard.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:41] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:41] "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:41] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:41] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /admin/im/exceldata/ HTTP/1.1" 200 26964
+[02/Apr/2024 10:05:44] "GET /static/admin/css/base.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/css/changelists.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[02/Apr/2024 10:05:44] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/jquery.init.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/core.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/urlify.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/actions.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/prepopulate.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+[02/Apr/2024 10:05:44] "GET /static/admin/js/filters.js HTTP/1.1" 404 179
+[02/Apr/2024 10:05:48] "GET /media/Excel/109_data.xlsx HTTP/1.1" 200 49732
+[02/Apr/2024 10:08:19] "GET /admin/ HTTP/1.1" 200 10138
+[02/Apr/2024 10:08:28] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 10:08:36] "POST /credit/IMCreditCount HTTP/1.1" 200 35415
+[02/Apr/2024 10:08:38] "GET /credit/profession HTTP/1.1" 200 26009
+[02/Apr/2024 10:10:01] "GET /credit/department HTTP/1.1" 200 4687
+[02/Apr/2024 10:10:16] "GET /credit/profession HTTP/1.1" 200 26009
+[02/Apr/2024 10:14:09] code 400, message Bad request version ('À\x14À')
+[02/Apr/2024 10:14:09] You're accessing the development server over HTTPS, but it only supports HTTP.
+[02/Apr/2024 10:15:24] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 10:16:27] "POST /credit/IMCreditCount HTTP/1.1" 200 35415
+[02/Apr/2024 10:16:30] "GET /credit/profession HTTP/1.1" 200 26009
+[02/Apr/2024 10:22:52] "POST /credit/IMCreditCount HTTP/1.1" 200 35415
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 30, 2024 - 11:20:56
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+必修  土木系服務學習(上)  還沒修
+特色體育未達標, 只修  1  堂
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 02, 2024 - 10:25:50
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+[02/Apr/2024 10:35:20] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 10:35:22] "GET /credit/rootExclusive HTTP/1.1" 200 763
+[02/Apr/2024 10:35:25] "POST /credit/rootExclusive HTTP/1.1" 200 841
+[02/Apr/2024 10:35:46] "POST /credit/rootExclusive HTTP/1.1" 200 546
+[02/Apr/2024 10:35:51] "GET /credit/addData HTTP/1.1" 200 992
+[02/Apr/2024 10:36:29] "POST /credit/addData HTTP/1.1" 200 750
+[02/Apr/2024 10:36:30] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 10:36:38] "POST /credit/IMCreditCount HTTP/1.1" 200 35410
+[02/Apr/2024 10:36:38] "GET /media/image/im_water.png HTTP/1.1" 200 197720
+[02/Apr/2024 10:36:46] "GET /credit/profession HTTP/1.1" 200 26208
+[02/Apr/2024 10:37:14] "GET /credit/same HTTP/1.1" 200 4460
+[02/Apr/2024 10:37:44] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 10:38:42] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 10:38:59,433] - Broken pipe from ('151.80.205.188', 63821)
+[02/Apr/2024 10:53:29] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 10:54:47] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 11:14:32] "POST /credit/IMCreditCount HTTP/1.1" 200 36110
+[02/Apr/2024 11:14:47] "GET /credit/profession HTTP/1.1" 200 26658
+[02/Apr/2024 11:34:41] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 12:17:40] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 12:26:23] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 12:32:36,520] - Broken pipe from ('80.94.92.60', 53772)
+[02/Apr/2024 12:57:06] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 13:20:03] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 13:39:50] "GET / HTTP/1.1" 400 143
+[02/Apr/2024 13:41:00] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 13:49:22] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 13:49:23] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 13:49:29] "POST /credit/IMCreditCount HTTP/1.1" 200 36003
+[02/Apr/2024 13:52:11] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 13:52:29] "POST /credit/IMCreditCount HTTP/1.1" 200 39524
+[02/Apr/2024 13:52:29] "POST /credit/IMCreditCount HTTP/1.1" 200 39524
+[02/Apr/2024 13:52:29] "POST /credit/IMCreditCount HTTP/1.1" 200 39524
+[02/Apr/2024 13:59:05] "HEAD / HTTP/1.1" 404 0
+[02/Apr/2024 13:59:07] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 13:59:08] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 13:59:09] "GET /ads.txt HTTP/1.1" 404 179
+[02/Apr/2024 13:59:10] "GET /app-ads.txt HTTP/1.1" 404 179
+[02/Apr/2024 13:59:11] "GET /sellers.json HTTP/1.1" 404 179
+[02/Apr/2024 14:06:32] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 14:08:55] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 14:08:55] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 14:41:35] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 14:41:36] "GET /credit/rootExclusive HTTP/1.1" 200 476
+[02/Apr/2024 14:41:37] "GET /credit/addData HTTP/1.1" 200 992
+[02/Apr/2024 14:43:22] "POST /credit/addData HTTP/1.1" 200 750
+[02/Apr/2024 14:43:23] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 14:43:36] "POST /credit/IMCreditCount HTTP/1.1" 200 36087
+[02/Apr/2024 14:43:44] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 14:44:20] "POST /credit/IMCreditCount HTTP/1.1" 200 38103
+[02/Apr/2024 14:44:36] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 14:44:39] "POST /credit/IMCreditCount HTTP/1.1" 200 38103
+[02/Apr/2024 14:44:41] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 14:45:00] "POST /credit/IMCreditCount HTTP/1.1" 200 39589
+[02/Apr/2024 14:45:01] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 14:48:43] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 15:03:14] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 15:03:47] "GET /credit/rootExclusive HTTP/1.1" 200 476
+[02/Apr/2024 15:35:15] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 15:53:45] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 15:53:50] "POST /credit/IMCreditCount HTTP/1.1" 200 40100
+[02/Apr/2024 16:19:50] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 16:57:05] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 17:04:37] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 17:04:40,610] - Broken pipe from ('43.157.82.72', 31378)
+[02/Apr/2024 17:09:37] code 400, message Bad request syntax ('\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03Sö¥T<®\x03N8ÞêÂÎ)H"â\xadQû\x90\x07\x196\x839\x15]')
+[02/Apr/2024 17:09:37] You're accessing the development server over HTTPS, but it only supports HTTP.
+[02/Apr/2024 17:09:38] code 400, message Bad request version ('À(À$À\x14À')
+[02/Apr/2024 17:09:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+[02/Apr/2024 18:14:30,773] - Broken pipe from ('151.80.205.188', 65500)
+[02/Apr/2024 18:27:28] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 18:27:28] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 18:27:54] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 18:36:39] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 18:36:39] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 18:37:04] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 18:37:04] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 18:43:43] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 18:54:45] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 19:28:02,204] - Broken pipe from ('151.80.205.188', 50960)
+[02/Apr/2024 19:33:00] "CONNECT google.com:443 HTTP/1.1" 400 143
+[02/Apr/2024 19:39:25] "CONNECT google.com:443 HTTP/1.1" 400 143
+[02/Apr/2024 19:42:15] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 19:43:41] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 20:37:31] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x84T\x9by2')
+[02/Apr/2024 20:37:31] You're accessing the development server over HTTPS, but it only supports HTTP.
+[02/Apr/2024 20:59:51] "GET / HTTP/1.0" 404 179
+[02/Apr/2024 21:51:05] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 21:55:09] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 21:55:11] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[02/Apr/2024 21:55:11] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Apr/2024 21:55:48] "POST /credit/IMCreditCount HTTP/1.1" 200 40100
+[02/Apr/2024 22:02:07] "GET /.git/config HTTP/1.1" 404 179
+[02/Apr/2024 22:22:37] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 23:41:14] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 23:42:51] "GET / HTTP/1.1" 404 179
+[02/Apr/2024 23:43:01] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 00:18:17] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 00:42:08,758] - Broken pipe from ('104.219.238.217', 56897)
+[03/Apr/2024 01:21:11] "GET /boaform/admin/formLogin?username=user&psd=user HTTP/1.0" 400 143
+[03/Apr/2024 01:38:51] "CONNECT google.com:443 HTTP/1.1" 400 143
+[03/Apr/2024 01:39:47] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 01:58:27] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 02:44:50,035] - Broken pipe from ('51.195.193.133', 53240)
+[03/Apr/2024 03:39:40] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 06:08:30] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 06:42:11] "GET /favicon.ico HTTP/1.1" 404 179
+[03/Apr/2024 06:43:11] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 06:44:32] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 07:12:36] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 07:18:07] "GET / HTTP/1.0" 400 143
+[03/Apr/2024 07:22:16] "HEAD / HTTP/1.1" 404 0
+[03/Apr/2024 07:22:17] "OPTIONS / HTTP/1.1" 404 179
+[03/Apr/2024 07:25:49] "CONNECT google.com:443 HTTP/1.1" 400 143
+[03/Apr/2024 07:32:46] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 07:32:46] "GET /favicon.ico HTTP/1.1" 404 179
+[03/Apr/2024 07:52:14] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 08:27:09] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00')
+[03/Apr/2024 08:27:09] "  à          " 400 -
+[03/Apr/2024 09:08:11] code 400, message Bad request version ('À\x13À')
+[03/Apr/2024 09:08:11] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Apr/2024 09:08:12] code 400, message Bad request version ('À(À$À\x14À')
+[03/Apr/2024 09:08:12] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Apr/2024 09:30:35] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 09:36:26] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 09:51:38] code 400, message Bad request syntax ('<v\x9b¢í\x19>\x03\x10êþÎûë>X')
+[03/Apr/2024 09:51:38] "<v¢í>êþÎûë>X" 400 -
+[03/Apr/2024 10:06:33,269] - Broken pipe from ('185.224.128.34', 51686)
+[03/Apr/2024 10:09:26] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 10:20:24] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 10:25:39] "GET /.git/config HTTP/1.1" 404 179
+[03/Apr/2024 10:59:00] "GET / HTTP/1.1" 400 143
+[03/Apr/2024 11:04:18] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 12:14:03] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 12:34:16] "GET / HTTP/1.0" 400 143
+[03/Apr/2024 13:26:02] "GET /stalker_portal/server/tools/auth_simple.php HTTP/1.1" 404 179
+[03/Apr/2024 13:59:48] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 14:45:53] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 14:45:58] "GET /favicon.ico HTTP/1.1" 404 179
+[03/Apr/2024 15:02:07] "GET /HNAP1 HTTP/1.1" 404 179
+[03/Apr/2024 15:04:33] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 15:07:03] "POST /onvif/device_service HTTP/1.1" 404 179
+[03/Apr/2024 15:07:04] "GET /PSIA/index HTTP/1.1" 404 179
+[03/Apr/2024 15:30:40] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 15:58:12] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 16:41:02] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 16:44:19] "GET /credit/rootExclusive HTTP/1.1" 200 476
+[03/Apr/2024 16:44:19] "GET /favicon.ico HTTP/1.1" 404 179
+[03/Apr/2024 16:44:24] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[03/Apr/2024 17:03:30] "GET /favicon.ico HTTP/1.1" 404 179
+[03/Apr/2024 17:16:35] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 17:32:41] "CONNECT google.com:443 HTTP/1.1" 400 143
+[03/Apr/2024 18:07:04] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 18:45:38] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 19:22:24] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[03/Apr/2024 19:22:24] "  /*à     Cookie: mstshash=Administr" 400 -
+[03/Apr/2024 19:42:31] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 19:46:28] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 19:53:32] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 20:57:06] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 20:57:31] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 21:40:09] "GET http://httpbin.org/ip HTTP/1.1" 400 143
+[03/Apr/2024 21:55:04] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 22:10:03] code 400, message Bad request version ("3£¬.ê,TÐ\x8fËÏ\x9eë\x17\x83ê\x0ea@\x03ìzT\x1buE\x00>\x13\x02\x13\x03\x13\x01À,À0\x00\x9fÌ©Ì¨ÌªÀ+À/\x00\x9eÀ$À(\x00kÀ#À'\x00gÀ")
+[03/Apr/2024 22:10:03] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Apr/2024 22:10:35] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 22:10:38] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 22:10:41] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 22:10:44] code 400, message Bad request version ("3Êß\x19\x13i5ÀzØ\x96\x00>\x13\x02\x13\x03\x13\x01À,À0\x00\x9fÌ©Ì¨ÌªÀ+À/\x00\x9eÀ$À(\x00kÀ#À'\x00gÀ")
+[03/Apr/2024 22:10:44] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Apr/2024 22:11:23] "GET /favicon.ico HTTP/1.1" 404 179
+[03/Apr/2024 22:11:26] "GET /favicon.ico HTTP/1.1" 404 179
+[03/Apr/2024 22:11:30,061] - Broken pipe from ('164.52.0.94', 53601)
+[03/Apr/2024 22:31:42] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 23:09:02] "GET / HTTP/1.1" 404 179
+[03/Apr/2024 23:51:37] "GET /0bef HTTP/1.0" 400 143
+[04/Apr/2024 00:03:23,083] - Broken pipe from ('206.168.34.39', 43060)
+[04/Apr/2024 00:03:26] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 00:03:26,513] - Broken pipe from ('206.168.34.39', 40284)
+[04/Apr/2024 00:03:29] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 00:03:30] code 505, message Invalid HTTP version (2.0)
+[04/Apr/2024 00:03:30] "PRI * HTTP/2.0" 505 -
+[04/Apr/2024 00:32:49] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 00:51:25] "CONNECT example.com:80 HTTP/1.1" 400 143
+[04/Apr/2024 00:51:40] code 400, message Bad request syntax ('\x05\x01\x00')
+[04/Apr/2024 00:51:40] " " 400 -
+[04/Apr/2024 00:51:40] code 400, message Bad request syntax ('\x04\x01\x00P\x00\x00\x00\x01\x00example.com\x00')
+[04/Apr/2024 00:51:40] " P    example.com " 400 -
+[04/Apr/2024 01:10:03] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 01:10:04] code 505, message Invalid HTTP version (2.0)
+[04/Apr/2024 01:10:04] "PRI * HTTP/2.0" 505 -
+[04/Apr/2024 01:46:22] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 02:01:24] "CONNECT google.com:443 HTTP/1.1" 400 143
+[04/Apr/2024 02:25:02] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 02:54:42,457] - Broken pipe from ('23.224.198.111', 59378)
+[04/Apr/2024 03:03:03] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 03:19:18] "GET / HTTP/1.0" 400 143
+[04/Apr/2024 03:49:33] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 04:48:34,443] - Broken pipe from ('91.92.254.157', 61000)
+[04/Apr/2024 06:11:46] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 06:11:46] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 06:13:03] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 06:13:07] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 06:17:03] code 400, message Bad request version ('À\x13À')
+[04/Apr/2024 06:17:03] You're accessing the development server over HTTPS, but it only supports HTTP.
+[04/Apr/2024 06:17:03] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03\x16æ~N1<-\x19ð@\x84\x8bßa6;Ãm\x86N\x9aoO[×ß²G]Wþ|\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À")
+[04/Apr/2024 06:17:03] You're accessing the development server over HTTPS, but it only supports HTTP.
+[04/Apr/2024 06:27:00] "CONNECT google.com:443 HTTP/1.1" 400 143
+[04/Apr/2024 06:55:03] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 07:20:35] "CONNECT google.com:443 HTTP/1.1" 400 143
+[04/Apr/2024 07:21:14] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 07:21:14] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 07:34:33] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 08:28:17] code 400, message Bad request version ('À\x14À')
+[04/Apr/2024 08:28:17] You're accessing the development server over HTTPS, but it only supports HTTP.
+[04/Apr/2024 09:19:01] "GET / HTTP/1.0" 404 179
+[04/Apr/2024 09:42:17] "GET / HTTP/1.0" 404 179
+[04/Apr/2024 09:57:39] "GET / HTTP/1.0" 404 179
+[04/Apr/2024 11:04:45] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 11:24:35,200] - Broken pipe from ('185.224.128.34', 50052)
+[04/Apr/2024 11:43:40] "GET /c/ HTTP/1.1" 404 179
+[04/Apr/2024 11:44:04] "GET /c HTTP/1.1" 404 179
+[04/Apr/2024 11:48:44] "GET /c HTTP/1.1" 404 179
+[04/Apr/2024 11:49:38] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 11:49:47] "GET / HTTP/1.1" 400 143
+[04/Apr/2024 11:58:55] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 12:10:00] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 12:12:32] code 400, message Bad request version ('Ä\x90{úV»´[\x13yðÊºd\x1aM#$"Úr\x82C£\x86')
+[04/Apr/2024 12:12:32] You're accessing the development server over HTTPS, but it only supports HTTP.
+[04/Apr/2024 12:12:42] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 12:13:01] "GET /favicon.ico HTTP/1.1" 404 179
+[04/Apr/2024 12:13:01] "GET /robots.txt HTTP/1.1" 404 179
+[04/Apr/2024 12:13:02] "GET /sitemap.xml HTTP/1.1" 404 179
+[04/Apr/2024 12:17:24,052] - Broken pipe from ('167.94.146.56', 48510)
+[04/Apr/2024 12:17:27] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 12:17:27,628] - Broken pipe from ('167.94.146.56', 43190)
+[04/Apr/2024 12:17:30] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 12:17:31] code 505, message Invalid HTTP version (2.0)
+[04/Apr/2024 12:17:31] "PRI * HTTP/2.0" 505 -
+[04/Apr/2024 12:24:12] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 12:26:42] "GET /favicon.ico HTTP/1.1" 404 179
+[04/Apr/2024 12:27:21] "GET /geoserver/web/ HTTP/1.1" 404 179
+[04/Apr/2024 13:15:44] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 13:17:59] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 13:25:01,589] - Broken pipe from ('167.94.145.54', 55958)
+[04/Apr/2024 13:25:04] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 13:25:05,270] - Broken pipe from ('167.94.145.54', 48984)
+[04/Apr/2024 13:25:08] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 13:25:09] code 505, message Invalid HTTP version (2.0)
+[04/Apr/2024 13:25:09] "PRI * HTTP/2.0" 505 -
+[04/Apr/2024 13:27:09] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 14:19:53] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 15:43:46] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 16:14:15] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 16:21:54] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 16:28:55] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 16:43:35] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[04/Apr/2024 16:43:35] "  /*à     Cookie: mstshash=Administr" 400 -
+[04/Apr/2024 17:28:57] "                    GET / HTTP/1.0" 400 143
+[04/Apr/2024 17:42:29] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 18:22:40] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 18:22:41] "GET /favicon.ico HTTP/1.1" 404 179
+[04/Apr/2024 19:08:11] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 19:15:52] "CONNECT google.com:443 HTTP/1.1" 400 143
+[04/Apr/2024 19:44:18] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 19:52:14] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 20:01:08] "GET /hv8F HTTP/1.1" 404 179
+[04/Apr/2024 20:01:08] "GET /YQz9 HTTP/1.1" 404 179
+[04/Apr/2024 20:01:08] "GET /aab8 HTTP/1.1" 404 179
+[04/Apr/2024 20:01:09] "GET /jquery-3.3.1.slim.min.js HTTP/1.1" 404 179
+[04/Apr/2024 20:01:09] "GET /aab9 HTTP/1.1" 404 179
+[04/Apr/2024 20:01:09] "GET /jquery-3.3.2.slim.min.js HTTP/1.1" 404 179
+[04/Apr/2024 20:40:50] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[04/Apr/2024 20:40:50] "  /*à     Cookie: mstshash=Administr" 400 -
+[04/Apr/2024 20:42:38] code 400, message Bad request version ('À\x14À')
+[04/Apr/2024 20:42:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+[04/Apr/2024 21:53:40] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 22:29:15,187] - Broken pipe from ('54.90.91.236', 62948)
+[04/Apr/2024 22:58:13] "GET / HTTP/1.1" 404 179
+[04/Apr/2024 23:38:28] "HEAD /.env HTTP/1.1" 404 0
+[05/Apr/2024 00:12:56] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 00:25:08] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Ô\x0eñ¸`eD¦')
+[05/Apr/2024 00:25:08] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 00:25:08] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03NçF$þó|«óòú\x8e\x08\x13-´Úð!QB\x99êiÅÍ}/D^\x98\x93\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[05/Apr/2024 00:25:08] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 00:25:08] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 00:25:08] "GET /form.html HTTP/1.1" 404 179
+[05/Apr/2024 00:25:09] "GET /upl.php HTTP/1.1" 404 179
+[05/Apr/2024 00:25:09] code 400, message Bad request version ('À\x14À')
+[05/Apr/2024 00:25:09] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 00:25:09] "GET /geoip/ HTTP/1.1" 404 179
+[05/Apr/2024 00:25:09] "GET /favicon.ico HTTP/1.1" 404 179
+[05/Apr/2024 00:25:09] "GET /1.php HTTP/1.1" 404 179
+[05/Apr/2024 00:25:09] "GET /bundle.js HTTP/1.1" 404 179
+[05/Apr/2024 00:25:09] "GET /files/ HTTP/1.1" 404 179
+[05/Apr/2024 00:25:10] "GET /systembc/password.php HTTP/1.1" 404 179
+[05/Apr/2024 00:25:10] "GET /password.php HTTP/1.1" 404 179
+[05/Apr/2024 00:25:10] "GET /info.php HTTP/1.1" 404 179
+[05/Apr/2024 00:57:37,521] - Broken pipe from ('185.224.128.34', 42356)
+[05/Apr/2024 01:02:10] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 01:04:54] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 01:31:12] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 01:39:59] "CONNECT google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 02:11:17] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 03:05:08,943] - Broken pipe from ('80.94.92.60', 33170)
+[05/Apr/2024 03:30:02] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 03:35:04] "CONNECT google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 04:12:39] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 04:12:59] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 04:45:46] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 04:56:54] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 05:17:24] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[05/Apr/2024 05:17:24] "  /*à     Cookie: mstshash=Administr" 400 -
+[05/Apr/2024 06:05:11] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 06:53:49] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 06:54:15] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 07:08:15] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 07:20:49] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 07:32:17] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 09:56:15] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 10:25:10] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 10:31:09] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 10:44:38] code 400, message Bad request version ('À\x14À')
+[05/Apr/2024 10:44:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 10:45:13] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 10:45:31] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 10:49:37] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 11:37:18] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 11:56:21] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 12:07:26] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 12:30:08] "HEAD / HTTP/1.1" 404 0
+[05/Apr/2024 13:22:04] "CONNECT google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 13:27:35] code 400, message Bad request version ('À\x13À')
+[05/Apr/2024 13:27:35] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 13:27:35] code 400, message Bad request version ('À(À$À\x14À')
+[05/Apr/2024 13:27:35] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 13:30:20] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 13:57:29] "GET / HTTP/1.0" 400 143
+[05/Apr/2024 14:01:28] "GET /c HTTP/1.1" 404 179
+[05/Apr/2024 14:08:06] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 14:08:06] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 14:13:47] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 14:36:48] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 14:44:21] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 14:58:31] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 15:39:18] "GET /boaform/admin/formLogin?username=admin&psd=admin HTTP/1.0" 400 143
+[05/Apr/2024 16:01:09] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 16:04:27] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 17:19:54] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 17:35:58] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 17:42:42] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 18:08:31] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[05/Apr/2024 18:08:31] "  /*à     Cookie: mstshash=Administr" 400 -
+[05/Apr/2024 18:09:02] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 18:31:47] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 18:46:13] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 19:05:10] "ÛÍ@Cë0`°3º  ´GET / HTTP/1.0" 400 143
+[05/Apr/2024 19:20:11] "CONNECT google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 19:21:59] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 19:38:21] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 19:41:09] "CONNECT google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 20:16:00] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 20:18:24] "GET /favicon.ico HTTP/1.1" 404 179
+[05/Apr/2024 20:19:04] "GET /geoserver/web/ HTTP/1.1" 404 179
+[05/Apr/2024 20:21:58] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 20:55:48] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 21:12:44] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 21:16:08] "GET / HTTP/1.0" 404 179
+[05/Apr/2024 21:36:33] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 21:44:18] "GET / HTTP/1.0" 404 179
+[05/Apr/2024 22:26:48] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 22:47:59] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 22:47:59] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+[05/Apr/2024 22:47:59] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 22:48:00] code 400, message Bad request syntax ('\x16\x03\x01\x00ü\x01\x00\x00ø\x03\x03_¹;')
+[05/Apr/2024 22:48:00] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 22:48:00] code 400, message Bad request version ('\x16\x13¸ðs\x16\x82Ï°m\x05\x86XC')
+[05/Apr/2024 22:48:00] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 23:10:12] code 400, message Bad request version ('À\x13À')
+[05/Apr/2024 23:10:12] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 23:10:14] code 400, message Bad request syntax ('\x16\x03\x01\x00¡\x01\x00\x00\x9d\x03\x03î\x86g\x01Ã\x06a\x92\x15ãêo\x9d¼\x9d\x972\x89_Û·ö;{F\x8b\x07,f`eÒ\x00\x00*À+À/\x00\x9eÌ©Ì¨ÌªÀ')
+[05/Apr/2024 23:10:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[05/Apr/2024 23:10:22] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 23:24:02] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[05/Apr/2024 23:48:54,047] - Broken pipe from ('80.94.92.60', 44192)
+[05/Apr/2024 23:58:07] "GET / HTTP/1.1" 404 179
+[05/Apr/2024 23:58:08] code 505, message Invalid HTTP version (2.0)
+[05/Apr/2024 23:58:08] "PRI * HTTP/2.0" 505 -
+[06/Apr/2024 00:46:57] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 00:56:09] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 01:25:17] "CONNECT google.com:443 HTTP/1.1" 400 143
+[06/Apr/2024 01:39:45] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 02:01:35] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[06/Apr/2024 02:43:19] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 03:18:32] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 04:20:22] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 04:34:06] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[06/Apr/2024 04:45:21] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 05:19:24] code 400, message Bad request version ('À\x13À')
+[06/Apr/2024 05:19:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[06/Apr/2024 05:19:24] "GET /db_backup/ HTTP/1.1" 404 179
+[06/Apr/2024 05:43:29,581] - Broken pipe from ('167.94.146.55', 39006)
+[06/Apr/2024 05:43:32] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 05:43:33,151] - Broken pipe from ('167.94.146.55', 38176)
+[06/Apr/2024 05:43:36] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 05:43:37] code 505, message Invalid HTTP version (2.0)
+[06/Apr/2024 05:43:37] "PRI * HTTP/2.0" 505 -
+[06/Apr/2024 05:52:21] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 06:49:28] "CONNECT www.google.com:443 HTTP/1.1" 400 143
+[06/Apr/2024 07:26:14] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 07:27:25] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 07:28:27] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 07:33:55] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 07:36:43] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 07:53:47] "CONNECT google.com:443 HTTP/1.1" 400 143
+[06/Apr/2024 08:08:29] code 400, message Bad request version ('À\x13À')
+[06/Apr/2024 08:08:29] You're accessing the development server over HTTPS, but it only supports HTTP.
+[06/Apr/2024 08:08:30] code 400, message Bad request version ('À(À$À\x14À')
+[06/Apr/2024 08:08:30] You're accessing the development server over HTTPS, but it only supports HTTP.
+[06/Apr/2024 08:18:37] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 08:46:11] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 08:46:12] "GET /robots.txt HTTP/1.1" 404 179
+[06/Apr/2024 08:46:14] "GET /sitemap.xml HTTP/1.1" 404 179
+[06/Apr/2024 08:46:14,679] - Broken pipe from ('185.142.236.41', 45268)
+[06/Apr/2024 08:46:17] "GET /.well-known/security.txt HTTP/1.1" 404 179
+[06/Apr/2024 08:46:18,104] - Broken pipe from ('185.142.236.41', 47274)
+[06/Apr/2024 08:46:19,922] - Broken pipe from ('185.142.236.41', 46164)
+[06/Apr/2024 08:46:22] "GET /favicon.ico HTTP/1.1" 404 179
+[06/Apr/2024 09:03:42] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 09:18:58] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 09:55:54] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[06/Apr/2024 09:55:54] "  /*à     Cookie: mstshash=Administr" 400 -
+[06/Apr/2024 10:24:53] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 10:32:43] "POST /boaform/admin/formLogin HTTP/1.1" 404 179
+[06/Apr/2024 10:34:59] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 10:50:46] code 400, message Bad request version ('À\x14À')
+[06/Apr/2024 10:50:46] You're accessing the development server over HTTPS, but it only supports HTTP.
+[06/Apr/2024 11:09:42] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 11:20:45,776] - Broken pipe from ('185.224.128.34', 50514)
+[06/Apr/2024 12:22:28] "GET / HTTP/1.0" 400 143
+[06/Apr/2024 13:04:39] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[06/Apr/2024 13:04:39] "  /*à     Cookie: mstshash=Administr" 400 -
+[06/Apr/2024 13:30:10] "CONNECT google.com:443 HTTP/1.1" 400 143
+[06/Apr/2024 13:39:24] "CONNECT google.com:443 HTTP/1.1" 400 143
+[06/Apr/2024 14:32:10] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03')
+[06/Apr/2024 14:32:10] You're accessing the development server over HTTPS, but it only supports HTTP.
+[06/Apr/2024 14:48:34] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 15:11:06,898] - Broken pipe from ('120.85.116.92', 1953)
+[06/Apr/2024 15:11:56] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 15:11:56,843] - Broken pipe from ('157.245.92.19', 23554)
+[06/Apr/2024 15:50:51] code 400, message Bad request version ('À\x14À')
+[06/Apr/2024 15:50:51] You're accessing the development server over HTTPS, but it only supports HTTP.
+[06/Apr/2024 15:56:55] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 15:57:58] "GET /.env HTTP/1.1" 404 179
+[06/Apr/2024 16:03:23] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[06/Apr/2024 16:03:23] "  /*à     Cookie: mstshash=Administr" 400 -
+[06/Apr/2024 16:09:12] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 16:09:56] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 16:14:07] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 16:22:46] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 16:40:11] "GET /boaform/admin/formLogin?username=ec8&psd=ec8 HTTP/1.0" 400 143
+[06/Apr/2024 17:23:57] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 17:49:54] "GET / HTTP/1.0" 400 143
+[06/Apr/2024 18:06:14] "GET /.git/config HTTP/1.1" 404 179
+[06/Apr/2024 18:21:03] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 19:17:00] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 19:18:04] "CONNECT google.com:443 HTTP/1.1" 400 143
+[06/Apr/2024 19:47:57] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 20:11:35,392] - Broken pipe from ('54.90.91.236', 49921)
+[06/Apr/2024 21:23:02] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 21:41:27] "GET / HTTP/1.1" 404 179
+[06/Apr/2024 23:12:31] "HEAD /.env HTTP/1.1" 404 0
+[06/Apr/2024 23:33:00] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 00:35:24] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 00:35:38] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 01:18:29] "GET /.git/config HTTP/1.1" 404 179
+[07/Apr/2024 01:24:25] "GET / HTTP/1.1" 400 143
+[07/Apr/2024 01:36:20,395] - Broken pipe from ('185.224.128.34', 48656)
+[07/Apr/2024 01:39:14] "GET /.env HTTP/1.1" 404 179
+[07/Apr/2024 01:47:03] "CONNECT google.com:443 HTTP/1.1" 400 143
+[07/Apr/2024 02:15:55] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 02:45:16] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 02:54:30] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 04:50:34] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 05:07:19] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 05:32:49,013] - Broken pipe from ('185.224.128.34', 36592)
+[07/Apr/2024 06:10:14] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 06:39:25] "CONNECT google.com:443 HTTP/1.1" 400 143
+[07/Apr/2024 06:48:37] code 400, message Bad request version ('À\x14À')
+[07/Apr/2024 06:48:37] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 06:52:16] code 400, message Bad request version ('À\x14À')
+[07/Apr/2024 06:52:16] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 06:53:24] "GET /favicon.ico HTTP/1.1" 404 179
+[07/Apr/2024 06:56:25] code 400, message Bad request version ('À\x14À')
+[07/Apr/2024 06:56:25] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 06:57:42] "GET /manage/account/login HTTP/1.1" 404 179
+[07/Apr/2024 07:01:53] code 400, message Bad request version ('À\x14À')
+[07/Apr/2024 07:01:53] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 07:03:32] "GET /admin/index.html HTTP/1.1" 302 0
+[07/Apr/2024 07:07:55] code 400, message Bad request version ('À\x14À')
+[07/Apr/2024 07:07:55] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 07:09:17] "GET /index.html HTTP/1.1" 404 179
+[07/Apr/2024 07:13:29] code 400, message Bad request version ('À\x14À')
+[07/Apr/2024 07:13:29] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 07:14:42] "GET /+CSCOE+/logon.html HTTP/1.1" 404 179
+[07/Apr/2024 07:18:53] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00±\x01\x00\x00\xad\x03\x03H\x061\x11hß\x82Ci¤\x98#ª1c\x8cm\x9dù¾\x17ºv\x8e1¡\x0eïÀëäã\x00\x00PÀ/À+À\x11À\x07À\x13À')
+[07/Apr/2024 07:18:53] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 07:20:13] "GET /cgi-bin/login.cgi HTTP/1.1" 404 179
+[07/Apr/2024 07:20:25] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 07:24:27] code 400, message Bad request version ('À\x14À')
+[07/Apr/2024 07:24:27] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 07:25:52] "GET /logon.htm HTTP/1.1" 404 179
+[07/Apr/2024 07:26:03] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 07:30:46] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00±\x01\x00\x00\xad\x03\x03Æj=m>\x13\x84Xæé\x999eÀ?]¯ü\x9e½\x9f\x98~77ì®?\x96GXÉ\x00\x00PÀ/À+À\x11À\x07À\x13À')
+[07/Apr/2024 07:30:46] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 07:30:53] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 07:31:52] "GET /login.jsp HTTP/1.1" 404 179
+[07/Apr/2024 07:35:48] code 400, message Bad request version ('À\x14À')
+[07/Apr/2024 07:35:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 07:37:28] "GET /doc/index.html HTTP/1.1" 404 179
+[07/Apr/2024 07:43:17] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00±\x01\x00\x00\xad\x03\x03#í3ûkÊbÏüÞ;»9õ\x9e,öùh%\x96d\x92ç\x0fB@g¢\x83öp\x00\x00PÀ/À+À\x11À\x07À\x13À')
+[07/Apr/2024 07:43:17] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 07:58:11] "CONNECT google.com:443 HTTP/1.1" 400 143
+[07/Apr/2024 08:26:37,097] - Broken pipe from ('185.224.128.34', 38754)
+[07/Apr/2024 08:31:34] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 10:23:24] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 11:02:02] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 11:17:38] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 11:23:31] "GET / HTTP/1.0" 404 179
+[07/Apr/2024 11:41:08,399] - Broken pipe from ('185.224.128.34', 59942)
+[07/Apr/2024 12:00:44] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 12:28:50] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 13:15:01] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 14:10:27] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 14:10:45,461] - Broken pipe from ('185.224.128.34', 36180)
+[07/Apr/2024 15:12:24] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00î\x01\x00\x00ê\x03\x037\x823Ì\x86´#u!f\x7f\x02®#ÍIÑ¢Åä·C\x17\x18\x8eCî\\Ñ4üÄ')
+[07/Apr/2024 15:12:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 15:12:24] code 400, message Bad request version ('À(À$À\x14À')
+[07/Apr/2024 15:12:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 15:19:21,590] - Broken pipe from ('206.168.34.50', 54394)
+[07/Apr/2024 15:19:24] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 15:19:25,324] - Broken pipe from ('206.168.34.50', 40134)
+[07/Apr/2024 15:19:29] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 15:19:29] code 505, message Invalid HTTP version (2.0)
+[07/Apr/2024 15:19:29] "PRI * HTTP/2.0" 505 -
+[07/Apr/2024 16:26:13] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 16:54:06] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 16:54:06] "GET /.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:06] "GET /config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:06] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 16:54:07] "GET /git/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:07] "GET /git/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:08] "GET /git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:08] "GET /git HTTP/1.1" 404 179
+[07/Apr/2024 16:54:08] "GET /src/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:08] "GET /src/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:09] "GET /src/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:09] "GET /src HTTP/1.1" 404 179
+[07/Apr/2024 16:54:09] "GET /source/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:09] "GET /source/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:10] "GET /source/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:10] "GET /source HTTP/1.1" 404 179
+[07/Apr/2024 16:54:11] "GET /sources/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:11] "GET /sources/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:11] "GET /sources/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:11] "GET /sources HTTP/1.1" 404 179
+[07/Apr/2024 16:54:12] "GET /admin/.git/config HTTP/1.1" 302 0
+[07/Apr/2024 16:54:12] "GET /admin/ HTTP/1.1" 302 0
+[07/Apr/2024 16:54:12] "GET /admin/login/?next=/admin/.git/config HTTP/1.1" 200 4184
+[07/Apr/2024 16:54:12] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4162
+[07/Apr/2024 16:54:13,261] - Broken pipe from ('45.155.40.221', 54732)
+[07/Apr/2024 16:54:13,308] - Broken pipe from ('45.155.40.221', 54734)
+[07/Apr/2024 16:54:13] "GET /admin/config HTTP/1.1" 302 0
+[07/Apr/2024 16:54:13] "GET /admin HTTP/1.1" 301 0
+[07/Apr/2024 16:54:14] "GET /admin/login/?next=/admin/config HTTP/1.1" 200 4174
+[07/Apr/2024 16:54:14] "GET /admin/ HTTP/1.1" 302 0
+[07/Apr/2024 16:54:14,486] - Broken pipe from ('45.155.40.221', 46854)
+[07/Apr/2024 16:54:14] "GET /api/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:14] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4162
+[07/Apr/2024 16:54:15,182] - Broken pipe from ('45.155.40.221', 46868)
+[07/Apr/2024 16:54:15] "GET /api/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:15] "GET /api/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:16] "GET /rest/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:16] "GET /api HTTP/1.1" 404 179
+[07/Apr/2024 16:54:16] "GET /rest/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:16] "GET /rest/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:17] "GET /backend/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:17] "GET /rest HTTP/1.1" 404 179
+[07/Apr/2024 16:54:17] "GET /backend/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:17] "GET /backend/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:18] "GET /svc/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:18] "GET /backend HTTP/1.1" 404 179
+[07/Apr/2024 16:54:18] "GET /svc/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:19] "GET /svc/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:19] "GET /svc HTTP/1.1" 404 179
+[07/Apr/2024 16:54:19] "GET /service/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:20] "GET /service/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:20] "GET /service/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:20] "GET /service HTTP/1.1" 404 179
+[07/Apr/2024 16:54:20] "GET /services/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:21] "GET /services/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:21] "GET /services/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:21] "GET /services HTTP/1.1" 404 179
+[07/Apr/2024 16:54:21] "GET /app/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:22] "GET /app/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:22] "GET /app/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:22] "GET /app HTTP/1.1" 404 179
+[07/Apr/2024 16:54:23] "GET /data/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:23] "GET /data/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:23] "GET /data/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:24] "GET /data HTTP/1.1" 404 179
+[07/Apr/2024 16:54:24] "GET /bak/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:24] "GET /bak/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:24] "GET /bak/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:25] "GET /bak HTTP/1.1" 404 179
+[07/Apr/2024 16:54:25] "GET /backup/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:25] "GET /backup/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:26] "GET /backup/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:26] "GET /backup HTTP/1.1" 404 179
+[07/Apr/2024 16:54:26] "GET /test/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:27] "GET /test/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:27] "GET /test/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:27] "GET /test HTTP/1.1" 404 179
+[07/Apr/2024 16:54:27] "GET /temp/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:28] "GET /temp/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:28] "GET /temp/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:28] "GET /temp HTTP/1.1" 404 179
+[07/Apr/2024 16:54:29] "GET /tmp/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:29] "GET /tmp/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:29] "GET /tmp/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:30] "GET /tmp HTTP/1.1" 404 179
+[07/Apr/2024 16:54:30] "GET /lib/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:30] "GET /lib/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:30] "GET /lib/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:31] "GET /lib HTTP/1.1" 404 179
+[07/Apr/2024 16:54:31] "GET /libs/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:31] "GET /libs/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:32] "GET /libs/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:32] "GET /libs HTTP/1.1" 404 179
+[07/Apr/2024 16:54:32] "GET /cfg/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:32] "GET /cfg/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:33] "GET /cfg/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:33] "GET /cfg HTTP/1.1" 404 179
+[07/Apr/2024 16:54:33] "GET /conf/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:34] "GET /conf/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:34] "GET /conf/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:34] "GET /conf HTTP/1.1" 404 179
+[07/Apr/2024 16:54:35] "GET /config/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:35] "GET /config/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:35] "GET /config/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:35] "GET /config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:36] "GET /inc/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:36] "GET /inc/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:36] "GET /inc/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:36] "GET /inc HTTP/1.1" 404 179
+[07/Apr/2024 16:54:37] "GET /include/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:37] "GET /include/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:38] "GET /include/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:38] "GET /include HTTP/1.1" 404 179
+[07/Apr/2024 16:54:38] "GET /includes/.git/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:38] "GET /includes/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:39] "GET /includes/config HTTP/1.1" 404 179
+[07/Apr/2024 16:54:39] "GET /includes HTTP/1.1" 404 179
+[07/Apr/2024 16:54:39] "GET /upload/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:40] "GET /upload HTTP/1.1" 404 179
+[07/Apr/2024 16:54:41] "GET /uploads/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:41] "GET /uploads HTTP/1.1" 404 179
+[07/Apr/2024 16:54:42] "GET /download/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:42] "GET /download HTTP/1.1" 404 179
+[07/Apr/2024 16:54:43] "GET /downloads/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:44] "GET /downloads HTTP/1.1" 404 179
+[07/Apr/2024 16:54:44] "GET /files/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:45] "GET /files HTTP/1.1" 404 179
+[07/Apr/2024 16:54:45] "GET /log/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:46] "GET /log HTTP/1.1" 404 179
+[07/Apr/2024 16:54:47] "GET /logs/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:47] "GET /logs HTTP/1.1" 404 179
+[07/Apr/2024 16:54:48] "GET /cron/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:48] "GET /cron HTTP/1.1" 404 179
+[07/Apr/2024 16:54:49] "GET /wallet/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:50] "GET /wallet HTTP/1.1" 404 179
+[07/Apr/2024 16:54:50] "GET /wallets/ HTTP/1.1" 404 179
+[07/Apr/2024 16:54:51] "GET /wallets HTTP/1.1" 404 179
+[07/Apr/2024 17:17:09] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 17:28:03] "GET / HTTP/1.0" 400 143
+[07/Apr/2024 17:41:39] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 17:43:50] "GET /favicon.ico HTTP/1.1" 404 179
+[07/Apr/2024 17:44:18] "GET /geoserver/web/ HTTP/1.1" 404 179
+[07/Apr/2024 17:47:28,975] - Broken pipe from ('91.165.219.122', 62861)
+[07/Apr/2024 17:52:43,925] - Broken pipe from ('185.224.128.34', 45462)
+[07/Apr/2024 18:15:58] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03&³\xadñårS{ò2\x1açÂ\x16<IOFö¿\x16n>öm\x06Ñö\x01³U¡\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[07/Apr/2024 18:15:58] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 18:25:57] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 19:16:16] "CONNECT google.com:443 HTTP/1.1" 400 143
+[07/Apr/2024 19:44:44] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 19:51:58] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 20:31:47] "GET http://httpbin.org/ip HTTP/1.1" 400 143
+[07/Apr/2024 20:38:19] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[07/Apr/2024 20:38:19] "  /*à     Cookie: mstshash=Administr" 400 -
+[07/Apr/2024 20:46:29] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 21:17:18,264] - Broken pipe from ('185.224.128.34', 55818)
+[07/Apr/2024 21:20:43] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 21:28:45] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 21:57:19] "CONNECT google.com:443 HTTP/1.1" 400 143
+[07/Apr/2024 22:06:17] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 22:10:21,907] - Broken pipe from ('54.90.91.236', 61170)
+[07/Apr/2024 22:31:29] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 22:42:21] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 23:47:31] "GET / HTTP/1.1" 404 179
+[07/Apr/2024 23:52:39,682] - Broken pipe from ('159.223.17.183', 54777)
+[07/Apr/2024 23:52:50] "GET / HTTP/1.0" 400 143
+[07/Apr/2024 23:52:51] "OPTIONS / HTTP/1.0" 400 143
+[07/Apr/2024 23:52:57] code 400, message Bad request version ('\x00/\x00')
+[07/Apr/2024 23:52:57] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 23:52:57] "POST /sdk HTTP/1.1" 404 179
+[07/Apr/2024 23:52:58] "GET /nmaplowercheck1712505176 HTTP/1.1" 404 179
+[07/Apr/2024 23:52:59] "GET /HNAP1 HTTP/1.1" 404 179
+[07/Apr/2024 23:52:59] "GET /evox/about HTTP/1.1" 404 179
+[07/Apr/2024 23:53:02] code 400, message Bad request version ("$\x19§>0³n4Q¯-\x07EÐå\x00\x96\x13\x02\x13\x03\x13\x01\x003\x009\x005\x00/À,À0\x00£\x00\x9fÌ©Ì¨ÌªÀ¯À\xadÀ£À\x9fÀ]ÀaÀWÀSÀ+À/\x00¢\x00\x9eÀ®À¬À¢À\x9eÀ\\À`ÀVÀRÀ$À(\x00k\x00jÀsÀw\x00Ä\x00ÃÀ#À'\x00g\x00@ÀrÀv\x00¾\x00½À")
+[07/Apr/2024 23:53:02] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 23:53:02] code 400, message Bad HTTP/0.9 request type ('\x80\x00\x00(DÝ^x\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86')
+[07/Apr/2024 23:53:02] "  (DÝ^x                                " 400 -
+[07/Apr/2024 23:53:02] code 400, message Bad request version ("Àj¿îñ\x96z\x99\x18©²½ÉÂq¸÷\x95È\x05\x06Ì\x8f²ìµ¬\x9b\x98U\x00\x96\x13\x02\x13\x03\x13\x01\x003\x009\x005\x00/À,À0\x00£\x00\x9fÌ©Ì¨ÌªÀ¯À\xadÀ£À\x9fÀ]ÀaÀWÀSÀ+À/\x00¢\x00\x9eÀ®À¬À¢À\x9eÀ\\À`ÀVÀRÀ$À(\x00k\x00jÀsÀw\x00Ä\x00ÃÀ#À'\x00g\x00@ÀrÀv\x00¾\x00½À")
+[07/Apr/2024 23:53:02] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 23:53:03] code 400, message Bad request version ("1Ê\x97\x8f7\x9cs\x8b\x05yÒÿRL\x05#\x00\x96\x13\x02\x13\x03\x13\x01\x003\x009\x005\x00/À,À0\x00£\x00\x9fÌ©Ì¨ÌªÀ¯À\xadÀ£À\x9fÀ]ÀaÀWÀSÀ+À/\x00¢\x00\x9eÀ®À¬À¢À\x9eÀ\\À`ÀVÀRÀ$À(\x00k\x00jÀsÀw\x00Ä\x00ÃÀ#À'\x00g\x00@ÀrÀv\x00¾\x00½À")
+[07/Apr/2024 23:53:03] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 23:53:06] code 400, message Bad request syntax ('\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03\x83ý')
+[07/Apr/2024 23:53:06] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 23:53:06] "GET /cgi-bin/authLogin.cgi HTTP/1.1" 404 179
+[07/Apr/2024 23:53:06] code 400, message Bad request version ('À\x13À')
+[07/Apr/2024 23:53:06] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 23:53:07] code 400, message Bad request version ('À\x13À')
+[07/Apr/2024 23:53:07] You're accessing the development server over HTTPS, but it only supports HTTP.
+[07/Apr/2024 23:53:07] "GET /query?q=SHOW+DIAGNOSTICS HTTP/1.1" 404 179
+[07/Apr/2024 23:53:07] "GET /v2/_catalog HTTP/1.1" 404 179
+[07/Apr/2024 23:53:16] "GET /solr/admin/info/system HTTP/1.1" 404 179
+[07/Apr/2024 23:53:17] "GET /solr/admin/cores?action=STATUS&wt=json HTTP/1.1" 404 179
+[07/Apr/2024 23:58:42] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 00:14:59,284] - Broken pipe from ('185.224.128.34', 60088)
+[08/Apr/2024 00:31:40] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 00:33:56] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 01:34:44,729] - Broken pipe from ('162.142.125.215', 58358)
+[08/Apr/2024 01:34:47] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 01:34:48,275] - Broken pipe from ('162.142.125.215', 46428)
+[08/Apr/2024 01:34:51] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 01:34:52] code 505, message Invalid HTTP version (2.0)
+[08/Apr/2024 01:34:52] "PRI * HTTP/2.0" 505 -
+[08/Apr/2024 01:45:12] "CONNECT google.com:443 HTTP/1.1" 400 143
+[08/Apr/2024 02:17:43] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 02:36:51,332] - Broken pipe from ('167.94.138.52', 53858)
+[08/Apr/2024 02:36:54] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 02:36:54,942] - Broken pipe from ('167.94.138.52', 40908)
+[08/Apr/2024 02:36:58] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 02:36:58] code 505, message Invalid HTTP version (2.0)
+[08/Apr/2024 02:36:58] "PRI * HTTP/2.0" 505 -
+[08/Apr/2024 03:04:10] "                    GET / HTTP/1.0" 400 143
+[08/Apr/2024 03:06:46,582] - Broken pipe from ('185.224.128.34', 47430)
+[08/Apr/2024 03:14:31] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 03:46:49] "GET /feed/jolts.rss HTTP/1.1" 400 143
+[08/Apr/2024 03:58:50] "GET /feed/jolts.rss HTTP/1.1" 400 143
+[08/Apr/2024 04:09:30] "GET / HTTP/1.0" 400 143
+[08/Apr/2024 04:41:20] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 06:05:59] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03k\x9f\x8d§ÙßF\x06¸ýð^\x13\x0e\x7f(?\x86{\x11ì\x9azõðÊ´Ú¾\x8f,K\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[08/Apr/2024 06:05:59] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:07:55] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:07:55] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:09:28] "GET /favicon.ico HTTP/1.1" 404 179
+[08/Apr/2024 06:11:28] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:11:28] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:13:20] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 06:13:21] "GET /manage/account/login HTTP/1.1" 404 179
+[08/Apr/2024 06:17:22] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:17:22] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:19:23] "GET /admin/index.html HTTP/1.1" 302 0
+[08/Apr/2024 06:22:41] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00±\x01\x00\x00\xad\x03\x03ùC¨°µ©HF\x94\xadÜ\x0e4ÿWü[¿kb¤nÌS©Kõ|Ghò|\x00\x00PÀ/À+À\x11À\x07À\x13À')
+[08/Apr/2024 06:22:41] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:24:16] "GET /index.html HTTP/1.1" 404 179
+[08/Apr/2024 06:27:57] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:27:57] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:34:22] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:34:22] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:36:31] "GET /cgi-bin/login.cgi HTTP/1.1" 404 179
+[08/Apr/2024 06:36:54] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03¦5àqá\x8aþ^U\x94Ú¡')
+[08/Apr/2024 06:36:54] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:36:55] code 400, message Bad request version ('À(À$À\x14À')
+[08/Apr/2024 06:36:55] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:40:34,343] - Broken pipe from ('185.224.128.34', 56372)
+[08/Apr/2024 06:40:37] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:40:37] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:42:34] "GET /logon.htm HTTP/1.1" 404 179
+[08/Apr/2024 06:46:26] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:46:26] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:47:58] "GET /login.jsp HTTP/1.1" 404 179
+[08/Apr/2024 06:51:17] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:51:17] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:52:46] "GET /feed/jolts.rss HTTP/1.1" 400 143
+[08/Apr/2024 06:52:48] "GET /doc/index.html HTTP/1.1" 404 179
+[08/Apr/2024 06:56:12] code 400, message Bad request version ('À\x14À')
+[08/Apr/2024 06:56:12] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 06:58:00] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 07:28:18] "CONNECT google.com:443 HTTP/1.1" 400 143
+[08/Apr/2024 08:47:26] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 08:48:09] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 08:48:12] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 09:03:27] "CONNECT google.com:443 HTTP/1.1" 400 143
+[08/Apr/2024 09:41:02] "GET / HTTP/1.1" 400 143
+[08/Apr/2024 10:04:26] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 10:15:48,497] - Broken pipe from ('185.224.128.34', 52630)
+[08/Apr/2024 10:42:16] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 12:20:43] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[08/Apr/2024 12:20:43] "  /*à     Cookie: mstshash=Administr" 400 -
+[08/Apr/2024 13:05:19] code 400, message Bad request version ("uB'\x97\x840Å\x00>\x13\x02\x13\x03\x13\x01À,À0\x00\x9fÌ©Ì¨ÌªÀ+À/\x00\x9eÀ$À(\x00kÀ#À'\x00gÀ")
+[08/Apr/2024 13:05:19] You're accessing the development server over HTTPS, but it only supports HTTP.
+[08/Apr/2024 13:28:56] "CONNECT google.com:443 HTTP/1.1" 400 143
+[08/Apr/2024 13:54:29] "GET /.env HTTP/1.1" 404 179
+[08/Apr/2024 13:54:30] "POST / HTTP/1.1" 404 179
+[08/Apr/2024 14:23:37] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 14:24:36] "GET /.env HTTP/1.1" 404 179
+[08/Apr/2024 14:29:32] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 14:29:33] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 14:29:34] "GET /favicon.ico HTTP/1.1" 404 179
+[08/Apr/2024 14:29:35] "GET /robots.txt HTTP/1.1" 404 179
+[08/Apr/2024 14:43:35] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[08/Apr/2024 14:43:35] "  /*à     Cookie: mstshash=Administr" 400 -
+[08/Apr/2024 15:01:39] "GET / HTTP/1.0" 404 179
+[08/Apr/2024 15:05:16] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 15:07:50] "GET /favicon.ico HTTP/1.1" 404 179
+[08/Apr/2024 15:08:18] "GET /geoserver/web/ HTTP/1.1" 404 179
+[08/Apr/2024 15:49:50] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 16:02:53,920] - Broken pipe from ('185.224.128.34', 44350)
+[08/Apr/2024 16:11:56] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 16:33:59,277] - Broken pipe from ('157.230.8.75', 49222)
+[08/Apr/2024 16:33:59,763] - Broken pipe from ('157.230.8.75', 49234)
+[08/Apr/2024 16:39:21] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 16:39:22] "GET /favicon.ico HTTP/1.1" 404 179
+[08/Apr/2024 16:44:36] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:44:38] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:45:22] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:45:41] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 16:46:01] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:46:14] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 16:47:16] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:47:39] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:48:48] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 16:49:28] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:49:52] "GET /credit/rootExclusive HTTP/1.1" 200 763
+[08/Apr/2024 16:50:13] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:51:04,962] - Broken pipe from ('10.23.22.12', 61522)
+[08/Apr/2024 16:51:04,963] - Broken pipe from ('10.23.22.12', 61502)
+[08/Apr/2024 16:51:17] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 16:52:14] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 16:52:14] "GET /favicon.ico HTTP/1.1" 404 179
+[08/Apr/2024 16:52:37] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 16:52:42] "POST /credit/IMCreditCount HTTP/1.1" 200 36105
+[08/Apr/2024 16:52:43] "GET /media/image/im_water.png HTTP/1.1" 200 197720
+[08/Apr/2024 16:52:46] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 16:55:47] "POST /credit/IMCreditCount HTTP/1.1" 500 145
+[08/Apr/2024 16:56:35,041] - Broken pipe from ('10.23.22.12', 52606)
+[08/Apr/2024 16:56:35,041] - Broken pipe from ('10.23.22.12', 52607)
+[08/Apr/2024 17:01:52] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 17:25:19] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:34:46] "GET /credit/IMCreditCount/ HTTP/1.1" 404 179
+[08/Apr/2024 17:34:49] "GET /credit/IMCreditCount/ HTTP/1.1" 404 179
+[08/Apr/2024 17:35:14] "GET /credit/IMCreditCount/ HTTP/1.1" 404 179
+[08/Apr/2024 17:35:14] "GET /credit/IMCreditCount/ HTTP/1.1" 404 179
+[08/Apr/2024 17:35:39] "GET /credit/IMCreditCount/ HTTP/1.1" 404 179
+[08/Apr/2024 17:35:48] "GET /credit/IMCreditCount/ HTTP/1.1" 404 179
+[08/Apr/2024 17:35:51] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:36:07] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:36:28] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:36:31] "GET /ce HTTP/1.1" 404 179
+[08/Apr/2024 17:36:33] "GET /ce HTTP/1.1" 404 179
+[08/Apr/2024 17:36:36] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:36:49] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:36:51] "GET /ce HTTP/1.1" 404 179
+[08/Apr/2024 17:36:52] "GET /ce HTTP/1.1" 404 179
+[08/Apr/2024 17:36:55] "GET /ces HTTP/1.1" 404 179
+[08/Apr/2024 17:37:02] "GET /ddd HTTP/1.1" 404 179
+[08/Apr/2024 17:37:30] "GET / HTTP/1.1" 404 179
+[08/Apr/2024 17:37:40] "GET /ce HTTP/1.1" 404 179
+[08/Apr/2024 17:38:12] "GET /ce HTTP/1.1" 404 179
+[08/Apr/2024 17:38:41] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:38:56] "POST /credit/IMCreditCount HTTP/1.1" 403 1018
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 02, 2024 - 10:26:51
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+特色體育未達標, 只修  0  堂
+特色體育未達標, 只修  1  堂
+特色體育未達標, 只修  0  堂
+特色體育未達標, 只修  1  堂
+特色體育未達標, 只修  0  堂
+特色體育未達標, 只修  1  堂
+特色體育未達標, 只修  0  堂
+特色體育未達標, 只修  1  堂
+特色體育未達標, 只修  0  堂
+特色體育未達標, 只修  1  堂
+特色體育未達標, 只修  0  堂
+特色體育未達標, 只修  1  堂
+[08/Apr/2024 17:41:29] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 08, 2024 - 17:39:59
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 08, 2024 - 17:41:51
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+[08/Apr/2024 17:43:26] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:43:33] "POST /credit/IMCreditCount HTTP/1.1" 403 1018
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 08, 2024 - 17:43:02
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/www/imCredit/static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[08/Apr/2024 17:44:05] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+Forbidden (Origin checking failed - https://grade.im.ncnu.edu.tw does not match any trusted origins.): /credit/IMCreditCount
+[08/Apr/2024 17:44:08] "POST /credit/IMCreditCount HTTP/1.1" 403 2575
+Performing system checks...
+
+April 08, 2024 - 17:44:03
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/www/imCredit/static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[08/Apr/2024 17:45:40] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:45:50] "POST /credit/IMCreditCount HTTP/1.1" 200 35980
+[08/Apr/2024 17:46:15] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:46:28] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:46:44] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+Not Found: /
+[08/Apr/2024 17:49:42] "GET / HTTP/1.1" 404 2674
+[08/Apr/2024 17:49:52] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 17:50:10] "POST /credit/IMCreditCount HTTP/1.1" 200 35980
+[08/Apr/2024 17:54:48] code 400, message Bad request version ('Þ¤ÀÆ\x03')
+[08/Apr/2024 17:54:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[08/Apr/2024 17:54:51] "OPTIONS / HTTP/1.0" 404 2675
+[08/Apr/2024 18:03:37,531] - Broken pipe from ('124.220.11.157', 47458)
+Not Found: /
+[08/Apr/2024 18:39:28] "GET / HTTP/1.1" 404 2671
+[08/Apr/2024 19:17:07] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 19:28:50,475] - Broken pipe from ('185.224.128.34', 60846)
+Invalid HTTP_HOST header: 'google.com:443'. You may need to add 'google.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/dist-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.10/dist-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/usr/local/lib/python3.10/dist-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'google.com:443'. You may need to add 'google.com' to ALLOWED_HOSTS.
+Bad Request: /google.com:443
+[08/Apr/2024 19:31:49] "CONNECT google.com:443 HTTP/1.1" 400 59037
+[08/Apr/2024 20:20:58] "POST /credit/IMCreditCount HTTP/1.1" 200 35980
+[08/Apr/2024 20:21:43] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:21:45] "POST /credit/IMCreditCount HTTP/1.1" 200 35980
+[08/Apr/2024 20:22:09] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:22:17] "POST /credit/IMCreditCount HTTP/1.1" 200 36105
+[08/Apr/2024 20:22:18] "GET /credit/same HTTP/1.1" 200 4460
+[08/Apr/2024 20:22:32] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:22:34] "POST /credit/IMCreditCount HTTP/1.1" 200 36087
+[08/Apr/2024 20:22:36] "GET /credit/same HTTP/1.1" 200 4460
+[08/Apr/2024 20:22:39] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:22:52] "POST /credit/IMCreditCount HTTP/1.1" 200 36087
+[08/Apr/2024 20:23:01] "GET /credit/same HTTP/1.1" 200 4460
+[08/Apr/2024 20:23:04] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:23:47] "POST /credit/IMCreditCount HTTP/1.1" 200 39589
+[08/Apr/2024 20:24:22] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:25:05] "POST /credit/IMCreditCount HTTP/1.1" 200 39589
+Not Found: /
+[08/Apr/2024 20:26:23] "GET / HTTP/1.1" 404 2671
+[08/Apr/2024 20:27:03] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:27:05] "POST /credit/IMCreditCount HTTP/1.1" 200 36105
+/var/www/imCredit/im/views.py changed, reloading.
+Performing system checks...
+
+April 08, 2024 - 17:45:37
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+特色體育未達標, 只修  0  堂
+特色體育未達標, 只修  1  堂
+特色體育未達標, 只修  0  堂
+特色體育未達標, 只修  1  堂
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/www/imCredit/static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[08/Apr/2024 20:35:48] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:36:53] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:36:58] "POST /credit/IMCreditCount HTTP/1.1" 200 36105
+[08/Apr/2024 20:40:19] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:40:22] "POST /credit/IMCreditCount HTTP/1.1" 200 36105
+[08/Apr/2024 20:40:38] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:40:48] "POST /credit/IMCreditCount HTTP/1.1" 200 36466
+/var/www/imCredit/im/views.py changed, reloading.
+Performing system checks...
+
+April 08, 2024 - 20:27:27
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/www/imCredit/static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+Performing system checks...
+
+April 08, 2024 - 20:42:52
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/www/imCredit/static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[08/Apr/2024 20:43:31] "GET /credit/IMCreditCount HTTP/1.1" 200 3443
+[08/Apr/2024 20:43:39] "POST /credit/IMCreditCount HTTP/1.1" 200 36599
+Performing system checks...
+
+April 08, 2024 - 20:43:28
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/www/imCredit/static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[08/Apr/2024 20:44:40] "POST /credit/IMCreditCount HTTP/1.1" 200 36105
+[08/Apr/2024 20:44:50] "GET /credit/same HTTP/1.1" 200 4460
+Performing system checks...
+
+April 08, 2024 - 20:44:39
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/www/imCredit/static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[08/Apr/2024 20:46:22] "POST /credit/IMCreditCount HTTP/1.1" 200 36105
+Performing system checks...
+
+April 08, 2024 - 20:46:20
+Django version 5.0.3, using settings 'credit.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+
+False 機率與統計
+False 基礎班英文二
+False 土木系社會服務學習(上)
+False 土木系英文(上)
+True 中文思辨與表達一：閱讀書寫（科技學院H）
+False 作業研究
+False 高等運輸規劃
+False 地工合成材之工程應用
+False 水處理工程
+False 專題研究(五)
+False 計算機程式
+False 工程數學(上)
+False 工程數學(下)
+False 水利工程
+False 土木工程實驗(二)
+False 專題研究(一)
+False 專題研究(三)
+False 專題研究(四)
+False 地理資訊系統
+False 施工法
+False 運輸系統導論
+False 土木工程設計實作
+False 土木系社會服務學習(下)
+False 決策思考力
+False 運動傷害與急救
+False R立方創新實作：地方微型創業提案
+False 跨文化溝通在社區
+False 普通物理
+False 基礎工程
+False 微積分(上)
+False 鋼筋混凝土學
+False 土木工程實驗(一)
+False 工程經濟
+False 土壤力學
+False 流體力學
+False 普通物理實驗
+False 運輸工程
+False 工程材料
+False 工程圖學
+False 微積分(下)
+False 環境工程
+False 體育:游泳
+False 材料力學
+False 靜力學
+False 水文學
+False 測量學
+False 測量實習
+False 土木工程概論
+False 大一體育(下：羽球)
+False 土木系大一體育(上)

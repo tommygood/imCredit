@@ -61,13 +61,17 @@ text-align : center;
     left: 0%;
 }
 
+#id_domain {
+    display:none;
+}
+
 </style>
 <title>
 暨大資管學分檢核表-學士班
 </title>
 <strong>
 <div align = center style = "font-size:34px;">
-國立暨南國際大學 資訊管理學系
+國立暨南國際大學 土木工程學系
 <br/>
 <br/>
 畢業學分學生自我檢核表
@@ -89,9 +93,6 @@ text-align : center;
     {{ form.year }}
     <br/>
     <div id = "sel_text">
-    <b>
-    選擇次領域：
-    </b>
     </div>
     <br/>
     {{ form.domain }}
@@ -109,5 +110,8 @@ text-align : center;
 </form>
 </body>
 </html>
+<script>
+document.getElementById("id_domain_0").checked = true;
+</script>
 
 

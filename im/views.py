@@ -44,7 +44,7 @@ def Credit(request) : # 選擇學年及領域頁面
                 if request.POST['domain']== "2" : # 管理
                     return creMain(request, 2, request.POST['year'], stand)
             elif request.POST['year'] == "109" : # 109 學年
-                stand = [12.0, 19.0, 15.0, 30.0, 24.0, 12.0, 20.0]
+                stand = [12.0, 19.0, 0, 73.0, 28.0, 0, 0.0]
                 request.session['stand'] = stand
                 if request.POST['domain']== "1" : # 技術
                     return creMain(request, 1, request.POST['year'], stand)
@@ -454,15 +454,25 @@ def ckNecessary(same, lec_same_cre, stand) : # 檢查領域是否有必修還沒
     if lec_same_cre < stand[0] : # 學分沒到
         return False
     # 檢查必修過了沒
-    data_name = ['英文上','英文下','英文二','國文上','國文下','資管系服務學習(上)','資管系服務學習(下)','大一體育(上)','大一體育(下)'] # 全部必修課名
+    data_name = ['英文上','英文下','英文二','國文上','國文下','土木系服務學習(上)','土木系服務學習(下)','大一體育(上)','大一體育(下)'] # 全部必修課名
     same_nece = True
     same_name_only = [] # 只有上過的課名，把是不是必修拿掉
     for lec_name, necess in same :
         same_name_only.append(lec_name)
-    print(same_name_only)
+
+    # 檢查特色體育有沒有修超過兩堂
+    special_num = 0
+    for course in same_name_only :
+        if "體育:" in course :
+            special_num += 1
+    if special_num < 2 :
+        print("特色體育未達標, 只修 ", special_num, " 堂")
+        return False
+
     for i in data_name : # 找所有的必修課
         if not i in same_name_only : # 有一
             same_nece = False
+            print("必修 ", i, " 還沒修")
             #return [i, same_name_only]
             break
     return same_nece
@@ -574,11 +584,12 @@ def lecSame(lec_name) : # 全校共同課程
     if lec_name == "英文寫作一(上)" or lec_name == "英文寫作一(下)" or '進修英文' in lec_name :
         return False, False
     is_over = False
-    if "僑外生華語文(上)" in lec_name :
+    if "僑外生華語文(上)" in lec_name or ("中文思辨與表達一" in lec_name and "科技學院" in lec_name) :
         is_over = True
         over_lec_name = lec_name
         lec_name = "國文上"
-    if "僑外生華語文(下)" in lec_name :
+    if "僑外生華語文(下)" in lec_name or ("中文思辨與表達二" in lec_name and "科技學院" in lec_name) :
+        is_over = True
         is_over = True
         over_lec_name = lec_name
         lec_name = "國文下"
@@ -924,9 +935,9 @@ def mkLec(path, year) : # 製作不同領域課程 list
     return True
 
 def ckOverseas(course_name) : # 僑生華語文可以抵國文
-    if "僑外生華語文(上)" in course_name :
+    if "僑外生華語文(上)" in course_name or ("中文思辨與表達一" in course_name and "科技學院" in course_name) :
         return True
-    elif "僑外生華語文(下)" in course_name :
+    elif "僑外生華語文(下)" in course_name or ("中文思辨與表達二" in course_name and "科技學院" in course_name) :
         return True
     else :
         return False

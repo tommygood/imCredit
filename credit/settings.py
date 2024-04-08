@@ -26,9 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-71jav%wr-zw3-!lsv3#%@ty%^%71rxwo4zwu4%d_m@66ze%@y_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["grade.im.ncnu.edu.tw", "localhost"]
+ALLOWED_HOSTS = ["163.22.17.208", "localhost", "grade.im.ncnu.edu.tw", "www.ce.ncnu.edu.tw"]
+
+CSRF_TRUSTED_ORIGINS = ['https://grade.im.ncnu.edu.tw', "https://www.ce.ncnu.edu.tw"]
 
 
 # Application definition
@@ -147,12 +149,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SSL
 # secure proxy SSL header and secure cookies
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
 # session expire at browser close
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # wsgi scheme
-os.environ['wsgi.url_scheme'] = 'https'
+#os.environ['wsgi.url_scheme'] = 'https'

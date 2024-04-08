@@ -44,53 +44,7 @@
         </h1>
     </head>
     <body>
-        <div> 規則 : 綠字為已修過。次領域 <b>2</b> 選 <b>1</b> ，選擇的領域需 <b> {{ stand.4 }} </b>學分(以下課程均為 <b>3</b> 學分)，最後全部(主領域+其他領域)需 <b>{{ total_pro }}</b> 學分。 </div>
-        <br/>
-        <table border = 1>
-	    <tr>
-                <td rowspan = 2 width = "50%"> <b><span id = "blue_txt">資訊技術與系統開發次領域</span></b> </td>
-                    {% for key, value in tech_dic.items %}
-		        <td>
-			    {{ value.1 }}
-		        </td>
-	            {% endfor %}
-	    </tr>
-	    <tr>
-                {% for key, value in tech_dic.items %}
-		    <td>
-                        {% if value.0 == 1 %}
-                            <b><span id = "green_txt">{{ key }}<br/>✓</span></b>
-                        {% else %}
-                            {{ key }}
-                        {% endif %}
-		    </td>
-                {% endfor %}
-	    </tr>
-        </table>
-        <br/>
-        <table border = 1>
-	    <tr>
-                <td rowspan = 2 width = "50%"> <b><span id = "oran_txt">資訊管理與決策科學次領域</span></b> </td>
-                    {% for key, value in mana_dic.items %}
-		        <td>
-			    {{ value.1 }}
-		        </td>
-	            {% endfor %}
-	    </tr>
-	    <tr>
-                {% for key, value in mana_dic.items %}
-		    <td>
-                        {% if value.0 == 1 %}
-                            <b><span id = "green_txt">{{ key }}<br/>✓</span></b>
-                        {% else %}
-                            {{ key }}
-                        {% endif %}
-		    </td>
-                {% endfor %}
-	    </tr>
-        </table>
-        <br/>
-        <br/>
+        <div> 規則 : 綠字為已修過，總共需修 <b> {{ stand.4 }} </b>學分 </div>
         <br/>
         <br/>
         <table id = "tb" border = 1>

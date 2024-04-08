@@ -149,7 +149,7 @@ img {
     <img id = 'water'></img>
     <strong>
         <div id = "txt" align = center>
-            國立暨南國際大學 資訊管理學系
+            國立暨南國際大學 土木工程學系
         </div>
         <br/>
         <div id = "txt" align = center>
@@ -164,13 +164,6 @@ img {
             <td id = 'name'>{{name}}</td>
             <td><b>學年</b></td>
             <td id = 'stu_year'>{{year}}</td>
-            <td><b>次領域</b></td>
-            {% if domain == 1 %}
-                <td>資訊技術與系統開發</td>
-            {% endif %}
-            {% if domain == 2 %}
-                <td>資訊管理與決策科學</td>
-            {% endif %}
 	    <td><b>目前已修習學分數</b></td>
         <td style = "border-right:3px solid #484891;">{{ fin_cre }}</td>
         </tr>
@@ -182,10 +175,8 @@ img {
                 最低畢業門檻：<b>{{ total_stand }}</b> 學分，分別為以下：<br/>
                 <a href = "same">全校共同課程：</a> <b>{{ stand.0 }}</b>，
                 <a href = "tongs">通識領域課程：</a> <b>{{ stand.1 }}</b>，
-                <a href = "college">院必修：</a><b>{{ stand.2 }}</b>，
                 <a href = "department">系必修：</a> <b>{{ stand.3 }}</b>，
-		<a href = "profession">次領域+系專業選修：</a> <b>{{ stand.4 }}＋{{ stand.5 }}</b>，
-                <a href = "free">自由選修：</a> <b>{{ stand.6 }}</b>。
+		<a href = "profession">系專業選修</a> <b>{{ stand.4 }}</b>。
             </td>
         </tr>
         <tr style = "border-top:3px solid #484891;">
@@ -496,40 +487,10 @@ img {
                 </tr>
             {% endfor %}
             <tr style = "border-top:3px solid #484891">
-                <td rowspan = {{ college_name_cre|length }} style = "border-left:3px solid #484891">
-                    院必修課程<br/>
-                    {{ college_name_cre.total_cre }}/{{ stand.2 }}<br/>
-                    {% if college_name_cre.total_cre !=  stand.2  %}
-                        <b><span id = "red_txt">未達規定門檻</span></b>
-                    {% else %}
-                        <b> 已達規定門檻 </b>
-                    {% endif %}
-                </td>
-               {% if college_name_cre|length < 2 %}
-                   <td colspan = "12" style = "border-right:3px solid #484891">
-                   </td> 
-               {% endif %}
-            </tr>
-            {% for key, value in college_name_cre.items %}
-                {% if forloop.counter0 != 0  %}
-                    <tr>
-			{% if forloop.counter0 == 1 %}
-                            <td colspan = 5 style = "border-top:3px solid #484891;border-right:3px solid #484891;">
-                                {{ key }} {{ value }} 學分
-                            </td>
-			{% else %}
-                        <td colspan = 5 style = "border-right:3px solid #484891">
-                            {{ key }} {{ value }} 學分
-                        </td>
-			{% endif %}
-                    </tr>
-                {% endif %}
-            {% endfor %}
-            <tr style = "border-top:3px solid #484891">
                 <td rowspan = {{ depart_name_cre|length }} style = "border-left:3px solid #484891">
                     系必修課程<br/><br/>
                     {{ depart_name_cre.total_cre }}/{{ stand.3 }}<br/>
-                    {% if depart_name_cre.total_cre !=  stand.3  %}
+                    {% if depart_name_cre.total_cre <  stand.3  %}
                         <b><span id = "red_txt">未達規定門檻</span></b>
                     {% else %}
                         <b> 已達規定門檻 </b>
@@ -559,9 +520,9 @@ img {
                     </tr>
                 {% endif %}
             {% endfor %}
-            {% if domain == 1 %}
+            {% if 1 %}
                 <tr style = "border-top:3px solid #484891">
-                    <td rowspan = {{ total_profe_len }} style = "border-left:3px solid #484891">
+                    <td rowspan = {{ total_profe_len|add:"-1" }} style = "border-left:3px solid #484891">
                         系專業選修<br/><br/>
                         {{ total_pro_cre }}/{{ sum_stand_pro }}<br/>
                         {% if total_pro_cre < sum_stand_pro %}
@@ -571,53 +532,16 @@ img {
                         {% endif %}
                     </td>
                 </tr>
-                   <tr style = "border-top:3px solid #484891">
-                        <td rowspan = {{ tech_name_cre|length }}>
-                             <b><span id = "blue_txt">技術次領域</span></b><br/>
-                             {{ tech_name_cre.total_cre }}/{{ stand.4 }}<br/>
-                            {% if tech_name_cre.total_cre < stand.4 %}
-                                <b><span id = "red_txt">未達規定門檻</span></b>
-                            {% else %}
-                                <b>已達規定門檻</b>
-                            {% endif %}
-                        </td>   
-                        {% if tech_name_cre|length < 2 %}
-                            <td colspan = "4" style = "border-right:3px solid #484891">
-                            </td> 
-                        {% endif %}
-                   </tr>
-                {% for key, value in tech_name_cre.items %}
-                    {% if forloop.counter0 != 0  %}
-                        <tr  style = "border-right:3px solid #484891">
-                            <td colspan = 4>
-                                 {{ key }} {{ value }} 學分
-                            </td>
-                        </tr>
-                    {% endif %}
-                {% endfor %}
                 <tr>
-                    <td rowspan = {{ other_len }} >
-                         <b>其他次領域</b><br/>
-                         {{ other_cre }}<br/>
-                    </td>   
                     {% if mana_name_cre|length < 2  and profe_name_cre|length < 2 %}
                         <td colspan = "12" style = "border-right:3px solid #484891">
                         </td> 
                     {% endif %}
                 </tr>
-                {% for key, value in mana_name_cre.items %}
-                    {% if forloop.counter0 != 0  %}
-                        <tr>
-                            <td colspan = 4 style = "border-right:3px solid #484891">
-                                {{ key }} {{ value }} 學分
-                            </td>
-                        </tr>
-                    {% endif %}
-                {% endfor %}
                 {% for key, value in profe_name_cre.items %}
                     {% if forloop.counter0 != 0  %}
                         <tr>
-                          <td colspan = 4 style = "border-right:3px solid #484891">
+                          <td colspan = 5 style = "border-right:3px solid #484891">
                                 {{ key }} {{ value }} 學分
                             </td>
                         </tr>
