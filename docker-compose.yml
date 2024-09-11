@@ -1,0 +1,7 @@
+services:
+  web:
+    image: tommygood/im_credit:latest
+    volumes:
+      - .:/code/media/Excel
+    ports:
+      - "3001:8000"
