@@ -17,9 +17,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # login info
 import json
-login_info = json.loads(open(str(BASE_DIR) + "/config.json", "r").read())
-account = login_info["account"]
-password = login_info["password"]
+#login_info = json.loads(open(str(BASE_DIR) + "/config.json", "r").read())
+#account = login_info["account"]
+#password = login_info["password"]
+import os
+account = os.environ["account"]
+password = os.environ["password"]
 
 def Credit(request) : # 選擇學年及領域頁面
     form = CreditForm(request.POST)

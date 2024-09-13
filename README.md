@@ -6,7 +6,8 @@
 - build with Django
 
 ## Config
-- 寫登入的設定檔到 `config.json` :  `{"account" : "{your_account}", "password", "{your_password}"}`
+- 登入的設定
+   - read `account` & `password` from env.
 
 ## Usage
 - `python3 manage.py runserver`
