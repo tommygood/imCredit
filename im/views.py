@@ -53,6 +53,13 @@ def Credit(request) : # 選擇學年及領域頁面
                     return creMain(request, 1, request.POST['year'], stand)
                 if request.POST['domain']== "2" : # 管理
                     return creMain(request, 2, request.POST['year'], stand)
+            elif request.POST['year'] == "110" : # 109 學年
+                stand = [12.0, 19.0, 15.0, 30.0, 24.0, 12.0, 20.0]
+                request.session['stand'] = stand
+                if request.POST['domain']== "1" : # 技術
+                    return creMain(request, 1, request.POST['year'], stand)
+                if request.POST['domain']== "2" : # 管理
+                    return creMain(request, 2, request.POST['year'], stand)
     context = {"form" : form, "form_lec" : form_lec}
     return render(request, "credit.html", context)
 
