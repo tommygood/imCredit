@@ -467,14 +467,15 @@ def ckNecessary(same, lec_same_cre, stand) : # 檢查領域是否有必修還沒
     special_num = 0
     for course in same_name_only :
         if "體育:" in course :
-            print("特色體育未達標, 只修 ", special_num, " 堂")
             special_num += 1
     if special_num < 2 :
+        print("特色體育未達標, 只修 ", special_num, " 堂")
         return False
 
     for i in data_name : # 找所有的必修課
-        if not i in same_name_only : # 有一
+        if not i in same_name_only : # 有一堂沒有修
             same_nece = False
+            print("必修課:%s，未修完" % i)
             #return [i, same_name_only]
             break
     return same_nece
@@ -509,8 +510,8 @@ def mkSemeDic(request, total) : # [全部學期的字典，學年度為 key, 通
                 seme_dic[total[i][0]] = [] # 第一個為 key
             else :
                 # 處理特例課名
-                if "Python 程式設計" in total[i][j] :
-                    total[i][j] = total[i][j].replace("Python 程式設計", "Python程式設計") 
+                #if "Python 程式設計" in total[i][j] :
+                    #total[i][j] = total[i][j].replace("Python 程式設計", "Python程式設計") 
                 if out : # 外抵或內抵
                     #seme_dic[total[i][0]].append(total[i][j].split("  "))
                     seme_dic[total[i][0]].append(mkSplit(total[i][j]))
