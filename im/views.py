@@ -520,10 +520,31 @@ def mkSemeDic(request, total) : # [全部學期的字典，學年度為 key, 通
         for k in range(len(seme_dic['已抵免之學分如下:'])) :
             for i in seme_dic :
                 for j in range(len(seme_dic[i])) :
+                    if len(seme_dic[i][j]) > 6 : # 長度大於 6, 代表課名有空白
+                        print("課名有空白, 課資訊長度 ", len(seme_dic[i][j]), seme_dic[i][j])
+                        seme_dic[i][j] = concatSpace(seme_dic[i][j]) # 將空白連成一個字串
+                        print("新課資訊長度 ", len(seme_dic[i][j]), seme_dic[i][j])
                     if (seme_dic['已抵免之學分如下:'][k][-1][:-5] in seme_dic[i][j] or seme_dic['已抵免之學分如下:'][k][-1][:-3] in seme_dic[i][j]) and '內抵' not in seme_dic[i][j] : # 是內抵的學分，且只要抓學期中的紀錄就好
                         print(seme_dic[i][j][4], "換成", seme_dic['已抵免之學分如下:'][k][2])
                         seme_dic[i][j][4] = seme_dic['已抵免之學分如下:'][k][2] # 換名字
+                        seme_dic[i][j][0] = seme_dic['已抵免之學分如下:'][k][1] # 換課號
     return seme_dic, semi, other_info
+
+def concatSpace(course_info) :
+    c_name = ""
+    # 把課名的空白加起來
+    for i in range(4, len(course_info)-1) :
+        c_name += course_info[i] + " "
+    c_name = c_name[:-1] # 刪掉最後一個空白
+
+    # 用新課名做 course_info
+    n_course_info = []
+    for i in range(4) :
+        n_course_info.append(course_info[i])
+    n_course_info.append(c_name)
+    n_course_info.append(course_info[len(course_info)-1])
+
+    return n_course_info
 
 def mkSplit(obj) : # 遇到字才加到 list
     n_obj = []
