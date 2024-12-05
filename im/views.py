@@ -24,9 +24,19 @@ import os
 account = os.environ["account"]
 password = os.environ["password"]
 
+def setTongsStandard(human, society, science, special) :
+    stand_tongs = {
+        'human' : human,
+		'society' : society,
+		'science' : science,
+		'special' : special
+    }
+	return stand_tongs
+
 def Credit(request) : # 選擇學年及領域頁面
     form = CreditForm(request.POST)
     form_lec = userForm(request.POST)
+	stand_tongs = setTongsStandard(5,5,5,4)
     if "send" in request.POST :
         if form.is_valid() and form_lec.is_valid() :
             #form_lec.save()
@@ -36,30 +46,31 @@ def Credit(request) : # 選擇學年及領域頁面
                 stand = [12.0, 19.0, 9.0, 39.0, 21.0, 12.0, 20.0] # 各領域最低學分門檻
                 request.session['stand'] = stand
                 if request.POST['domain']== "1" : # 技術
-                    return creMain(request, 1, request.POST['year'], stand)
+                    return creMain(request, 1, request.POST['year'], stand, stand_tongs)
                 if request.POST['domain']== "2" : # 管理
-                    return creMain(request, 2, request.POST['year'], stand)
+                    return creMain(request, 2, request.POST['year'], stand, stand_tongs)
             elif request.POST['year'] == "108" : # 108 學年
                 stand = [12.0, 19.0, 15.0, 30.0, 24.0, 12.0, 20.0]
                 request.session['stand'] = stand
                 if request.POST['domain']== "1" : # 技術
-                    return creMain(request, 1, request.POST['year'], stand)
+                    return creMain(request, 1, request.POST['year'], stand, stand_tongs)
                 if request.POST['domain']== "2" : # 管理
-                    return creMain(request, 2, request.POST['year'], stand)
+                    return creMain(request, 2, request.POST['year'], stand, stand_tongs)
             elif request.POST['year'] == "109" : # 109 學年
                 stand = [12.0, 19.0, 15.0, 30.0, 24.0, 12.0, 20.0]
                 request.session['stand'] = stand
                 if request.POST['domain']== "1" : # 技術
-                    return creMain(request, 1, request.POST['year'], stand)
+                    return creMain(request, 1, request.POST['year'], stand, stand_tongs)
                 if request.POST['domain']== "2" : # 管理
-                    return creMain(request, 2, request.POST['year'], stand)
+                    return creMain(request, 2, request.POST['year'], stand, stand_tongs)
             elif request.POST['year'] == "110" : # 109 學年
-                stand = [12.0, 19.0, 15.0, 30.0, 24.0, 12.0, 20.0]
+                stand = [15.0, 16.0, 15.0, 30.0, 24.0, 12.0, 16.0]
+				stand_tongs = setTongsStandard(4,4,4,4)
                 request.session['stand'] = stand
                 if request.POST['domain']== "1" : # 技術
-                    return creMain(request, 1, request.POST['year'], stand)
+                    return creMain(request, 1, request.POST['year'], stand, stand_tongs)
                 if request.POST['domain']== "2" : # 管理
-                    return creMain(request, 2, request.POST['year'], stand)
+                    return creMain(request, 2, request.POST['year'], stand, stand_tongs)
     context = {"form" : form, "form_lec" : form_lec}
     return render(request, "credit.html", context)
 
@@ -112,7 +123,7 @@ def ckConflictCourse(course_name, course_snum, domain) :
         return False
     return "keep" # 此課程沒有相同課名的課
 
-def creMain(request, domain, year, stand) : # 主頁面
+def creMain(request, domain, year, stand, stand_tongs) : # 主頁面
     path = str(BASE_DIR) + "/media/Excel"
     if not mkLec(path, year) : # 沒資料
         return render(request, "creMain.html", {"no_data" : True})
@@ -293,7 +304,7 @@ def creMain(request, domain, year, stand) : # 主頁面
         pic_path = '/media/image/im_water.png'
     else :
         pic_path = ''
-    context = {"pic_path" : pic_path, "fin_cre" : total_credit, "total_pro_cre" : tech_name_cre['total_cre']+mana_name_cre['total_cre']+profe_name_cre['total_cre'], "sum_stand_pro" : stand[4]+stand[5], "total_stand" : sum(stand), "stand" : stand, "date" : datetime.date.today(), "other_cre1" : other_cre1, "other_len1" : other_len1, "depart_107" : east, "college_107" : local, "other_info" : other_info, "semi_dic" : semi_dic, "total" : total, "other_dic" : other_dic, "total_profe_len" : total_profe_len, "other_len" : other_len, "other_cre" : other_cre, "profe_name_cre" : profe_name_cre, "mana_name_cre" : mana_name_cre, "tech_name_cre" : tech_name_cre, "depart_name_cre" : depart_name_cre, "college_name_cre" : college_name_cre, "tongs_pass" : tongsPass(tongs_cre_sep), "tongs_cre_sep" : tongs_cre_sep, "tongs_len" : tongs_len, "name" : name, "domain" : domain, "seme_dic" : seme_dic, "year" : request.POST["year"], "lec_same" : lec_same, "same_nece" : same_nece, "tongs_dic" : tongs_dic, "tongs_cre" : tongs_cre}
+    context = {"pic_path" : pic_path, "fin_cre" : total_credit, "total_pro_cre" : tech_name_cre['total_cre']+mana_name_cre['total_cre']+profe_name_cre['total_cre'], "sum_stand_pro" : stand[4]+stand[5], "total_stand" : sum(stand), "stand" : stand, "date" : datetime.date.today(), "other_cre1" : other_cre1, "other_len1" : other_len1, "depart_107" : east, "college_107" : local, "other_info" : other_info, "semi_dic" : semi_dic, "total" : total, "other_dic" : other_dic, "total_profe_len" : total_profe_len, "other_len" : other_len, "other_cre" : other_cre, "profe_name_cre" : profe_name_cre, "mana_name_cre" : mana_name_cre, "tech_name_cre" : tech_name_cre, "depart_name_cre" : depart_name_cre, "college_name_cre" : college_name_cre, "tongs_pass" : tongsPass(tongs_cre_sep, stand_tongs), "tongs_cre_sep" : tongs_cre_sep, "tongs_len" : tongs_len, "name" : name, "domain" : domain, "seme_dic" : seme_dic, "year" : request.POST["year"], "lec_same" : lec_same, "same_nece" : same_nece, "tongs_dic" : tongs_dic, "tongs_cre" : tongs_cre, "stand_tongs" : stand_tongs}
     return render(request, "creMain.html", context)
 
 def profeCk(course_name, course_snum) : # 檢查是否在院必修
@@ -352,16 +363,16 @@ def collegeCk(course_name) : # 檢查是否在院必修
     else :
         return False
 
-def tongsPass(tongs_cre_sep) : # 檢查通識學分、領域是否達標
+def tongsPass(tongs_cre_sep, stand_tongs) : # 檢查通識學分、領域是否達標
     status = [0,0] # 兩種可能，學分不足、領域不足, 0 為足夠, 1 不足
     for key in tongs_cre_sep :
         if key == "spe" : # 特色通識只要 4 學分
-            if tongs_cre_sep[key][0] < 4 : # 學分不足
+            if tongs_cre_sep[key][0] < stand_tongs['special'] : # 學分不足
                 status[0] = 1
             if tongs_cre_sep[key][1] < 2 : # 領域不足
                 status[1] = 1
         else :
-            if tongs_cre_sep[key][0] < 5 : # 學分不足
+            if tongs_cre_sep[key][0] < stand_tongs['human'] : # 學分不足
                 status[0] = 1
             if tongs_cre_sep[key][1] < 2 : # 領域不足
                 status[1] = 1
