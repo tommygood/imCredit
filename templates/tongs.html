@@ -28,7 +28,7 @@
     </head>
     <body>
         <div>
-            規則 : 綠色字體代表已經修過。人文、社會、自然 各需 <b>2</b> 領域且相加至少 <b>5</b> 學分以上，特色通識為 <b>3</b> 領域 需選 <b>2</b> 領域，相加至少 <b>4</b> 學分。最後總通識學分最低門檻為 <b>3*5 + 2*2 = 19</b> 學分。
+		規則 : 綠色字體代表已經修過。人文、社會、自然 各需 <b>2</b> 領域且相加至少 <b>{{ stand_tongs.human }}</b> 學分以上，特色通識為 <b>3</b> 領域 需選 <b>2</b> 領域，相加至少 <b>{{ stand_tongs.special }}</b> 學分。最後總通識學分最低門檻為 <b>{{ stand_tongs.human|add:stand_tongs.society|add:stand_tongs.science|add:stand_tongs.special }}</b> 學分。
         </div>
         <br/>
         <table id = "liter_tab" border = 1>

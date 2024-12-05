@@ -31,12 +31,13 @@ def setTongsStandard(human, society, science, special) :
 		'science' : science,
 		'special' : special
     }
-	return stand_tongs
+    return stand_tongs
 
 def Credit(request) : # 選擇學年及領域頁面
     form = CreditForm(request.POST)
     form_lec = userForm(request.POST)
-	stand_tongs = setTongsStandard(5,5,5,4)
+    global stand_tongs
+    stand_tongs = setTongsStandard(5,5,5,4)
     if "send" in request.POST :
         if form.is_valid() and form_lec.is_valid() :
             #form_lec.save()
@@ -65,7 +66,7 @@ def Credit(request) : # 選擇學年及領域頁面
                     return creMain(request, 2, request.POST['year'], stand, stand_tongs)
             elif request.POST['year'] == "110" : # 109 學年
                 stand = [15.0, 16.0, 15.0, 30.0, 24.0, 12.0, 16.0]
-				stand_tongs = setTongsStandard(4,4,4,4)
+                stand_tongs = setTongsStandard(4,4,4,4)
                 request.session['stand'] = stand
                 if request.POST['domain']== "1" : # 技術
                     return creMain(request, 1, request.POST['year'], stand, stand_tongs)
@@ -720,7 +721,7 @@ def Tongs(request) : # 通識
             local_dic[i] = 0
         else :
             local_dic[i] = 1
-    context = {"liber_dic" : liber_dic, "history_dic" : history_dic, "law_dic" : law_dic, "social_dic" : social_dic, "engi_dic" : engi_dic, "life_dic" : life_dic, "green_dic" : green_dic, "east_dic" : east_dic, "local_dic" : local_dic}
+    context = {"liber_dic" : liber_dic, "history_dic" : history_dic, "law_dic" : law_dic, "social_dic" : social_dic, "engi_dic" : engi_dic, "life_dic" : life_dic, "green_dic" : green_dic, "east_dic" : east_dic, "local_dic" : local_dic, "stand_tongs" : stand_tongs}
     return render(request, "tongs.html", context)
 
 def College(request) : # 院必修
